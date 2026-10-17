@@ -1,0 +1,10 @@
+{
+  "tool": "image_gen integrado",
+  "assets": [
+    {
+      "name": "baiacu-inflado",
+      "prompt": "Use case: stylized-concept. One inflated angry pufferfish enemy game sprite, MARÉ BAIXA. Match reference TOP CENTER green pufferfish, NOT other creatures. Perfectly ROUND inflated olive green body, cream underside, angry eyebrow and eye looking RIGHT, small mouth, LONG sharp cream radial spikes extending strongly outward to fill almost entire square canvas, tiny tail left. Coarse native 32x32 pixel art enlarged, simple expressive face and large readable square clusters, 7 colors #101B2D outline, #123D49 shadow, #64834B green, #94A653 green highlight, #E6BD85 sand, #FFF0CE cream, #F47724 eye. Transparent background, no glow/shadow/text/labels/UI. No smooth gradients or fine detail.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-54a6ca1a-322d-4a5d-bbe2-d3bac9faa85e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

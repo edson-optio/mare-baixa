@@ -1,0 +1,52 @@
+MARÉ BAIXA — Sprites de jogo
+
+ENTREGA
+39 sprites finais PNG na raiz, com os mesmos nomes e canvases dos respectivos
+placeholders em MareBaixa/Assets/Art/Gerados. Nenhum arquivo Unity foi alterado.
+Os 9 arquivos de água, brilhos e cacos que não constavam na lista desta leva
+não foram substituídos.
+
+PRODUÇÃO
+Bases visuais produzidas com image_gen integrado a partir das referências.
+Redução exclusivamente NEAREST, quantização sem dithering e acabamento na
+grade final: olhos, contornos, membros, pinças, encaixes e estados de animação.
+Paletas limitadas às cores-alvo do LEIA-ME e tons de luz/sombra das referências.
+Contorno #101B2D. Transparência limpa, RGB zero nos pixels transparentes.
+Alpha 0/255 em todos, exceto interior do sino das águas-vivas: alpha 192.
+Tentáculos e eletricidade têm alpha binário.
+
+CASCO E CAMADAS
+10 quadros 32x32, corpo sem concha, abdômen mole salmão enrolado atrás.
+Orientação: direita. Cabeça/tronco compartilham a mesma base, sem reescala
+por quadro. Bob de -1 px em parado-2, anda-2 e anda-4. Pés chegam à linha 31,
+inclusive pulo/queda; pernas e pinças variam localmente.
+Ataques atingem a coluna 31, com pinça aberta no segundo quadro.
+Conchas comum/tampinha/espiral: só concha, canvas 32x32, encaixe já posicionado.
+Compor por alpha sobre o corpo, usando canvas e pivô idênticos, offset zero.
+As três conchas foram verificadas com os dez quadros, sem recobrir os olhos.
+Não recortar automaticamente o espaço transparente das conchas.
+
+OUTROS
+Inimigos centralizados em 32x32; espinho 16x16 voltado à direita.
+Moradores, baús, saída, placa, corais, algas decorativas e casa com base na
+última linha. Baús compartilham exatamente as 12 linhas inferiores.
+Pérolas/bolhas variam brilho/formato; algas e tentáculos mudam localmente.
+
+REVISÃO
+previa.png: folha sem texto, todos os sprites ampliados exatamente 4x NEAREST.
+Quatro primeiras linhas: corpo sem concha, comum, tampinha e espiral.
+Ordem das 10 colunas: parado-1, parado-2, anda-1, anda-2, anda-3, anda-4,
+pulo, queda, ataque-1, ataque-2. Demais linhas: conchas e demais sprites.
+previa-layout.json identifica cada célula; coordenadas nativas multiplicadas
+por 4 localizam as imagens na folha.
+referencia/casco-ciclos.gif: revisão animada 4x, corpo e três conchas em paralelo.
+validacao.json: tamanhos, alpha, limites, registro de cabeça/tronco e encaixes.
+preparar.py: preparação reproduzível usando os arquivos em originais/.
+prompts*.json: prompts e origem das gerações. originais/ contém artes grandes
+antes da preparação, incluindo versões descartadas; não importar como sprites.
+referencia/ contém a inspeção dos placeholders e imagens auxiliares de revisão.
+
+UNITY
+Importar apenas os 39 PNGs finais da raiz. previa.png não é spritesheet de jogo.
+Filter Mode Point, Compression None, mipmaps desativados. Manter os pivôs
+estabelecidos: centro da base nos personagens terrestres; centro nos inimigos.

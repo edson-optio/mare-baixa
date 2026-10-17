@@ -1,0 +1,525 @@
+[
+  {
+    "name": "casco-parado-1",
+    "shell": null,
+    "xy_native": [
+      20,
+      24
+    ]
+  },
+  {
+    "name": "casco-parado-2",
+    "shell": null,
+    "xy_native": [
+      92,
+      24
+    ]
+  },
+  {
+    "name": "casco-anda-1",
+    "shell": null,
+    "xy_native": [
+      164,
+      24
+    ]
+  },
+  {
+    "name": "casco-anda-2",
+    "shell": null,
+    "xy_native": [
+      236,
+      24
+    ]
+  },
+  {
+    "name": "casco-anda-3",
+    "shell": null,
+    "xy_native": [
+      308,
+      24
+    ]
+  },
+  {
+    "name": "casco-anda-4",
+    "shell": null,
+    "xy_native": [
+      380,
+      24
+    ]
+  },
+  {
+    "name": "casco-pulo",
+    "shell": null,
+    "xy_native": [
+      452,
+      24
+    ]
+  },
+  {
+    "name": "casco-queda",
+    "shell": null,
+    "xy_native": [
+      524,
+      24
+    ]
+  },
+  {
+    "name": "casco-ataque-1",
+    "shell": null,
+    "xy_native": [
+      596,
+      24
+    ]
+  },
+  {
+    "name": "casco-ataque-2",
+    "shell": null,
+    "xy_native": [
+      668,
+      24
+    ]
+  },
+  {
+    "name": "casco-parado-1",
+    "shell": "concha-comum",
+    "xy_native": [
+      20,
+      96
+    ]
+  },
+  {
+    "name": "casco-parado-2",
+    "shell": "concha-comum",
+    "xy_native": [
+      92,
+      96
+    ]
+  },
+  {
+    "name": "casco-anda-1",
+    "shell": "concha-comum",
+    "xy_native": [
+      164,
+      96
+    ]
+  },
+  {
+    "name": "casco-anda-2",
+    "shell": "concha-comum",
+    "xy_native": [
+      236,
+      96
+    ]
+  },
+  {
+    "name": "casco-anda-3",
+    "shell": "concha-comum",
+    "xy_native": [
+      308,
+      96
+    ]
+  },
+  {
+    "name": "casco-anda-4",
+    "shell": "concha-comum",
+    "xy_native": [
+      380,
+      96
+    ]
+  },
+  {
+    "name": "casco-pulo",
+    "shell": "concha-comum",
+    "xy_native": [
+      452,
+      96
+    ]
+  },
+  {
+    "name": "casco-queda",
+    "shell": "concha-comum",
+    "xy_native": [
+      524,
+      96
+    ]
+  },
+  {
+    "name": "casco-ataque-1",
+    "shell": "concha-comum",
+    "xy_native": [
+      596,
+      96
+    ]
+  },
+  {
+    "name": "casco-ataque-2",
+    "shell": "concha-comum",
+    "xy_native": [
+      668,
+      96
+    ]
+  },
+  {
+    "name": "casco-parado-1",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      20,
+      168
+    ]
+  },
+  {
+    "name": "casco-parado-2",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      92,
+      168
+    ]
+  },
+  {
+    "name": "casco-anda-1",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      164,
+      168
+    ]
+  },
+  {
+    "name": "casco-anda-2",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      236,
+      168
+    ]
+  },
+  {
+    "name": "casco-anda-3",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      308,
+      168
+    ]
+  },
+  {
+    "name": "casco-anda-4",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      380,
+      168
+    ]
+  },
+  {
+    "name": "casco-pulo",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      452,
+      168
+    ]
+  },
+  {
+    "name": "casco-queda",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      524,
+      168
+    ]
+  },
+  {
+    "name": "casco-ataque-1",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      596,
+      168
+    ]
+  },
+  {
+    "name": "casco-ataque-2",
+    "shell": "concha-tampinha",
+    "xy_native": [
+      668,
+      168
+    ]
+  },
+  {
+    "name": "casco-parado-1",
+    "shell": "concha-espiral",
+    "xy_native": [
+      20,
+      240
+    ]
+  },
+  {
+    "name": "casco-parado-2",
+    "shell": "concha-espiral",
+    "xy_native": [
+      92,
+      240
+    ]
+  },
+  {
+    "name": "casco-anda-1",
+    "shell": "concha-espiral",
+    "xy_native": [
+      164,
+      240
+    ]
+  },
+  {
+    "name": "casco-anda-2",
+    "shell": "concha-espiral",
+    "xy_native": [
+      236,
+      240
+    ]
+  },
+  {
+    "name": "casco-anda-3",
+    "shell": "concha-espiral",
+    "xy_native": [
+      308,
+      240
+    ]
+  },
+  {
+    "name": "casco-anda-4",
+    "shell": "concha-espiral",
+    "xy_native": [
+      380,
+      240
+    ]
+  },
+  {
+    "name": "casco-pulo",
+    "shell": "concha-espiral",
+    "xy_native": [
+      452,
+      240
+    ]
+  },
+  {
+    "name": "casco-queda",
+    "shell": "concha-espiral",
+    "xy_native": [
+      524,
+      240
+    ]
+  },
+  {
+    "name": "casco-ataque-1",
+    "shell": "concha-espiral",
+    "xy_native": [
+      596,
+      240
+    ]
+  },
+  {
+    "name": "casco-ataque-2",
+    "shell": "concha-espiral",
+    "xy_native": [
+      668,
+      240
+    ]
+  },
+  {
+    "name": "concha-comum",
+    "xy_native": [
+      20,
+      324
+    ]
+  },
+  {
+    "name": "concha-tampinha",
+    "xy_native": [
+      92,
+      324
+    ]
+  },
+  {
+    "name": "concha-espiral",
+    "xy_native": [
+      164,
+      324
+    ]
+  },
+  {
+    "name": "agua-viva-1",
+    "xy_native": [
+      236,
+      324
+    ]
+  },
+  {
+    "name": "agua-viva-carregada-1",
+    "xy_native": [
+      308,
+      324
+    ]
+  },
+  {
+    "name": "agua-viva-2",
+    "xy_native": [
+      380,
+      324
+    ]
+  },
+  {
+    "name": "agua-viva-carregada-2",
+    "xy_native": [
+      452,
+      324
+    ]
+  },
+  {
+    "name": "baiacu-1",
+    "xy_native": [
+      524,
+      324
+    ]
+  },
+  {
+    "name": "baiacu-2",
+    "xy_native": [
+      596,
+      324
+    ]
+  },
+  {
+    "name": "baiacu-inflado",
+    "xy_native": [
+      668,
+      324
+    ]
+  },
+  {
+    "name": "espinho",
+    "xy_native": [
+      28,
+      412
+    ]
+  },
+  {
+    "name": "vovo-buzia",
+    "xy_native": [
+      84,
+      380
+    ]
+  },
+  {
+    "name": "ostracia",
+    "xy_native": [
+      156,
+      380
+    ]
+  },
+  {
+    "name": "dona-lagosta",
+    "xy_native": [
+      228,
+      380
+    ]
+  },
+  {
+    "name": "bolota",
+    "xy_native": [
+      308,
+      396
+    ]
+  },
+  {
+    "name": "perola-1",
+    "xy_native": [
+      388,
+      412
+    ]
+  },
+  {
+    "name": "perola-2",
+    "xy_native": [
+      460,
+      412
+    ]
+  },
+  {
+    "name": "bolha-1",
+    "xy_native": [
+      524,
+      396
+    ]
+  },
+  {
+    "name": "bolha-2",
+    "xy_native": [
+      596,
+      396
+    ]
+  },
+  {
+    "name": "alga",
+    "xy_native": [
+      676,
+      412
+    ]
+  },
+  {
+    "name": "bau-fechado",
+    "xy_native": [
+      20,
+      468
+    ]
+  },
+  {
+    "name": "bau-aberto",
+    "xy_native": [
+      92,
+      468
+    ]
+  },
+  {
+    "name": "saida",
+    "xy_native": [
+      164,
+      436
+    ]
+  },
+  {
+    "name": "placa",
+    "xy_native": [
+      236,
+      468
+    ]
+  },
+  {
+    "name": "coral-1",
+    "xy_native": [
+      308,
+      468
+    ]
+  },
+  {
+    "name": "coral-2",
+    "xy_native": [
+      380,
+      468
+    ]
+  },
+  {
+    "name": "alga-decor-1",
+    "xy_native": [
+      452,
+      468
+    ]
+  },
+  {
+    "name": "alga-decor-2",
+    "xy_native": [
+      524,
+      468
+    ]
+  },
+  {
+    "name": "casa-garrafa",
+    "xy_native": [
+      580,
+      436
+    ]
+  }
+]

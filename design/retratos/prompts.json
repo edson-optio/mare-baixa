@@ -1,0 +1,35 @@
+{
+  "tool": "image_gen integrado",
+  "assets": [
+    {
+      "folder": "retratos",
+      "name": "vovo-buzia",
+      "prompt": "Use case: stylized-concept. ONE standalone square dialogue portrait for MAR\u00c9 BAIXA. Reference image is identity/design reference ONLY, extract only the specified character, do not copy labels or other characters. TOP LEFT character Vov\u00f3 B\u00fazia: elderly orange hermit crab, kind smile, white bushy eyebrows above eyes on stalks, tall sand-colored spiral shell with green seaweed and small barnacles, hint of wooden walking stick. Warm wise expression. Bust/face composition facing slightly toward viewer's RIGHT, expressive face readable at final 128x128. Fill about 85% of square, keep full recognizable head/shell/antennae within canvas. Crisp deliberate square pixel art, limited 20-24 colors, dark outline #101B2D, no antialias, no blur. Actual transparent background, no scene, ground, frame, text, UI, logo or shadow halo.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-874cac7b-d9ed-4223-819f-e98d613af7ce.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "folder": "retratos",
+      "name": "ostracia",
+      "prompt": "Use case: stylized-concept. ONE standalone square dialogue portrait for MAR\u00c9 BAIXA. Reference image is identity/design reference ONLY, extract only the specified character, do not copy labels or other characters. TOP RIGHT character Ostr\u00e1cia: pale peach round oyster face, large dark curious eyes and tiny smile, broad opened fan-shaped lavender-gray scalloped shell with sand rim behind head, green cloth on front shell lip and two little pearls. Friendly curious expression. Bust/face composition facing slightly toward viewer's RIGHT, expressive face readable at final 128x128. Fill about 85% of square, keep full recognizable head/shell/antennae within canvas. Crisp deliberate square pixel art, limited 20-24 colors, dark outline #101B2D, no antialias, no blur. Actual transparent background, no scene, ground, frame, text, UI, logo or shadow halo.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-ccde8e97-250d-4975-a6d8-4c05e0f9bddc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "folder": "retratos",
+      "name": "dona-lagosta",
+      "prompt": "Use case: stylized-concept. ONE square dialogue BUST PORTRAIT for MAR\u00c9 BAIXA. Reference image is character identity ONLY. BOTTOM LEFT character Dona Lagosta: red-orange lobster blacksmith, two long curved red antennae, skeptical thick brows, stern but kind face, brown leather work apron straps and upper bib, large claw and hint of small hammer at side. Keep lobster anatomy. Crop to head and upper chest, no full body or feet. Face turned slightly toward viewer's RIGHT. Expressive, readable at 128x128. Keep head and antennae within square. Deliberate square pixel art, limited 24 colors, #101B2D outline. Actual transparent background. No ground, scene, frame, labels, text, UI, logos, blur, antialias, glow.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-a8fdbbdc-df60-4c0b-a5d0-ba503f4c2246.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "folder": "retratos",
+      "name": "bolota",
+      "prompt": "Use case: stylized-concept. ONE square dialogue BUST PORTRAIT for MAR\u00c9 BAIXA. Reference image is character identity ONLY. BOTTOM RIGHT character Bolota: round golden tan pufferfish with cream belly and muzzle, short blunt spikes, very large dark teal eyes, worried eyebrows, little open mouth, small side fins. Timid endearing expression. No long aggressive spikes. Crop to head and upper chest, no full body or feet. Face turned slightly toward viewer's RIGHT. Expressive, readable at 128x128. Keep head and antennae within square. Deliberate square pixel art, limited 24 colors, #101B2D outline. Actual transparent background. No ground, scene, frame, labels, text, UI, logos, blur, antialias, glow.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-f5ce2a0c-ee86-4baf-bf25-e27e3660c0c7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "folder": "retratos",
+      "name": "casco",
+      "prompt": "Use case: stylized-concept. Square dialogue BUST PORTRAIT of Casco from provided identity reference. Orange hermit crab #F47724, large cream eyes on orange stalks, large orange claws, rounded ordinary sand shell #E6BD85. Same character proportions. Cheerful curious face turned slightly viewer's RIGHT. Close head and upper body only, shell behind head, lower claws cropped at chest, no feet or full-body pose. Deliberate crisp square pixel art with limited 24 colors, outline #101B2D. Large export designed to read at 128x128 pixels. Transparent RGBA background, no ground, scene, frame, text, UI, logos, blur, glow, antialiasing.",
+      "output_hint": "Generated images are saved to /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730 as /Users/edson/.codex/generated_images/01a14720-5e44-7801-9ec7-e16fd6918730/exec-8a465aca-0ea6-47ad-aa11-189145efaa21.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

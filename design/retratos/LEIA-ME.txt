@@ -1,0 +1,13 @@
+MARÉ BAIXA — Retratos de diálogo
+
+Finais 128x128 RGBA: vovo-buzia.png, ostracia.png, dona-lagosta.png,
+bolota.png e casco.png. Redução NEAREST, paletas limitadas, alpha 0/255,
+RGB zerado nas áreas transparentes e contorno #101B2D.
+Designs baseados nas referências de design/personagens/.
+
+previa.png: retratos ampliados 2x com NEAREST sobre fundos claro e escuro.
+originais/: gerações originais em alta resolução, antes do recorte de busto,
+quantização e limpeza do alpha; não são os arquivos finais para o jogo.
+prompts.json: prompts usados com image_gen integrado.
+Preparação reproduzida por ../tiles/preparar.py; validação em ../tiles/validacao.json.
+Unity: Filter Mode Point, Compression None, mipmaps desativados.

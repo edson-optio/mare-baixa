@@ -1,0 +1,194 @@
+{
+  "agua-superficie-1.png": [
+    32,
+    8
+  ],
+  "agua-superficie-2.png": [
+    32,
+    8
+  ],
+  "agua-viva-1.png": [
+    32,
+    32
+  ],
+  "agua-viva-2.png": [
+    32,
+    32
+  ],
+  "agua-viva-carregada-1.png": [
+    32,
+    32
+  ],
+  "agua-viva-carregada-2.png": [
+    32,
+    32
+  ],
+  "agua.png": [
+    32,
+    32
+  ],
+  "alga-decor-1.png": [
+    32,
+    32
+  ],
+  "alga-decor-2.png": [
+    32,
+    32
+  ],
+  "alga.png": [
+    16,
+    16
+  ],
+  "baiacu-1.png": [
+    32,
+    32
+  ],
+  "baiacu-2.png": [
+    32,
+    32
+  ],
+  "baiacu-inflado.png": [
+    32,
+    32
+  ],
+  "bau-aberto.png": [
+    32,
+    32
+  ],
+  "bau-fechado.png": [
+    32,
+    32
+  ],
+  "bolha-1.png": [
+    32,
+    32
+  ],
+  "bolha-2.png": [
+    32,
+    32
+  ],
+  "bolota.png": [
+    32,
+    32
+  ],
+  "brilho-1.png": [
+    16,
+    16
+  ],
+  "brilho-2.png": [
+    16,
+    16
+  ],
+  "brilho-3.png": [
+    16,
+    16
+  ],
+  "caco-areia.png": [
+    8,
+    8
+  ],
+  "caco-creme.png": [
+    8,
+    8
+  ],
+  "caco-turquesa.png": [
+    8,
+    8
+  ],
+  "casa-garrafa.png": [
+    64,
+    64
+  ],
+  "casco-anda-1.png": [
+    32,
+    32
+  ],
+  "casco-anda-2.png": [
+    32,
+    32
+  ],
+  "casco-anda-3.png": [
+    32,
+    32
+  ],
+  "casco-anda-4.png": [
+    32,
+    32
+  ],
+  "casco-ataque-1.png": [
+    32,
+    32
+  ],
+  "casco-ataque-2.png": [
+    32,
+    32
+  ],
+  "casco-parado-1.png": [
+    32,
+    32
+  ],
+  "casco-parado-2.png": [
+    32,
+    32
+  ],
+  "casco-pulo.png": [
+    32,
+    32
+  ],
+  "casco-queda.png": [
+    32,
+    32
+  ],
+  "concha-comum.png": [
+    32,
+    32
+  ],
+  "concha-espiral.png": [
+    32,
+    32
+  ],
+  "concha-tampinha.png": [
+    32,
+    32
+  ],
+  "coral-1.png": [
+    32,
+    32
+  ],
+  "coral-2.png": [
+    32,
+    32
+  ],
+  "dona-lagosta.png": [
+    48,
+    48
+  ],
+  "espinho.png": [
+    16,
+    16
+  ],
+  "ostracia.png": [
+    48,
+    48
+  ],
+  "perola-1.png": [
+    16,
+    16
+  ],
+  "perola-2.png": [
+    16,
+    16
+  ],
+  "placa.png": [
+    32,
+    32
+  ],
+  "saida.png": [
+    32,
+    64
+  ],
+  "vovo-buzia.png": [
+    48,
+    48
+  ]
+}

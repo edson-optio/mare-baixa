@@ -1,0 +1,19 @@
+MARÉ BAIXA — Tiles 32x32
+
+Finais: recife-meio.png, recife-topo.png, recife-plataforma.png,
+vila-meio.png, vila-topo.png, vila-plataforma.png.
+Todos são RGBA 32x32, redução NEAREST, paleta limitada, alpha 0/255.
+Interiores e topos opacos; plataformas ocupam somente as linhas 0–10.
+Bordas dos interiores conferidas nos quatro lados. Topos e plataformas
+conferidos na horizontal. Linha inferior de cada topo idêntica à linha
+superior do interior correspondente. Mosaicos 6x4 conferidos visualmente.
+
+previa.png: duas zonas montadas sobre os fundos correspondentes, 1280x360.
+mosaicos/: repetições 6x4 ampliadas com NEAREST e encaixes topo/interior.
+originais/: seis gerações em alta resolução, sem ajustes; não usar como tiles.
+prompts.json: prompts usados no image_gen integrado, incluindo os retratos.
+preparar.py: rotina de redução, quantização, ajustes de borda e validação.
+validacao.json: resultados técnicos dos seis tiles e cinco retratos.
+
+Unity: Filter Mode Point, Compression None, mipmaps desativados.
+Usar arquivos finais individuais; nenhum arquivo do projeto Unity foi alterado.

@@ -1,0 +1,16 @@
+@dica1 A / D para andar, Espaço para pular. Aperte E perto dos moradores para conversar.
+@dica2 Aperte E na descida para mergulhar no Recife Raso.
+############################################
+#                                          #
+#                                          #
+#                                          #
+#                                          #
+#                                          #
+#                                p         #
+#                     ======   =====   2   #
+#   1            p                         #
+#               ####                  k  D #
+# C  g V  h  Y########   L   h   U   #######
+############################################
+############################################
+############################################

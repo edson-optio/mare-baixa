@@ -1,0 +1,69 @@
+{
+  "fundo-recife": {
+    "high": [
+      1664,
+      936
+    ],
+    "final": [
+      640,
+      360
+    ],
+    "colors": 24
+  },
+  "silhuetas-recife": {
+    "high": [
+      1664,
+      936
+    ],
+    "final": [
+      640,
+      360
+    ],
+    "colors": 3,
+    "alpha": [
+      0,
+      255
+    ],
+    "top_half_transparent": true,
+    "edges_equal": true
+  },
+  "fundo-vila": {
+    "high": [
+      1664,
+      936
+    ],
+    "final": [
+      640,
+      360
+    ],
+    "colors": 24
+  },
+  "silhuetas-vila": {
+    "high": [
+      1664,
+      936
+    ],
+    "final": [
+      640,
+      360
+    ],
+    "colors": 4,
+    "alpha": [
+      0,
+      255
+    ],
+    "top_half_transparent": true,
+    "edges_equal": true
+  },
+  "menu-chave": {
+    "high": [
+      1664,
+      936
+    ],
+    "final": [
+      640,
+      360
+    ],
+    "colors": 48
+  }
+}

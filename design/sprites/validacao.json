@@ -1,0 +1,714 @@
+{
+  "sprites": {
+    "casco-parado-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-parado-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        3,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-anda-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-anda-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        3,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-anda-3": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-anda-4": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        3,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-pulo": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-queda": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-ataque-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casco-ataque-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        1,
+        4,
+        32,
+        32
+      ],
+      "base_last_row": true
+    },
+    "concha-comum": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        0,
+        8,
+        18,
+        27
+      ],
+      "base_last_row": false
+    },
+    "concha-tampinha": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        0,
+        12,
+        18,
+        27
+      ],
+      "base_last_row": false
+    },
+    "concha-espiral": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        0,
+        3,
+        18,
+        27
+      ],
+      "base_last_row": false
+    },
+    "agua-viva-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        192,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        4,
+        2,
+        27,
+        30
+      ],
+      "base_last_row": false
+    },
+    "agua-viva-carregada-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        192,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        0,
+        2,
+        32,
+        30
+      ],
+      "base_last_row": false
+    },
+    "agua-viva-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        192,
+        255
+      ],
+      "colors": 9,
+      "bbox": [
+        3,
+        2,
+        27,
+        30
+      ],
+      "base_last_row": false
+    },
+    "agua-viva-carregada-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        192,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        0,
+        2,
+        32,
+        30
+      ],
+      "base_last_row": false
+    },
+    "baiacu-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 8,
+      "bbox": [
+        2,
+        5,
+        29,
+        27
+      ],
+      "base_last_row": false
+    },
+    "baiacu-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 8,
+      "bbox": [
+        2,
+        5,
+        29,
+        27
+      ],
+      "base_last_row": false
+    },
+    "baiacu-inflado": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 8,
+      "bbox": [
+        0,
+        0,
+        31,
+        31
+      ],
+      "base_last_row": false
+    },
+    "espinho": {
+      "size": [
+        16,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 4,
+      "bbox": [
+        1,
+        4,
+        15,
+        12
+      ],
+      "base_last_row": false
+    },
+    "vovo-buzia": {
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 12,
+      "bbox": [
+        2,
+        3,
+        45,
+        48
+      ],
+      "base_last_row": true
+    },
+    "ostracia": {
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 16,
+      "bbox": [
+        2,
+        4,
+        46,
+        48
+      ],
+      "base_last_row": true
+    },
+    "dona-lagosta": {
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 12,
+      "bbox": [
+        1,
+        11,
+        47,
+        48
+      ],
+      "base_last_row": true
+    },
+    "bolota": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 11,
+      "bbox": [
+        1,
+        7,
+        31,
+        32
+      ],
+      "base_last_row": true
+    },
+    "perola-1": {
+      "size": [
+        16,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 11,
+      "bbox": [
+        2,
+        1,
+        14,
+        13
+      ],
+      "base_last_row": false
+    },
+    "perola-2": {
+      "size": [
+        16,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 11,
+      "bbox": [
+        2,
+        0,
+        15,
+        13
+      ],
+      "base_last_row": false
+    },
+    "bolha-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        3,
+        3,
+        29,
+        29
+      ],
+      "base_last_row": false
+    },
+    "bolha-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        2,
+        3,
+        30,
+        28
+      ],
+      "base_last_row": false
+    },
+    "alga": {
+      "size": [
+        16,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        3,
+        1,
+        13,
+        15
+      ],
+      "base_last_row": false
+    },
+    "bau-fechado": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        1,
+        8,
+        31,
+        32
+      ],
+      "base_last_row": true
+    },
+    "bau-aberto": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        1,
+        2,
+        31,
+        32
+      ],
+      "base_last_row": true
+    },
+    "saida": {
+      "size": [
+        32,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        1,
+        1,
+        31,
+        64
+      ],
+      "base_last_row": true
+    },
+    "placa": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 8,
+      "bbox": [
+        5,
+        1,
+        26,
+        32
+      ],
+      "base_last_row": true
+    },
+    "coral-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        2,
+        5,
+        29,
+        32
+      ],
+      "base_last_row": true
+    },
+    "coral-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 6,
+      "bbox": [
+        2,
+        4,
+        30,
+        32
+      ],
+      "base_last_row": true
+    },
+    "alga-decor-1": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 5,
+      "bbox": [
+        4,
+        1,
+        28,
+        32
+      ],
+      "base_last_row": true
+    },
+    "alga-decor-2": {
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 5,
+      "bbox": [
+        4,
+        1,
+        27,
+        32
+      ],
+      "base_last_row": true
+    },
+    "casa-garrafa": {
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "colors": 10,
+      "bbox": [
+        12,
+        1,
+        52,
+        64
+      ],
+      "base_last_row": true
+    }
+  },
+  "same_head_registration": true,
+  "same_torso_registration": true,
+  "shell_combinations": 30,
+  "attack_right_edge": true
+}

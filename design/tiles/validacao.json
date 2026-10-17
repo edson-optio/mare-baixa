@@ -1,0 +1,119 @@
+{
+  "recife-meio": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      255
+    ],
+    "colors": 5
+  },
+  "recife-topo": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      255
+    ],
+    "colors": 10
+  },
+  "recife-plataforma": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 6
+  },
+  "vila-meio": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      255
+    ],
+    "colors": 3
+  },
+  "vila-topo": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      255
+    ],
+    "colors": 8
+  },
+  "vila-plataforma": {
+    "size": [
+      32,
+      32
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 7
+  },
+  "vovo-buzia": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 20
+  },
+  "ostracia": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 21
+  },
+  "dona-lagosta": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 19
+  },
+  "bolota": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 20
+  },
+  "casco": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "colors": 19
+  }
+}

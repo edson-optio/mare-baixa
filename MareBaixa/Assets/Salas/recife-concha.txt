@@ -1,0 +1,22 @@
+@nome Gruta da Concha
+@mare 0.14
+@dica1 Encoste numa concha e aperte E para trocar. A antiga fica para trás.
+@dica2 L usa a habilidade da concha. Q come uma alga e recupera 1 de resistência.
+########################################
+#                                      #
+#                                      #
+#                                      #
+#                                      #
+#                                      #
+#                                      #
+#                                      #
+# C  k                               S #
+########       j                ########
+########                     o k########
+########    2         1 ################
+########                    ############
+########       O   ###      ############
+######## og a      ###K g rg############
+########################################
+########################################
+########################################

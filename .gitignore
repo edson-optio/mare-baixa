@@ -1,0 +1,18 @@
+# Unity (gerado ao abrir o projeto)
+MareBaixa/[Ll]ibrary/
+MareBaixa/[Tt]emp/
+MareBaixa/[Oo]bj/
+MareBaixa/[Bb]uild/
+MareBaixa/[Ll]ogs/
+MareBaixa/[Uu]ser[Ss]ettings/
+MareBaixa/*.csproj
+MareBaixa/*.sln
+MareBaixa/*.slnx
+MareBaixa/.vscode/
+# App compilado (grande; gerado pelo build)
+Entrega/
+Verificacao/*.log
+.DS_Store
+__pycache__/
+# Papéis dos agentes do Maestri (configuração local)
+.maestri/

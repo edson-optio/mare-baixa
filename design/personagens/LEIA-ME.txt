@@ -1,0 +1,43 @@
+MARÉ BAIXA — Design inicial de personagens
+Versão 01 — 9 de outubro de 2026
+
+CONTEÚDO
+01-casco-e-conchas.png: Casco sem concha e com as cinco conchas do GDD.
+02-moradores-da-vila.png: Vovó Búzia, Ostrácia, Dona Lagosta e Bolota.
+03-inimigos-e-chefes.png: seis inimigos comuns, Ermitão Colosso e Polvo Abissal.
+04-casco-concha-comum.png: personagem isolado com canal alpha para testar visualmente no protótipo.
+prompts.json: instruções de geração e correção utilizadas com image_gen integrado.
+
+ESTADO DA ENTREGA
+As imagens são conceitos em alta resolução (1536 x 1024), com estética pixel art. Não são sprites nativos de 32 x 32 nem folhas de animação recortáveis em grade. O PNG isolado é uma pose estática provisória; não inclui rig, colisores, movimento ou integração Unity. A transparência contém pixels parciais nas bordas, que deverão ser limpos na produção final de pixel art.
+
+FONTES E DECISÕES
+Foram lidos a apresentação em PDF, o GDD completo e o GDD de uma folha. O arquivo de uma folha tem Último Lume no nome, mas seu conteúdo descreve Maré Baixa. O GDD completo foi usado como referência principal para personagens e direção de arte.
+Características documentadas preservadas: Casco laranja, olhos em hastes e pinças grandes; conchas comum, tampinha, espiral, lata e lâmpada; os quatro moradores; seis inimigos; Colosso com pneu; Polvo e Pérola Lunar.
+Propostas visuais desta versão: cores específicas das conchas e NPCs, bengala de Búzia, avental e martelo da ferreira, disposição de pérolas da comerciante, detalhes de ferrugem e bioluminescência. São escolhas de design revisáveis, não requisitos adicionais do GDD. Textos decorativos nas pranchas não acrescentam regras ou história.
+
+DIREÇÃO VISUAL
+Casco: olhos, corpo laranja e pinças devem continuar reconhecíveis em todas as classes. O corpo deve manter proporções e posição consistentes nos sprites finais.
+Concha comum: volume arredondado, areia, leitura simples de proteção inicial.
+Tampinha: perfil baixo e borda metálica serrilhada, turquesa, mobilidade.
+Espiral: curva evidente, creme, leitura de giro.
+Lata: massa alta e pesada, verde gasto e metal, leitura de tanque.
+Lâmpada: vidro e filamento luminoso, destaque para o clarão.
+Bolota: olhos receosos e espinhos curtos. Baiacu Nervoso: sobrancelhas angulares e espinhos longos. A diferença deve funcionar também sem depender da cor.
+Chefes: ampliar a massa visual e conservar pontos de ataque legíveis. O brilho dos olhos do Polvo deve sobreviver à fase escura.
+
+PALETA PROPOSTA PARA A PRODUÇÃO
+Contorno: #101B2D; sombra marinha: #123D49; laranja base: #F47724;
+laranja sombra: #B94724; areia: #E6BD85; luz: #FFF0CE;
+turquesa: #42B5AC; verde sucata: #64834B; violeta abissal: #7050AD.
+São cores-alvo propostas; as imagens geradas possuem variações e mais cores.
+
+PRÓXIMA ETAPA DE PRODUÇÃO
+1. Redesenhar Casco em grade real 32 x 32, evitando apenas encolher as pranchas, pois olhos e pinças perderiam leitura.
+2. Separar corpo e concha em camadas com encaixe compartilhado; preservar o pivô entre poses.
+3. Priorizar Casco, concha comum, tampinha e espiral; Água-viva Errante e Baiacu Nervoso para o Recife. A escolha destas três conchas é uma proposta para o MVP.
+4. Proposta de animações: parado (4 quadros), andar (6), pular/cair (2), ataque (4), esquiva (4), dano (2) e quebra da concha (4). Números iniciais para dimensionar trabalho, não especificação existente.
+5. Testar legibilidade no tamanho de jogo, em fundo claro, escuro e sob a camada de água.
+6. Só então expandir NPCs e inimigos restantes. Proposta de exceções à grade: NPCs grandes até 48 x 48; Colosso 96 x 96; Polvo modular. O GDD prevê pixel art 32 x 32, portanto estas exceções precisam ser avaliadas pela equipe.
+
+O pacote não altera os documentos originais nem os projetos de laboratório existentes.

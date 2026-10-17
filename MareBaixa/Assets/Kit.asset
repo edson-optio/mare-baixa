@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3158af71d2bdf45aaa3ca31a0995d289, type: 3}
+  m_Name: Kit
+  m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.Kit
+  reefTop: {fileID: 11400000, guid: e5fca59ac853740f1be959ef77b6cf03, type: 2}
+  reefFill: {fileID: 11400000, guid: 92d6296ed9485487696c78b954caa288, type: 2}
+  reefPlatform: {fileID: 11400000, guid: e3e6d3e2fdca34caa92a4b82b9e7bebb, type: 2}
+  villageTop: {fileID: 11400000, guid: 761774ce007d74df096f61b0f8e33513, type: 2}
+  villageFill: {fileID: 11400000, guid: cca67e571cddb4984b5a5e7d56e798d3, type: 2}
+  villagePlatform: {fileID: 11400000, guid: 6ff09b3c8b2b44f12bb20a704cae7077, type: 2}
+  casco: {fileID: 5543180444269777497, guid: 601b9794ba9d642a2873072d29a39a60, type: 3}
+  pearl: {fileID: 1645976960727951460, guid: 7922d07be1742467d99efb3ad6886e41, type: 3}
+  alga: {fileID: 1517761030186323152, guid: c96d82076f58845b68be3e7167390f1e, type: 3}
+  bubble: {fileID: 5005634172723391880, guid: 67675386e1aed41ea8daf7e39d663ee5, type: 3}
+  chest: {fileID: 9098071610909442565, guid: 20d929465f04c433ebd0d566ad2a04aa, type: 3}
+  shellPickup: {fileID: 1501621257017597512, guid: 4f495e6a86f7941dd8cc7945ace0f92b, type: 3}
+  jellyfish: {fileID: 8576665899298761940, guid: 74ea8c3d0bef54c468d156e2e91019bf, type: 3}
+  pufferfish: {fileID: 6267751976441754823, guid: 1246910a6e8c94d9d9bb4a393c13476f, type: 3}
+  spike: {fileID: 3656730781059447311, guid: 0f63fef0def4e4b04a25f1cb104b3260, type: 3}
+  exit: {fileID: 1848659587224930711, guid: 7221bf0358a4f43e49e275a2ac38324d, type: 3}
+  descent: {fileID: 1180837605523578912, guid: f1df85c5e59e34ffa974b8e1f9f76321, type: 3}
+  buzia: {fileID: 8621931180286234180, guid: e583a0aee29c7488b94f8944bb184dd5, type: 3}
+  ostracia: {fileID: 5329824758248422521, guid: aa665f45458ed403cb2eaa9c8ed8dd9a, type: 3}
+  lagosta: {fileID: 6493490812231739108, guid: a5d05b4d6df874fdcab64e8a960676cd, type: 3}
+  bolota: {fileID: 8288063254803743143, guid: d9a8ea3b4e63f44999e1dbb391c29b81, type: 3}
+  shellSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 04c31d924c4724921a8e4ae5730fe575, type: 3}
+  - {fileID: 21300000, guid: ef251296dea6f4fd39254025eb55a312, type: 3}
+  - {fileID: 21300000, guid: a49a4f50d6ddf4968a95da58205a6cbb, type: 3}
+  shardSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 17a6de2439def47fba4d56eedb715bd2, type: 3}
+  - {fileID: 21300000, guid: 14f9a68a01a174841b7bf6e080e7f99a, type: 3}
+  - {fileID: 21300000, guid: 5f393338388fe424984dc715040332f4, type: 3}
+  sparkFrames:
+  - {fileID: 21300000, guid: d1eb2237389dc444c8fdf10752dc5859, type: 3}
+  - {fileID: 21300000, guid: f1ed301cb1a34463696ad54ab3cc747e, type: 3}
+  - {fileID: 21300000, guid: 45e543024bc7c4773a49260f07df2689, type: 3}
+  seaweedFrames:
+  - {fileID: 21300000, guid: 3eca9026eed00441c85136045a71712c, type: 3}
+  - {fileID: 21300000, guid: 32eaedcf088fb4596ac1f484967933c4, type: 3}
+  coral1: {fileID: 21300000, guid: 5721e518ee5c94abab7f7dede76f624b, type: 3}
+  coral2: {fileID: 21300000, guid: e79fff31b9c1d47208c766e70d0e082d, type: 3}
+  sign: {fileID: 21300000, guid: 60d2d8bca8d1a4316ac10efe241631b4, type: 3}
+  bottleHouse: {fileID: 21300000, guid: 600a06475c5c64a09aaab5ff2ee6d16d, type: 3}
+  white: {fileID: 21300000, guid: 2ae1d88e308474a0499c06ea674b05cc, type: 3}
+  waterSurface:
+  - {fileID: 21300000, guid: e539b5e85ca0749f5baedf351ab64139, type: 3}
+  - {fileID: 21300000, guid: 8f725a5fbf3e64f3092ca6815138ff4a, type: 3}
+  pearlIcon: {fileID: 21300000, guid: 82ec7576e9c2a4a98ac7072b696506b1, type: 3}
+  algaIcon: {fileID: 21300000, guid: 91a827b032c8d4b2288314a7daccb6a2, type: 3}
+  bubbleIcon: {fileID: 21300000, guid: 39d7dd40773ea41998dc25c71b36f52a, type: 3}
+  conceptArt: {fileID: 21300000, guid: 0761f7e3dc32e4667b6f0e0e61cbb25f, type: 3}
+  portraits:
+  - {fileID: 21300000, guid: c1a684f71624140c8a5dba25d9a66cef, type: 3}
+  - {fileID: 21300000, guid: 85dd451636c774c32aa03b0812372967, type: 3}
+  - {fileID: 21300000, guid: 9a377d3e8219641aa938f73231c4ecf0, type: 3}
+  - {fileID: 21300000, guid: 9a8ba09067672401aa8a61a741e72841, type: 3}
+  cascoPortrait: {fileID: 21300000, guid: d853a3be948114fc39ed4bec14a95e2a, type: 3}
+  village: {fileID: 4900000, guid: d5df8d62ba9fd432088c67ad85d7a89d, type: 3}
+  reefEntrance: {fileID: 4900000, guid: 971bc7145cd7e4309901864272977fd0, type: 3}
+  reefShellRoom: {fileID: 4900000, guid: 0b2d9fbd20d094db89aa477f7a770643, type: 3}
+  reefRooms:
+  - {fileID: 4900000, guid: e8a8329637abc4f2b9cb47c1563dc615, type: 3}
+  - {fileID: 4900000, guid: f7928f27e71bf49aa8e3562e4ca57512, type: 3}
+  - {fileID: 4900000, guid: 9ee64e8a88c964fa78d271c1e5be3365, type: 3}
+  - {fileID: 4900000, guid: 901783b0e6af6419d8c3523c13850740, type: 3}
+  - {fileID: 4900000, guid: 7f6a4bd9303de4f5b9e8ba76ff49cdf2, type: 3}

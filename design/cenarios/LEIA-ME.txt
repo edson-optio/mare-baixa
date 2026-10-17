@@ -1,0 +1,25 @@
+MARÉ BAIXA — Cenários para protótipo
+
+Artes: fundo-recife, silhuetas-recife, fundo-vila, silhuetas-vila, menu-chave.
+<nome>.png: alta resolução preparada em 1664x936, proporção exata 16:9.
+<nome>-640.png: final 640x360, reduzida exclusivamente com NEAREST.
+originais/<nome>.png: saída original intacta do image_gen integrado (1672x941).
+O gerador produziu uma proporção aproximada; foi aplicado recorte central mínimo
+de 8 colunas e 5 linhas para obter 16:9 exato nas entregas preparadas.
+
+Fundos: 24 cores. Menu: 48 cores. Silhuetas: 2/3 cores opacas mais transparência.
+Silhuetas com alpha binário 0/255, RGB zerado nas áreas transparentes, conteúdo
+restrito à metade inferior e perfil de terreno ajustado nas extremidades para
+repetição horizontal. Versões alta e final verificadas por preparar.py.
+Casco aparece apenas no menu, conforme a exceção solicitada.
+
+Unity: usar Filter Mode Point, Compression None e mipmaps desativados.
+Para repetição horizontal das silhuetas, usar Wrap U Repeat e Wrap V Clamp.
+Os arquivos são texturas; nenhuma cena ou configuração Unity foi alterada.
+
+prompts.json: prompts utilizados e ferramenta de geração.
+validacao.json: dimensões, cores, alpha, transparência superior e bordas.
+previa.png: duas repetições lado a lado de cada composição e menu final.
+preparar.py: preparação reproduzível a partir das saídas originais da sessão.
+
+Envio Maestri não executável nesta sessão: MAESTRI_SOCKET não está definido.
