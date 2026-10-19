@@ -1,0 +1,93 @@
+{
+  "completo": true,
+  "filtro": "NEAREST",
+  "arquivos": [
+    {
+      "arquivo": "fundo-cidade.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 24,
+      "alpha": [
+        255
+      ],
+      "metade_superior_transparente": false,
+      "bordas_horizontais_iguais": false,
+      "sha256": "89d8f8a7eae4403bad84b585d07ff92429ad74000ebeda76f3e6eada2539afc1"
+    },
+    {
+      "arquivo": "silhuetas-cidade.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "metade_superior_transparente": true,
+      "bordas_horizontais_iguais": true,
+      "sha256": "43d877e99b8b1afa2b5343606817ffd52b65da77985461244ee69f3a2b78c77a"
+    },
+    {
+      "arquivo": "fundo-fossa.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 24,
+      "alpha": [
+        255
+      ],
+      "metade_superior_transparente": false,
+      "bordas_horizontais_iguais": false,
+      "sha256": "c9c502e6f61ce6c42d69aa628d41d9f5a75cb38e61319120751326d0be015eac"
+    },
+    {
+      "arquivo": "silhuetas-fossa.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "metade_superior_transparente": true,
+      "bordas_horizontais_iguais": true,
+      "sha256": "b001dd95be872ac9205f0b1f034afdf0e9e289ed8bfe2cde1f9957972a6959d9"
+    },
+    {
+      "arquivo": "fundo-bolha.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 24,
+      "alpha": [
+        255
+      ],
+      "metade_superior_transparente": false,
+      "bordas_horizontais_iguais": false,
+      "sha256": "232dd45ff7523496fc11073f53e4c1877ddae05801abf9d71f8bdfe883873434"
+    },
+    {
+      "arquivo": "silhuetas-bolha.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "metade_superior_transparente": true,
+      "bordas_horizontais_iguais": true,
+      "sha256": "248e5aa39a79440d3e9cd4e5c94c73b7206d37e7668dbaf4c0e5a1dc63f56658"
+    }
+  ]
+}

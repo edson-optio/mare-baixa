@@ -1,0 +1,234 @@
+{
+  "tool": "image_gen integrado",
+  "date": "2026-10-18",
+  "assets": [
+    {
+      "name": "concha-lata",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: battered green soda can shell no crab. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "concha-lampada",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: antique glowing golden bulb shell no crab. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "caco-lata",
+      "width": 8,
+      "height": 8,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: single jagged broken green soda can metal shard. Side view 2D platformer, designed for 8x8 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "caco-lampada",
+      "width": 8,
+      "height": 8,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: single jagged golden glass light bulb shard. Side view 2D platformer, designed for 8x8 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "moreia-escondida",
+      "width": 64,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: green moray eel barely peeking to RIGHT from rusted pipe at LEFT pipe fully visible. Side view 2D platformer, designed for 64x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "moreia-bote",
+      "width": 64,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: green moray eel lunging far to RIGHT mouth open from rusted pipe at LEFT pipe fully visible. Side view 2D platformer, designed for 64x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "moreia-volta",
+      "width": 64,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: green moray eel retreating into rusted pipe at LEFT curved neck and head facing RIGHT. Side view 2D platformer, designed for 64x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "siri-1",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: blue slate scavenger crab rusty orange claw tips sideways walking first step two eyes. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "siri-2",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: blue slate scavenger crab rusty orange claw tips, sideways walking opposite step, two eyes. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "siri-garra",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: blue slate scavenger crab rusty orange claw tips both pincers raised open attack. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "siri-fugindo",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: blue slate scavenger crab fleeing sideways carrying a stolen beige spiral shell on back. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "pescador-1",
+      "width": 48,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: deep navy purple anglerfish facing RIGHT cyan glowing lure arching in front of face mouth closed tail left. Side view 2D platformer, designed for 48x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "pescador-2",
+      "width": 48,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: deep navy purple anglerfish facing RIGHT cyan glowing lure arching in front tail flexed swimming. Side view 2D platformer, designed for 48x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "pescador-boca",
+      "width": 48,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: deep navy purple anglerfish facing RIGHT cyan glowing lure enormous open mouth ivory teeth attack. Side view 2D platformer, designed for 48x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "tentaculo-1",
+      "width": 32,
+      "height": 64,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: one tall curling navy purple octopus tentacle rooted at bottom violet suction cups curves right. Side view 2D platformer, designed for 32x64 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "tentaculo-2",
+      "width": 32,
+      "height": 64,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: one tall curling navy purple octopus tentacle rooted at bottom violet suction cups curves left. Side view 2D platformer, designed for 32x64 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "tentaculo-aviso",
+      "width": 32,
+      "height": 8,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: horizontal ground fissure glowing violet inside dark rock lip very wide thin shape. Side view 2D platformer, designed for 32x8 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "valvula-1",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: rusty pipe valve green grey metal red orange wheel with cross spokes upright pipe below. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "valvula-2",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: rusty pipe valve green grey metal red orange wheel diagonal X spokes rotated pipe below. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "correnteza-1",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: three horizontal cyan water current streaks moving RIGHT curved arrow tips sparse isolated marks. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "correnteza-2",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: three horizontal cyan water current streaks moving RIGHT shifted flowing wave tips sparse isolated marks. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "fonte-1",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: giant open pearly clam shell healing fountain three floating turquoise air bubbles above calm light. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "fonte-seca",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: giant open pearly clam shell empty dry healing fountain dull grey shell no bubbles. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "saida-fechada",
+      "width": 32,
+      "height": 64,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: vertical underwater ancient stone doorway blocked entirely by rusty metal bars and scrap trash moss green stone arch. Side view 2D platformer, designed for 32x64 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-anda-1",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge orange hermit crab boss enormous black worn car tire shell facing RIGHT two stalk eyes powerful claws walking first step. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-anda-2",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge orange hermit crab boss enormous black worn car tire shell facing RIGHT two stalk eyes powerful claws walking opposite step. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-rola-1",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge hermit crab boss tucked inside enormous black worn car tire rolling wheel upright side view orange claws folded inside. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-rola-2",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge hermit crab boss tucked inside enormous black worn car tire rolling wheel rotated diagonal tread orange claws folded inside. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-tonto",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge orange hermit crab boss enormous black worn car tire shell facing RIGHT dizzy slumped eyes lowered claws two small stars. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "colosso-aviso",
+      "width": 96,
+      "height": 80,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: huge orange hermit crab boss enormous black worn car tire shell facing RIGHT claws raised warning attack windup orange highlights. Side view 2D platformer, designed for 96x80 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "polvo-corpo",
+      "width": 192,
+      "height": 128,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: enormous navy purple abyssal octopus boss frontal symmetrical broad eight curling tentacles violet suction cups large domed head NO EYES leave dark blank face for separate eye sprites. Side view 2D platformer, designed for 192x128 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "polvo-olho-aberto",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: single giant menacing octopus eye cyan glowing iris bright cream center vertical dark pupil purple navy eyelid rim. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "polvo-olho-fechado",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: single closed giant octopus eye purple navy eyelid horizontal cyan thin glowing slit. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "polvo-tinta",
+      "width": 16,
+      "height": 16,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: single navy violet ink droplet projectile teardrop purple highlight. Side view 2D platformer, designed for 16x16 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "carro",
+      "width": 64,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: rusted abandoned submerged green grey compact car side view broken windows algae rust flat tires. Side view 2D platformer, designed for 64x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "semaforo",
+      "width": 16,
+      "height": 48,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: old unlit traffic light three dark lamps tall rusty pole green grey housing no illumination. Side view 2D platformer, designed for 16x48 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "coral-bio",
+      "width": 32,
+      "height": 32,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: branching violet bioluminescent coral turquoise bright tips navy base. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    },
+    {
+      "name": "lixo",
+      "width": 32,
+      "height": 16,
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: small pile underwater rubbish one green glass bottle and black rubber tire. Side view 2D platformer, designed for 32x16 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+    }
+  ]
+}

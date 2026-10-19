@@ -1,0 +1,70 @@
+{
+  "tool": "image_gen integrado",
+  "date": "2026-10-18",
+  "assets": [
+    {
+      "name": "cena1-1",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Establishing wide shot at NIGHT of a tiny coastal village built by sea creatures from shells driftwood and salvaged bottles, warm windows. The LUNAR PEARL, one luminous ivory white sphere, rests on a tall shell pedestal in the village center, illuminating the sleeping village. Dark calm ocean at right. Pearl is a physical sphere on the pedestal, not the moon."
+    },
+    {
+      "name": "cena1-2",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Same shell and bottle coastal village at night. A huge navy purple OCTOPUS TENTACLE with violet suction cups suddenly rises from the ocean at right and curls toward the luminous ivory white LUNAR PEARL on its shell pedestal at left. Dynamic diagonal ominous composition, splash, no gore."
+    },
+    {
+      "name": "cena1-3",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Underwater view looking upward at the night surface: the luminous ivory white LUNAR PEARL sphere is dragged DOWN into deep navy water by one purple tentacle, small bubbles trail upward. The tiny distant shell village is silhouetted above the surface. Pearl disappearing into the sea, dramatic luminous focal point."
+    },
+    {
+      "name": "cena1-4",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. MORNING wide shot of the same tiny shell and salvaged bottle village: unusually high seawater covers HALF the sandy beach and lower halves of shell houses. Soft pale sunrise, worried small sea creatures on dry rocks, visible waterline midway up buildings. Story of rising tide, no destruction gore."
+    },
+    {
+      "name": "cena1-5",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Medium two-character shot in the flooded shell village morning. VOVO BUZIA an elderly orange hermit crab with huge tall beige spiral shell and driftwood walking stick looks gently but seriously toward CASCO, a small bright orange hermit crab with two tall eye stalks, large expressive cream eyes and two orange pincers, a simple round sand-colored shell. They face each other, beginning a quest."
+    },
+    {
+      "name": "cena2-1",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Comic beat one on a quiet turquoise reef sandy ledge. CASCO, small bright orange hermit crab with two tall eye stalks cream eyes two big orange pincers and thin legs, tries on an absurdly oversized beige spiral shell, three times his body size. His tiny face peers out below its rim, surprised. Wide composition readable physical comedy."
+    },
+    {
+      "name": "cena2-2",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Comic beat two on the same turquoise reef sandy ledge. CASCO small bright orange hermit crab tall eye stalks two big pincers wearing the SAME absurdly oversized beige spiral shell TRIPS forward, one claw bracing against sand, legs in air, shell tipping over his back. Expressive startled eyes, little sand puff, harmless slapstick."
+    },
+    {
+      "name": "cena2-3",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Comic beat three on the same turquoise reef sandy ledge. CASCO small bright orange hermit crab two tall eye stalks two orange pincers proudly stands upright under the SAME oversized beige spiral shell, one claw raised confidently, happy determined eyes. Shell remains large but stable. Warm playful lighting."
+    },
+    {
+      "name": "cena3-1",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Wide shot at the bottom of the ocean. Almost TOTAL DARKNESS navy black abyssal chamber, sparse dim violet corals, huge empty dark center. CASCO small orange hermit crab with sand colored shell is a tiny hesitant silhouette at bottom left with faint light. No monster eyes visible yet. Tense quiet anticipation, readable restrained pixel clusters."
+    },
+    {
+      "name": "cena3-2",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Same navy black abyssal chamber. TWO ENORMOUS CYAN OCTOPUS EYES open far away in the darkness at upper center, ominous vertical dark pupils and purple eyelid rims, only faint suggestion of a huge domed octopus head and tentacles. CASCO small orange hermit crab with sand shell remains tiny at lower left. Strong size contrast, no extra eyes."
+    },
+    {
+      "name": "cena3-3",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Extreme cinematic close-up of the SAME TWO enormous glowing cyan OCTOPUS EYES, dark vertical pupils, navy purple skin and heavy purple eyelid rims, filling a dark wide frame. Symmetric imposing gaze, pixel art, no characters in foreground, no third eye, mysterious rather than gory."
+    },
+    {
+      "name": "cena4-1",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Triumphant CASCO, small bright orange hermit crab with two tall eye stalks expressive cream eyes two big orange pincers and simple sand colored shell, stands on a rock lifting the recovered LUNAR PEARL ivory white luminous sphere overhead between claws. Blue purple abyss turns hopeful turquoise around the pearl, clear heroic silhouette."
+    },
+    {
+      "name": "cena4-2",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Grand panoramic view as ocean WATER RECEDES dramatically toward the distant horizon, revealing the ancient sunken CITY with grey green stone buildings streets arches and old cars beneath a hopeful warm dawn. Broad newly uncovered wet ground in foreground reflects light. No disaster wave, peaceful tide retreat."
+    },
+    {
+      "name": "cena4-3",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. The tiny shell driftwood and salvaged bottle coastal village CELEBRATES in warm daylight now on dry sand. CASCO small orange hermit crab with sand shell center, VOVO BUZIA elderly orange hermit crab tall beige spiral shell walking stick nearby, a friendly red lobster blacksmith and smiling open clam merchant rejoice. LUNAR PEARL ivory sphere restored on shell pedestal, colorful little shell bunting, no written signs."
+    },
+    {
+      "name": "cena4-4",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Warm affectionate medium shot in a shallow shore tidepool. BOLOTA, a round shy golden tan PUFFERFISH with cream belly short harmless spines huge worried gentle dark eyes and tiny fins, offers a new lovely beige spiral shell to CASCO, small bright orange hermit crab two tall eye stalks large cream eyes two big pincers. Casco accepts with a smile from a low rock. Both clearly visible, intimate friendship."
+    },
+    {
+      "name": "cena4-5",
+      "prompt": "Use case: illustration-story. ONE full-bleed cinematic 16:9 panel for the pixel art game Mare Baixa, final 640x360. Polished 16-bit pixel comic art, dark #101B2D outlines, limited palette, deliberate crisp block pixels, no antialiasing no photographic textures. Charming expressive sea creatures, coherent storybook world. No text, no captions, no speech balloons, no title, no logo, no border, no panel subdivisions. Peaceful ending wide shot from behind of CASCO small orange hermit crab with beige spiral shell sitting on a low shore rock beside BOLOTA round golden tan pufferfish cream belly short spines in shallow tidepool. They look toward a radiant orange pink SUNSET over calm ocean, tiny shell village at far left, restored safe low tide. Tender quiet friendship, no text or credits."
+    }
+  ]
+}

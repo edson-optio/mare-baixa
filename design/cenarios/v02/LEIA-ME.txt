@@ -1,0 +1,10 @@
+MARÉ BAIXA v0.2 — Cidade, Fossa e Bolha
+Execute python3 design/cenarios/v02/preparar.py com Pillow.
+Seis PNGs finais 640x360 publicados diretamente em Assets/Art/Cenarios.
+Originais intactos em originais/, prompts individuais em prompts.json.
+Fundos: recorte central 16:9 e NEAREST, 24 cores, opacos.
+Silhuetas: três tons por zona, alpha binário, metade superior transparente,
+RGB zero nas áreas transparentes, perfil lateral compatível para repetição.
+previa.png: cada composição duas vezes lado a lado, cidade/fossa/bolha.
+validacao.json: tamanhos, paleta, alpha, bordas e hashes dos PNGs Unity.
+Importação pelo orquestrador: Point, sem compressão/mipmaps; Repeat U nas silhuetas.

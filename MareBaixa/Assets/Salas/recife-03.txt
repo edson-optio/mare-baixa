@@ -1,5 +1,6 @@
 @nome Estacionamento Submerso
-@mare 0.18
+@mare 0.17
+@nivel 2
 ########################################
 #                                      #
 #                                      #

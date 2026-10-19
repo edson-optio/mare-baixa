@@ -1,0 +1,122 @@
+{
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "cidade-meio.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 8,
+      "alpha": [
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": true,
+      "sha256": "bba7fdafd51db70e7b93438e09127a69b240b321ef4b870256eaa5d01d46c215"
+    },
+    {
+      "arquivo": "cidade-topo.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 9,
+      "alpha": [
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": null,
+      "sha256": "d70cf70d888dad018d42894fd99c4cb69f45c275c3b3b95bdcac7008455a0b8c"
+    },
+    {
+      "arquivo": "cidade-plataforma.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": null,
+      "sha256": "20a90d47b2fdb7a68e15ce4437ba35b7967954f8e4e7e5a3b99fc4add651d3e7"
+    },
+    {
+      "arquivo": "fossa-meio.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 8,
+      "alpha": [
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": true,
+      "sha256": "6af9052ebd9d25dd8a3fc69b55fce484339efa6daee36f44229ae6835f7b4f10"
+    },
+    {
+      "arquivo": "fossa-topo.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 7,
+      "alpha": [
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": null,
+      "sha256": "0998c974f18aca4da0a1c2498a425a1a963d30da1e62c6c9248ae5b8a71a44df"
+    },
+    {
+      "arquivo": "fossa-plataforma.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "borda_horizontal": true,
+      "borda_vertical": null,
+      "sha256": "f8ba832d250fb1a2521d645de2300737439004b22e0e93b9bd2a14254302a3be"
+    }
+  ],
+  "paletas": {
+    "cidade": [
+      "101B2D",
+      "273B3C",
+      "3E5050",
+      "60716B",
+      "88958A",
+      "AAB4A0",
+      "304E38",
+      "64834B",
+      "94A653",
+      "70543E",
+      "A27952",
+      "C2C6B2"
+    ],
+    "fossa": [
+      "090E1E",
+      "101B2D",
+      "182238",
+      "25263F",
+      "39315E",
+      "51417D",
+      "7050AD",
+      "A078CC",
+      "C58ADB",
+      "354F66",
+      "548B98",
+      "8ED7CB"
+    ]
+  },
+  "filtro": "NEAREST"
+}

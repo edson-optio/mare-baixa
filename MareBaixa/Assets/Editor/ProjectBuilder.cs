@@ -8,8 +8,10 @@ using UnityEngine;
 namespace MareBaixa.Editor
 {
     // Monta o projeto inteiro a partir da arte e dos arquivos de sala: importa sprites, cria tiles,
-    // prefabs, o Kit e as cenas (Menu, Vila, RecifeRaso). As salas são montadas em tempo de execução.
-    public static class ProjectBuilder
+    // prefabs, o Kit e as cenas (Menu, Vila, Run). As salas são montadas em tempo de execução.
+    // Os prefabs dos inimigos novos e dos chefes ficam nos arquivos parciais de cada frente
+    // (ProjectBuilder.Mundo.cs e ProjectBuilder.Chefes.cs).
+    public static partial class ProjectBuilder
     {
         public const int GroundLayer = 6;
         const string ScenesPath = "Assets/Scenes/";
@@ -17,7 +19,7 @@ namespace MareBaixa.Editor
         const string KitPath = "Assets/Kit.asset";
         const string AppPath = "../Entrega/MareBaixa.app";
 
-        static readonly string[] SceneOrder = { GameRules.MenuScene, GameRules.VillageScene, GameRules.ReefScene };
+        static readonly string[] SceneOrder = { GameRules.MenuScene, GameRules.VillageScene, GameRules.RunScene };
 
         [InitializeOnLoadMethod]
         static void FirstOpen()
@@ -41,7 +43,8 @@ namespace MareBaixa.Editor
             Kit kit = CreateKit();
             CreateMenuScene(kit);
             CreateGameScene(GameRules.VillageScene, "vila", kit, typeof(VilaManager));
-            CreateGameScene(GameRules.ReefScene, "recife", kit, typeof(RunManager));
+            CreateGameScene(GameRules.RunScene, "recife", kit, typeof(RunManager));
+            AssetDatabase.DeleteAsset(ScenesPath + "RecifeRaso.unity");   // cena antiga da v0.1
 
             EditorBuildSettings.scenes = SceneOrder
                 .Select(name => new EditorBuildSettingsScene(ScenesPath + name + ".unity", true)).ToArray();
@@ -61,21 +64,35 @@ namespace MareBaixa.Editor
                 AssetDatabase.CreateAsset(kit, KitPath);
             }
 
-            kit.reefTop = ArtImporter.TileAsset("recife-topo");
-            kit.reefFill = ArtImporter.TileAsset("recife-meio");
-            kit.reefPlatform = ArtImporter.TileAsset("recife-plataforma");
-            kit.villageTop = ArtImporter.TileAsset("vila-topo");
-            kit.villageFill = ArtImporter.TileAsset("vila-meio");
-            kit.villagePlatform = ArtImporter.TileAsset("vila-plataforma");
+            // Índice = Zone { Vila, Recife, Cidade, Fossa, Bolha }. A bolha usa os blocos do recife.
+            kit.zones = new[]
+            {
+                ZoneArtOf("vila", "vila", GameRules.DeepSea),
+                ZoneArtOf("recife", "recife", GameRules.DeepSea),
+                ZoneArtOf("cidade", "cidade", new Color32(28, 44, 40, 255)),
+                ZoneArtOf("fossa", "fossa", GameRules.AbyssBlue),
+                ZoneArtOf("recife", "bolha", GameRules.DeepSea),
+            };
 
-            kit.shellSprites = new[] { null, S("concha-comum"), S("concha-tampinha"), S("concha-espiral") };
-            kit.shardSprites = new[] { null, S("caco-areia"), S("caco-turquesa"), S("caco-creme") };
+            kit.shellSprites = new[]
+            {
+                null, S("concha-comum"), S("concha-tampinha"), S("concha-espiral"), S("concha-lata"), S("concha-lampada"),
+            };
+            kit.shardSprites = new[]
+            {
+                null, S("caco-areia"), S("caco-turquesa"), S("caco-creme"), S("caco-lata"), S("caco-lampada"),
+            };
             kit.sparkFrames = ArtImporter.Frames("brilho", 3);
             kit.seaweedFrames = ArtImporter.Frames("alga-decor", 2);
             kit.coral1 = S("coral-1");
             kit.coral2 = S("coral-2");
             kit.sign = S("placa");
             kit.bottleHouse = S("casa-garrafa");
+            kit.car = S("carro");
+            kit.trafficLight = S("semaforo");
+            kit.bioCoral = S("coral-bio");
+            kit.trash = S("lixo");
+            kit.cutscenePanels = ArtImporter.Cutscenes();
             kit.white = S("agua");
             kit.waterSurface = ArtImporter.Frames("agua-superficie", 2);
             kit.pearlIcon = S("perola-1");
@@ -95,8 +112,14 @@ namespace MareBaixa.Editor
             kit.village = Room("vila");
             kit.reefEntrance = Room("recife-entrada");
             kit.reefShellRoom = Room("recife-concha");
-            kit.reefRooms = Directory.GetFiles("Assets/Salas", "recife-0*.txt").OrderBy(p => p)
-                .Select(p => AssetDatabase.LoadAssetAtPath<TextAsset>(p.Replace('\\', '/'))).ToArray();
+            kit.reefRooms = Bank("recife-0*.txt");
+            kit.bubbleRoom = Room("bolha");
+            kit.cityEntrance = Room("cidade-entrada");
+            kit.cityBossRoom = Room("cidade-colosso");
+            kit.cityRooms = Bank("cidade-0*.txt");
+            kit.abyssEntrance = Room("fossa-entrada");
+            kit.abyssBossRoom = Room("fossa-polvo");
+            kit.abyssRooms = Bank("fossa-0*.txt");
 
             kit.casco = CreateCasco();
             kit.pearl = Item<Pearl>("Perola", S("perola-1"), .3f, pearl => pearl.frames = ArtImporter.Frames("perola", 2));
@@ -113,6 +136,15 @@ namespace MareBaixa.Editor
             kit.ostracia = CreateNpc("Ostracia", NpcKind.Ostracia, "Ostrácia", "ostracia");
             kit.lagosta = CreateNpc("DonaLagosta", NpcKind.Lagosta, "Dona Lagosta", "dona-lagosta");
             kit.bolota = CreateNpc("Bolota", NpcKind.Bolota, "Bolota", "bolota");
+            kit.moray = CreateMoray();
+            kit.crab = CreateCrab();
+            kit.angler = CreateAngler();
+            kit.tentacle = CreateTentacle();
+            kit.valve = CreateValve();
+            kit.current = CreateCurrent();
+            kit.healFont = CreateHealFont();
+            kit.colosso = CreateColosso();
+            kit.polvo = CreatePolvo();
 
             EditorUtility.SetDirty(kit);
             AssetDatabase.SaveAssets();
@@ -121,6 +153,20 @@ namespace MareBaixa.Editor
 
         static Sprite S(string name) => ArtImporter.Sprite(name);
         static TextAsset Room(string name) => AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Salas/" + name + ".txt");
+
+        // Toda sala que casar com o padrão entra sozinha no banco de sorteio da zona.
+        static TextAsset[] Bank(string pattern) => Directory.GetFiles("Assets/Salas", pattern).OrderBy(p => p)
+            .Select(p => AssetDatabase.LoadAssetAtPath<TextAsset>(p.Replace('\\', '/'))).ToArray();
+
+        static ZoneArt ZoneArtOf(string tiles, string scenery, Color background) => new ZoneArt
+        {
+            top = ArtImporter.TileAsset(tiles + "-topo"),
+            fill = ArtImporter.TileAsset(tiles + "-meio"),
+            platform = ArtImporter.TileAsset(tiles + "-plataforma"),
+            background = ArtImporter.Scenery("fundo-" + scenery),
+            silhouettes = ArtImporter.Scenery("silhuetas-" + scenery),
+            backgroundColor = background,
+        };
 
         static GameObject Sprite(string name, Sprite sprite, int order)
         {
@@ -275,7 +321,9 @@ namespace MareBaixa.Editor
         {
             var go = Sprite("Saida", S("saida"), 10);
             TriggerBox(go, new Vector2(1f, 2f), new Vector2(0f, 1f));
-            go.AddComponent<RoomExit>();
+            var exit = go.AddComponent<RoomExit>();
+            exit.openSprite = S("saida");
+            exit.closedSprite = S("saida-fechada");   // arena com o chefe vivo
             return Save<GameObject>(go, "Saida");
         }
 
@@ -335,6 +383,10 @@ namespace MareBaixa.Editor
             var parallax = layer.AddComponent<Parallax>();
             parallax.parallaxEffect = .7f;
             parallax.verticalEffect = 1f;   // as silhuetas ficam sempre na parte de baixo da tela
+
+            var zoneBackground = camera.gameObject.AddComponent<ZoneBackground>();
+            zoneBackground.far = far.GetComponent<SpriteRenderer>();
+            zoneBackground.silhouettes = renderer;
         }
 
         static void CreateMenuScene(Kit kit)
@@ -364,7 +416,7 @@ namespace MareBaixa.Editor
         {
             PlayerSettings.companyName = "CC7140 Desenvolvimento de Jogos";
             PlayerSettings.productName = "Maré Baixa";
-            PlayerSettings.bundleVersion = "0.1.0";
+            PlayerSettings.bundleVersion = "0.2.0";
             PlayerSettings.defaultScreenWidth = 1280;
             PlayerSettings.defaultScreenHeight = 720;
             PlayerSettings.fullScreenMode = FullScreenMode.Windowed;

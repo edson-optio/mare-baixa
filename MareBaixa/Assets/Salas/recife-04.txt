@@ -1,5 +1,6 @@
 @nome Poço da Caixa-d'Água
-@mare 0.16
+@mare 0.13
+@nivel 1
 ##################################
 #                                #
 #                                #

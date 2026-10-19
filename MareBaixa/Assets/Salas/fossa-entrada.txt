@@ -1,0 +1,26 @@
+@nome Beira do Abismo
+@mare 0.25
+@escuro 0.75
+@dica1 Lá embaixo é quase tudo escuro. Siga os corais que brilham.
+@dica2 Cuidado com o peixe-pescador: a luz bonita é uma armadilha.
+@dica3 O chão treme antes do tentáculo sair: pule.
+####################################
+#                                  #
+#                                  #
+#                                  #
+#                                  #
+#                                  #
+#                                  #
+#                               nS #
+#   1                        o #####
+# C  n                         #####
+#######                     == #####
+#######   2    f              n#####
+#######       o       3     ########
+#######  n  T     n     O   ########
+#####################    ===########
+#####################o w    ########
+####################################
+####################################
+####################################
+####################################

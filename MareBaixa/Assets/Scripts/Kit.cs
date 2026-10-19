@@ -3,6 +3,18 @@ using UnityEngine.Tilemaps;
 
 namespace MareBaixa
 {
+    // Blocos e fundo de uma zona. O Kit guarda um por Zone (índice = (int)Zone).
+    [System.Serializable]
+    public class ZoneArt
+    {
+        public TileBase top;
+        public TileBase fill;
+        public TileBase platform;
+        public Sprite background;
+        public Sprite silhouettes;
+        public Color backgroundColor = Color.black;
+    }
+
     // Tudo o que as salas montadas em tempo de execução precisam: blocos, prefabs, sprites e
     // os arquivos de texto das salas. O ProjectBuilder preenche o asset Assets/Kit.asset.
     [CreateAssetMenu(menuName = "Maré Baixa/Kit")]
@@ -10,13 +22,8 @@ namespace MareBaixa
     {
         public static Kit Current;
 
-        [Header("Blocos")]
-        public TileBase reefTop;
-        public TileBase reefFill;
-        public TileBase reefPlatform;
-        public TileBase villageTop;
-        public TileBase villageFill;
-        public TileBase villagePlatform;
+        [Header("Zonas (índice = Zone)")]
+        public ZoneArt[] zones;
 
         [Header("Prefabs")]
         public Casco casco;
@@ -34,6 +41,15 @@ namespace MareBaixa
         public GameObject ostracia;
         public GameObject lagosta;
         public GameObject bolota;
+        public GameObject moray;
+        public GameObject crab;
+        public GameObject angler;
+        public TentaculoSombrio tentacle;
+        public GameObject valve;
+        public GameObject current;
+        public GameObject healFont;
+        public GameObject colosso;
+        public GameObject polvo;
 
         [Header("Sprites")]
         public Sprite[] shellSprites;   // índice = ShellType (0 = sem concha)
@@ -44,6 +60,10 @@ namespace MareBaixa
         public Sprite coral2;
         public Sprite sign;
         public Sprite bottleHouse;
+        public Sprite car;
+        public Sprite trafficLight;
+        public Sprite bioCoral;
+        public Sprite trash;
         public Sprite white;
         public Sprite[] waterSurface;
         public Sprite pearlIcon;
@@ -52,13 +72,31 @@ namespace MareBaixa
         public Sprite conceptArt;
         public Sprite[] portraits;      // retratos do diálogo, índice = NpcKind
         public Sprite cascoPortrait;
+        public Sprite[] cutscenePanels;  // Art/Cutscenes, procurados pelo nome (cena1-1...)
 
         [Header("Salas (texto)")]
         public TextAsset village;
         public TextAsset reefEntrance;
         public TextAsset reefShellRoom;
         public TextAsset[] reefRooms;
+        public TextAsset bubbleRoom;
+        public TextAsset cityEntrance;
+        public TextAsset cityBossRoom;
+        public TextAsset[] cityRooms;
+        public TextAsset abyssEntrance;
+        public TextAsset abyssBossRoom;
+        public TextAsset[] abyssRooms;
 
         public Sprite ShellSprite(ShellType type) => shellSprites[(int)type];
+        public ZoneArt Art(Zone zone) => zones[(int)zone];
+
+        // Quadro de cutscene pelo nome; nulo se a arte ainda não existir.
+        public Sprite CutscenePanel(string name)
+        {
+            if (cutscenePanels == null) return null;
+            foreach (var panel in cutscenePanels)
+                if (panel != null && panel.name == name) return panel;
+            return null;
+        }
     }
 }

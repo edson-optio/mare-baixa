@@ -1,0 +1,756 @@
+{
+  "esperados": 38,
+  "entregues": 38,
+  "completo": true,
+  "filtro": "NEAREST",
+  "paleta": [
+    "101B2D",
+    "123D49",
+    "F47724",
+    "B94724",
+    "E6BD85",
+    "FFF0CE",
+    "42B5AC",
+    "64834B",
+    "7050AD",
+    "FFAA52",
+    "8ED7CB",
+    "94A653",
+    "70543E",
+    "A995C2",
+    "30354F",
+    "52586A",
+    "88959A",
+    "304E38",
+    "C58ADB",
+    "39315E",
+    "182238",
+    "5373A0",
+    "C4F5E6",
+    "80553C"
+  ],
+  "arquivos": [
+    {
+      "arquivo": "concha-lata.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        0,
+        3,
+        18,
+        27
+      ],
+      "cores": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "cc2da2f817d8c1db78e824dd33fd9d741883298df359e5cd3d61479fa6468b4c"
+    },
+    {
+      "arquivo": "concha-lampada.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        0,
+        7,
+        18,
+        27
+      ],
+      "cores": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "479c139dbe62096c4b11caa194a4d300d23fbeb76ff4874a6e48d156ab19ef72"
+    },
+    {
+      "arquivo": "caco-lata.png",
+      "tamanho": [
+        8,
+        8
+      ],
+      "bbox": [
+        1,
+        2,
+        7,
+        6
+      ],
+      "cores": 5,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f95d5feab49c380d3b91f143a79311aa2400c722ddfdf6331de37b6ab53fd465"
+    },
+    {
+      "arquivo": "caco-lampada.png",
+      "tamanho": [
+        8,
+        8
+      ],
+      "bbox": [
+        1,
+        0,
+        6,
+        7
+      ],
+      "cores": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7505c4bff8b48303b92d1777b2661b5a0ab661836c8b6a256d644ac6ea51d8dc"
+    },
+    {
+      "arquivo": "moreia-escondida.png",
+      "tamanho": [
+        64,
+        32
+      ],
+      "bbox": [
+        1,
+        10,
+        63,
+        32
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1c9db48940de663a5c883c40ec5fe3a7499eaae007a25390a2f09f7463c42eed"
+    },
+    {
+      "arquivo": "moreia-bote.png",
+      "tamanho": [
+        64,
+        32
+      ],
+      "bbox": [
+        1,
+        9,
+        63,
+        32
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "db35c91fc3a7bf323df1512b8fb90dfa320497bde68c73762cdf699f1a620fd9"
+    },
+    {
+      "arquivo": "moreia-volta.png",
+      "tamanho": [
+        64,
+        32
+      ],
+      "bbox": [
+        1,
+        7,
+        63,
+        32
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "00703b211c81d835928b18a15020fa635c30f8681021ad916a8a493ce72d1750"
+    },
+    {
+      "arquivo": "siri-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        17,
+        31,
+        32
+      ],
+      "cores": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "69a04d8b087d41b3b45f0ef138b114c657a67e8b54c112076f670a74198dc0e6"
+    },
+    {
+      "arquivo": "siri-2.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        16,
+        31,
+        32
+      ],
+      "cores": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "df965e0b8b9d11a0b16cdb349297cd06d043d959438a5036d75b904d5c41743b"
+    },
+    {
+      "arquivo": "siri-garra.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        9,
+        31,
+        32
+      ],
+      "cores": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8ca83cc199b2a5b00db3a10a1caa5a304b5c0e81a3977f7d426db0e1e6e292f7"
+    },
+    {
+      "arquivo": "siri-fugindo.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        13,
+        31,
+        32
+      ],
+      "cores": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "dc5c311cf541a1c8a18db966fcaba1559d13aefbfc7f8519a8f0271080036d91"
+    },
+    {
+      "arquivo": "pescador-1.png",
+      "tamanho": [
+        48,
+        32
+      ],
+      "bbox": [
+        1,
+        3,
+        47,
+        29
+      ],
+      "cores": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "a483ad08d5f882b08e573ff22be9735097b731a90a10cac23c60ad7c794658dd"
+    },
+    {
+      "arquivo": "pescador-2.png",
+      "tamanho": [
+        48,
+        32
+      ],
+      "bbox": [
+        1,
+        3,
+        46,
+        29
+      ],
+      "cores": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "21037375080d4e4aa4e7a933253c34fa767f61926dafbb3058c011631c89efa1"
+    },
+    {
+      "arquivo": "pescador-boca.png",
+      "tamanho": [
+        48,
+        32
+      ],
+      "bbox": [
+        1,
+        2,
+        47,
+        30
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d908fc870954f300888a90f91ee2e4c6cd6de396e21b0ced150d0957ffe39c56"
+    },
+    {
+      "arquivo": "tentaculo-1.png",
+      "tamanho": [
+        32,
+        64
+      ],
+      "bbox": [
+        1,
+        0,
+        31,
+        64
+      ],
+      "cores": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "8237d80ce816239a30b9f5a29dc1f7e334ac484c9ce71e3fae81ca8f447f1164"
+    },
+    {
+      "arquivo": "tentaculo-2.png",
+      "tamanho": [
+        32,
+        64
+      ],
+      "bbox": [
+        2,
+        0,
+        30,
+        64
+      ],
+      "cores": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "afaddda847daa6a0a739bfcc07dd590abf703d46d5d7130f6a454ddd0ba839c4"
+    },
+    {
+      "arquivo": "tentaculo-aviso.png",
+      "tamanho": [
+        32,
+        8
+      ],
+      "bbox": [
+        1,
+        2,
+        31,
+        8
+      ],
+      "cores": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "90568808995b26e71840bc34033de1b56c85db120ab1c26d5d94cd98b3ac9b82"
+    },
+    {
+      "arquivo": "valvula-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        8,
+        0,
+        23,
+        32
+      ],
+      "cores": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "2aaa1bb97a1ca977ae0969769e44bbabbad87ddb76584509e227ea270c5be240"
+    },
+    {
+      "arquivo": "valvula-2.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        8,
+        0,
+        23,
+        32
+      ],
+      "cores": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6fc9a56b6e3f6ed9ac089bd277e6d4092cf86ace8a7016e7bb2e7f9b6f5128d7"
+    },
+    {
+      "arquivo": "correnteza-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        8,
+        31,
+        23
+      ],
+      "cores": 6,
+      "alpha": [
+        0,
+        144
+      ],
+      "sha256": "922b49ff07d1f3ad0097294c1a741f4b79ca80f16e3d6114ce9b1490cd410a75"
+    },
+    {
+      "arquivo": "correnteza-2.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        9,
+        31,
+        23
+      ],
+      "cores": 7,
+      "alpha": [
+        0,
+        144
+      ],
+      "sha256": "bed40716645f4e679a993495830f39716f6065a271a3bfd46cfa2fde0b42d928"
+    },
+    {
+      "arquivo": "fonte-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        0,
+        30,
+        32
+      ],
+      "cores": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "896f36736615ccb70cbaf095af766db26028e1d9f0311d36bd7e4859217a14d7"
+    },
+    {
+      "arquivo": "fonte-seca.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        5,
+        31,
+        32
+      ],
+      "cores": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "97891a3637d2cc5a9f463bad358968486b179d1b912a56fedbb18b8c1ff30c16"
+    },
+    {
+      "arquivo": "saida-fechada.png",
+      "tamanho": [
+        32,
+        64
+      ],
+      "bbox": [
+        1,
+        1,
+        31,
+        64
+      ],
+      "cores": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f1c1316a282b9ccbe3c5f3b2b264f91ed292d1fba5736fd0a4f610176afeedc0"
+    },
+    {
+      "arquivo": "colosso-anda-1.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        1,
+        7,
+        95,
+        80
+      ],
+      "cores": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "609170d338f0eac95c58e2400a3b9b0a7eab5b91a0a3d265b53d4f06caa4b49b"
+    },
+    {
+      "arquivo": "colosso-anda-2.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        1,
+        9,
+        95,
+        80
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "730886505cf8d95d1fe395d60f8c4da801fa4509c21d4474d66df49abfd0ba94"
+    },
+    {
+      "arquivo": "colosso-rola-1.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        6,
+        0,
+        90,
+        80
+      ],
+      "cores": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ba806b9ec7f45ef5ad9a178e80083d2f57e4b4d416fad5769057644b7102a6fe"
+    },
+    {
+      "arquivo": "colosso-rola-2.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        1,
+        3,
+        95,
+        80
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "d4e6aeab9345d8e70c951eeb2ba07857067112cd293f8f06c3613fc45c659b4e"
+    },
+    {
+      "arquivo": "colosso-tonto.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        1,
+        7,
+        95,
+        80
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "cf33bcbba3e8909033d4eb86824a89b6b897e9e4cfbc32010775d25cfef56de0"
+    },
+    {
+      "arquivo": "colosso-aviso.png",
+      "tamanho": [
+        96,
+        80
+      ],
+      "bbox": [
+        1,
+        6,
+        95,
+        80
+      ],
+      "cores": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "91b873b0565a188a10cd2434888ea409cdb2b06ade33958f55c07b5556e92d0e"
+    },
+    {
+      "arquivo": "polvo-corpo.png",
+      "tamanho": [
+        192,
+        128
+      ],
+      "bbox": [
+        1,
+        8,
+        191,
+        128
+      ],
+      "cores": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f5f7cf20bf0c7c873fae292ddbaba998e45a26fbee3fc0f29399c2cba33dbfe0"
+    },
+    {
+      "arquivo": "polvo-olho-aberto.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        3,
+        31,
+        28
+      ],
+      "cores": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "7cf89629eb6cf711742ebb3d799163f84825c840791cb2d6eb8913d8c3742317"
+    },
+    {
+      "arquivo": "polvo-olho-fechado.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        4,
+        31,
+        27
+      ],
+      "cores": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "1a2ef127915c994214b1889ce833f2f73614d4dbffdb2771ef0b49f6832aee36"
+    },
+    {
+      "arquivo": "polvo-tinta.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "bbox": [
+        1,
+        4,
+        15,
+        11
+      ],
+      "cores": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "c5ebfdfc854d7ad332040040539648fb95394bf10628c3a25a0de89650905824"
+    },
+    {
+      "arquivo": "carro.png",
+      "tamanho": [
+        64,
+        32
+      ],
+      "bbox": [
+        1,
+        8,
+        63,
+        32
+      ],
+      "cores": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e1846ac15b49689a15677f8f5cde7081bdf3a2ef0dbadfcfde0ab5b26b0d4eb7"
+    },
+    {
+      "arquivo": "semaforo.png",
+      "tamanho": [
+        16,
+        48
+      ],
+      "bbox": [
+        2,
+        0,
+        13,
+        48
+      ],
+      "cores": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "078dff8dca256eeb8743ad0d65ef612ec6a6a95a58860016375e19c829d79ada"
+    },
+    {
+      "arquivo": "coral-bio.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "bbox": [
+        1,
+        4,
+        31,
+        32
+      ],
+      "cores": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "0d2e2dd8b24db0f6124ab54a83340759841619614c8dd97dc343d0865306afc9"
+    },
+    {
+      "arquivo": "lixo.png",
+      "tamanho": [
+        32,
+        16
+      ],
+      "bbox": [
+        2,
+        0,
+        30,
+        16
+      ],
+      "cores": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "24bdbf214c1a9c20cbcc56c3f39594ff0aa028b94feb05a509983df2a6445764"
+    }
+  ]
+}

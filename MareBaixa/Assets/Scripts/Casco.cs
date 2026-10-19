@@ -4,7 +4,7 @@ using UnityEngine;
 namespace MareBaixa
 {
     // Casco, o protagonista: anda, pula, belisca (J), rola dentro da concha (K), usa a habilidade
-    // da concha (L), interage (E) e come algas (Q). A concha é a armadura: cada golpe tira 1 ponto
+    // da concha (L: pulo duplo, giro, investida ou clarão), interage (E) e come algas (Q). A concha é a armadura: cada golpe tira 1 ponto
     // de resistência e, sem concha, um golpe mata (GDD p. 2 e 7).
     //
     // Hierarquia: Casco (Rigidbody2D + BoxCollider2D) > Visual (gira e espelha) > Corpo e Concha.
@@ -42,7 +42,9 @@ namespace MareBaixa
         public bool HeadUnderwater { get; private set; }
         public bool Dodging => Time.time < dodgeUntil;
         public bool Spinning => Time.time < spinUntil;
-        public bool Invulnerable => Dodging || Time.time < invulnerableUntil;
+        public bool Charging => Time.time < chargeUntil;
+        public float LightRadius => Shell == ShellType.Lampada ? GameRules.LampLightRadius : GameRules.LightRadius;
+        public bool Invulnerable => Dodging || Charging || Time.time < invulnerableUntil;
         public bool Dead { get; private set; }
         public float Facing { get; private set; } = 1f;
         public bool CanTakeDamage { get; set; } = true;   // a vila desliga
@@ -63,6 +65,8 @@ namespace MareBaixa
         float lastJumpPressedTime = -10f;
         float attackReadyAt, attackUntil, spinReadyAt, spinUntil;
         float dodgeReadyAt, dodgeUntil;
+        float chargeReadyAt, chargeUntil, flashReadyAt;
+        Vector2 push, lastPush;
         float invulnerableUntil, knockbackUntil, trembleUntil, dropUntil;
         bool extraJumpUsed;
         bool airJumpRequested;
@@ -101,6 +105,7 @@ namespace MareBaixa
             int oldHp = ShellHp;
             Equip(pickup.type, pickup.hp);
             Destroy(pickup.gameObject);
+            Director.Instance?.OnShellEquipped(pickup.type);
             // A concha largada pertence à sala, para sumir junto quando a sala for trocada.
             var room = Director.Instance != null ? Director.Instance.Room : null;
             if (oldType != ShellType.Nenhuma)
@@ -118,6 +123,23 @@ namespace MareBaixa
             Director.Instance?.CameraRig.Shake(.25f, .3f);
             Director.Instance?.Hud.Flash();
         }
+
+        // O Siri Saqueador leva a concha inteira, sem quebrar (GDD p. 8).
+        public bool StealShell(out ShellType type, out int hp)
+        {
+            type = Shell;
+            hp = ShellHp;
+            if (Dead || Shell == ShellType.Nenhuma || Invulnerable || !CanTakeDamage) return false;
+            Equip(ShellType.Nenhuma, 0);
+            trembleUntil = Time.time + 1.5f;
+            invulnerableUntil = Time.time + GameRules.InvulnerableTime;
+            Sound?.Play(Sfx.Steal);
+            Director.Instance?.Hud.Flash();
+            return true;
+        }
+
+        // Empurrão de fora (correnteza, varrida de tentáculo), somado ao movimento só neste passo de física.
+        public void Push(Vector2 velocity) => push += velocity;
 
         // ---------------------------------------------------------------- Itens
 
@@ -267,7 +289,12 @@ namespace MareBaixa
             Body.gravityScale = GameRules.GravityScale * (InWater ? GameRules.WaterGravityFactor : 1f);
             Vector2 velocity = Body.linearVelocity;
 
-            if (Dodging)
+            // O empurrão do passo anterior sai antes de acelerar, para a correnteza dar uma deriva
+            // constante em vez de acumular velocidade a cada passo.
+            velocity -= lastPush;
+            if (Charging)
+                velocity.x = Facing * GameRules.ChargeSpeed * waterMove;
+            else if (Dodging)
                 velocity.x = Facing * GameRules.DodgeSpeed * waterMove;
             else if (Time.time >= knockbackUntil)
             {
@@ -292,6 +319,9 @@ namespace MareBaixa
             if (cutJump && !Controls.Held(GameAction.Jump) && velocity.y > jumpSpeed * .4f && !Dodging)
                 velocity.y = jumpSpeed * .4f;
             velocity.y = Mathf.Max(velocity.y, -(InWater ? GameRules.WaterMaxFallSpeed : GameRules.MaxFallSpeed));
+            velocity += push;
+            lastPush = push;
+            push = Vector2.zero;
             Body.linearVelocity = velocity;
         }
 
@@ -352,10 +382,40 @@ namespace MareBaixa
                     hitThisSwing.Clear();
                     Sound?.Play(Sfx.Spin);
                     break;
+                case ShellType.Lata:
+                    if (Time.time < chargeReadyAt || Dodging) return;
+                    if (Mathf.Abs(move) > .1f) Facing = Mathf.Sign(move);
+                    chargeReadyAt = Time.time + GameRules.ChargeCooldown * AttackFactor;
+                    chargeUntil = Time.time + GameRules.ChargeTime;
+                    hitThisSwing.Clear();
+                    Sound?.Play(Sfx.Charge);
+                    Director.Instance?.CameraRig.Shake(.08f, .2f);
+                    break;
+                case ShellType.Lampada:
+                    if (Time.time < flashReadyAt) return;
+                    flashReadyAt = Time.time + GameRules.FlashCooldown;
+                    Flash();
+                    break;
                 default:
                     Sound?.Play(Sfx.Error);
                     break;
             }
+        }
+
+        // Clarão da Lâmpada: atordoa todo mundo por perto e clareia a escuridão (GDD p. 7).
+        void Flash()
+        {
+            Sound?.Play(Sfx.Flash);
+            Escuridao.Current?.Flash(1.5f);
+            Director.Instance?.Hud.Flash();
+            Physics2D.OverlapCircle(Center, GameRules.FlashRadius, hitFilter, overlaps);
+            var stunned = new HashSet<IStunnable>();
+            foreach (var other in overlaps)
+            {
+                var target = other.GetComponentInParent<IStunnable>();
+                if (target != null && stunned.Add(target)) target.Stun(GameRules.FlashStun);
+            }
+            Effects.Spark(Center);
         }
 
         void UpdateAttack()
@@ -379,9 +439,15 @@ namespace MareBaixa
                 Physics2D.OverlapCircle(Center, GameRules.SpinRadius, hitFilter, overlaps);
                 HitOverlaps(GameRules.SpinDamage);
             }
+            if (Charging)
+            {
+                var point = Center + new Vector2(Facing * .55f, 0f);
+                Physics2D.OverlapBox(point, new Vector2(1.1f, .9f), 0f, hitFilter, overlaps);
+                HitOverlaps(GameRules.ChargeDamage, GameRules.ChargeStun);
+            }
         }
 
-        void HitOverlaps(int damage)
+        void HitOverlaps(int damage, float stun = 0f)
         {
             foreach (var other in overlaps)
             {
@@ -389,6 +455,7 @@ namespace MareBaixa
                 var target = other.GetComponentInParent<IHittable>();
                 if (target == null || !hitThisSwing.Add(target)) continue;
                 target.Hit(damage, Center);
+                if (stun > 0f) other.GetComponentInParent<IStunnable>()?.Stun(stun);
                 Effects.Spark(other.bounds.center);
                 Effects.HitStop(.05f);
                 Sound?.Play(Sfx.Hit);
@@ -399,7 +466,8 @@ namespace MareBaixa
 
         void Animate()
         {
-            if (!Dodging && !Locked)
+            // Rolando ou na investida da Lata, a direção fica travada até o fim do movimento.
+            if (!Dodging && !Charging && !Locked)
             {
                 if (move > .01f) Facing = 1f;
                 else if (move < -.01f) Facing = -1f;
@@ -427,6 +495,11 @@ namespace MareBaixa
             {
                 visual.localRotation = Quaternion.Euler(0f, 0f, -Time.time * 1400f);
                 bodyRenderer.enabled = Shell == ShellType.Nenhuma;
+            }
+            else if (Charging)
+            {
+                visual.localRotation = Quaternion.Euler(0f, 0f, -12f * Facing);
+                bodyRenderer.enabled = true;
             }
             else if (Spinning)
             {
@@ -457,6 +530,7 @@ namespace MareBaixa
         }
 
         public void SetShellHp(int hp) => ShellHp = Mathf.Clamp(hp, 0, ShellMaxHp);
+        public void UseAbilityNow() => UseAbility();
         public void SetAir(float air) => Air = air;
         public void MakeInvulnerable(float seconds) => invulnerableUntil = Time.time + seconds;
         public void ClearInvulnerability() => invulnerableUntil = 0f;

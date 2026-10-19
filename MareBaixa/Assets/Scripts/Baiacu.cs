@@ -78,6 +78,8 @@ namespace MareBaixa
 
         protected override void Update()
         {
+            // Atordoado, o pavio e o murchar ficam congelados.
+            if (Stunned) phaseStart += Time.deltaTime;
             float elapsed = Time.time - phaseStart;
             if (phase == Phase.Fuse && elapsed >= fuseTime) Explode();
             else if (phase == Phase.Deflate && elapsed >= deflateTime) SetPhase(Phase.Swim);
@@ -109,11 +111,11 @@ namespace MareBaixa
             phaseStart = Time.time;
         }
 
-        // Inchado, os espinhos protegem: o golpe não entra até ele explodir.
+        // Inchado, os espinhos protegem: o golpe não entra até ele explodir (atordoado, entra).
         public override void Hit(int damage, Vector2 from)
         {
             if (Dead) return;
-            if (phase == Phase.Fuse)
+            if (phase == Phase.Fuse && !Stunned)
             {
                 Effects.Spark(from);
                 return;

@@ -1,0 +1,24 @@
+@nome Avenida Submersa
+@mare 0.17
+@dica1 A moreia mora no cano e dá o bote quando você chega perto. Espere o bote e ataque quando ela recolher.
+@dica2 Bater na válvula baixa a água por alguns segundos, mas o barulho atrai inimigos.
+@dica3 O siri rouba sua concha: bata nele para recuperar.
+@dica4 A correnteza empurra. Use a favor ou pule por cima.
+################################################
+#                                              #
+#                                              #
+#                                              #
+#                                              #
+#                                              #
+#                                              #
+#                                              #
+#                             j                #
+#                                         q  S #
+#      1                              o  #######
+#           z                            #######
+# C  q     ##                        === #######
+#########  ##   2    3  O  4       p     #######
+#########  ##     o          o    ####   #######
+######### o##m  v  x   s  >>>>> T ####   #######
+################################################
+################################################

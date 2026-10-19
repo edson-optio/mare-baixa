@@ -1,8 +1,7 @@
 namespace MareBaixa
 {
-    // A concha é classe e vida ao mesmo tempo. Lata e Lâmpada (Cidade Afundada e Fossa)
-    // entram quando essas zonas forem feitas; a tabela do GDD p. 7 já prevê os valores.
-    public enum ShellType { Nenhuma, Comum, Tampinha, Espiral }
+    // A concha é classe e vida ao mesmo tempo (tabela do GDD p. 7). A ordem não muda: o save guarda o índice.
+    public enum ShellType { Nenhuma, Comum, Tampinha, Espiral, Lata, Lampada }
 
     public readonly struct ShellInfo
     {
@@ -28,7 +27,18 @@ namespace MareBaixa
             new ShellInfo("Concha Comum", 3, 1f, "Nenhuma habilidade"),
             new ShellInfo("Tampinha de Garrafa", 2, 1.2f, "Pulo duplo"),
             new ShellInfo("Concha Espiral", 4, 1f, "Ataque giratório dos dois lados"),
+            new ShellInfo("Lata de Refrigerante", 6, .8f, "Investida que derruba inimigos"),
+            new ShellInfo("Lâmpada Velha", 3, 1f, "Clarão que atordoa e ilumina"),
         };
+
+        // Conchas novas que a sala sorteia com "r" em cada zona (GDD p. 7: onde aparece).
+        public static ShellType RandomFor(Zone zone)
+        {
+            bool deep = zone == Zone.Cidade || zone == Zone.Fossa;
+            bool first = UnityEngine.Random.value < .5f;
+            if (deep) return first ? ShellType.Lata : ShellType.Lampada;
+            return first ? ShellType.Tampinha : ShellType.Espiral;
+        }
 
         public static ShellInfo Get(ShellType type) => Table[(int)type];
     }

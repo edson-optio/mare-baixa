@@ -4,21 +4,27 @@ using UnityEngine.Tilemaps;
 
 namespace MareBaixa
 {
-    public enum Zone { Vila, Recife }
+    public enum Zone { Vila, Recife, Cidade, Fossa, Bolha }
 
     // Monta uma sala a partir de um arquivo de texto (Assets/Salas/*.txt) em tempo de execução,
     // para a run poder sortear a ordem das salas (GDD p. 5). Cada caractere é um bloco de 32 px:
     //
     //   #  pedra (o bloco de topo é escolhido sozinho)   =  plataforma que dá para atravessar por baixo
     //   C  início de Casco    S  saída da sala           D  descida para o Recife (vila)
-    //   j  Água-viva Errante  b  Baiacu Nervoso
+    //   j  Água-viva Errante  b  Baiacu Nervoso  m  Moreia de Cano  s  Siri Saqueador
+    //   f  Peixe-pescador  w  Tentáculo Sombrio (do chão, ou da parede se não houver chão embaixo)
+    //   B  chefe da arena (Ermitão Colosso na Cidade, Polvo Abissal na Fossa)
+    //   v  válvula   <  >  correnteza   H  fonte de cura (bolha de ar)
     //   o  pérola   T  baú   a  alga   O  bolha de ar
-    //   c  Concha Comum   t  Tampinha   e  Espiral   r  concha nova sorteada (Tampinha ou Espiral)
-    //   k  K  corais   g  algas   p  placa   h  casa de garrafa     (decoração, sem colisão)
+    //   c  Concha Comum   t  Tampinha   e  Espiral   l  Lata   i  Lâmpada
+    //   r  concha nova sorteada (Tampinha/Espiral no Recife, Lata/Lâmpada mais fundo)
+    //   k  K  corais   g  algas   p  placa   h  casa de garrafa   x  carro   q  semáforo
+    //   n  coral bioluminescente (luz fraca)   z  lixo                (decoração, sem colisão)
     //   V  Vovó Búzia   Y  Ostrácia   L  Dona Lagosta   U  Bolota
     //   1..9  dica de tutorial (texto na linha "@dicaN" do arquivo)
     //
-    // Linhas que começam com @ são dados da sala: "@nome Entrada do Recife", "@mare 0.2".
+    // Linhas que começam com @ são dados da sala: "@nome Entrada do Recife", "@mare 0.2",
+    // "@nivel 2" (dificuldade das salas sorteadas, 1 a 3) e "@escuro 0.8" (opacidade da escuridão).
     public class Room : MonoBehaviour
     {
         public string RoomName { get; private set; }
@@ -27,6 +33,10 @@ namespace MareBaixa
         public Vector2 StartPoint { get; private set; }
         public float FloorY { get; private set; }
         public float TideSpeed { get; private set; } = -1f;
+        public int Level { get; private set; } = 1;
+        public float Darkness { get; private set; } = -1f;
+        public Zone Zone { get; private set; }
+        public Boss Boss { get; private set; }
         public Collider2D Platforms { get; private set; }
         public Mare Mare { get; private set; }
         public List<string> Rows { get; } = new List<string>();
@@ -36,12 +46,16 @@ namespace MareBaixa
         public static Room Build(TextAsset file, Zone zone, Kit kit)
         {
             var room = new GameObject("Sala " + file.name).AddComponent<Room>();
+            room.Zone = zone;
             room.Parse(file.text);
             room.Paint(zone, kit);
             room.Populate(kit);
-            if (zone == Zone.Recife && room.TideSpeed <= 0f) room.TideSpeed = GameRules.ReefTideSpeed;
+            if (room.TideSpeed <= 0f) room.TideSpeed = DefaultTide(zone);
             if (room.TideSpeed > 0f)
                 room.Mare = Mare.Create(room.transform, kit, room.Width, room.Height, room.FloorY, room.TideSpeed);
+            if (room.Darkness < 0f) room.Darkness = zone == Zone.Fossa ? GameRules.AbyssDarkness : 0f;
+            if (room.Darkness > 0f)
+                Escuridao.Create(room.Darkness).transform.SetParent(room.transform, false);
             return room;
         }
 
@@ -61,8 +75,37 @@ namespace MareBaixa
             Height = Rows.Count;
             foreach (string row in Rows) Width = Mathf.Max(Width, row.Length);
             RoomName = data.TryGetValue("nome", out string name) ? name : "Sala";
-            if (data.TryGetValue("mare", out string tide))
-                TideSpeed = float.Parse(tide, System.Globalization.CultureInfo.InvariantCulture);
+            // Valor torto num @ não pode derrubar a montagem da sala (a run ficaria presa na transição).
+            TideSpeed = Number("mare", TideSpeed);
+            Level = Mathf.RoundToInt(Number("nivel", Level));
+            Darkness = Number("escuro", Darkness);
+        }
+
+        float Number(string key, float fallback)
+        {
+            if (!data.TryGetValue(key, out string text)) return fallback;
+            string first = text.Split(' ')[0].Replace(',', '.');
+            if (float.TryParse(first, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float value))
+                return value;
+            Debug.LogWarning("Sala " + RoomName + ": @" + key + " inválido (" + text + ")");
+            return fallback;
+        }
+
+        // A vila e a bolha de ar não têm maré; o resto sobe na velocidade da zona (GDD p. 5).
+        static float DefaultTide(Zone zone) => zone switch
+        {
+            Zone.Recife => GameRules.ReefTideSpeed,
+            Zone.Cidade => GameRules.CityTideSpeed,
+            Zone.Fossa => GameRules.AbyssTideSpeed,
+            _ => 0f,
+        };
+
+        // Lê só o @nivel de um arquivo, para o RunManager ordenar as salas sem montá-las.
+        public static int LevelOf(TextAsset file)
+        {
+            foreach (string raw in file.text.Replace("\r", "").Split('\n'))
+                if (raw.StartsWith("@nivel ") && int.TryParse(raw.Substring(7).Trim(), out int level)) return level;
+            return 1;
         }
 
         // Caractere na coluna x, linha y (y = 0 é a linha de baixo).
@@ -75,10 +118,10 @@ namespace MareBaixa
 
         void Paint(Zone zone, Kit kit)
         {
-            bool village = zone == Zone.Vila;
-            TileBase top = village ? kit.villageTop : kit.reefTop;
-            TileBase fill = village ? kit.villageFill : kit.reefFill;
-            TileBase platform = village ? kit.villagePlatform : kit.reefPlatform;
+            ZoneArt art = kit.Art(zone);
+            TileBase top = art.top;
+            TileBase fill = art.fill;
+            TileBase platform = art.platform;
 
             var grid = new GameObject("Grid", typeof(Grid)).transform;
             grid.SetParent(transform, false);
@@ -164,9 +207,25 @@ namespace MareBaixa
                         case 'c': ShellPickup.Spawn(ShellType.Comum, -1, feet, objects); break;
                         case 't': ShellPickup.Spawn(ShellType.Tampinha, -1, feet, objects); break;
                         case 'e': ShellPickup.Spawn(ShellType.Espiral, -1, feet, objects); break;
-                        case 'r':
-                            ShellPickup.Spawn(Random.value < .5f ? ShellType.Tampinha : ShellType.Espiral, -1, feet, objects);
+                        case 'l': ShellPickup.Spawn(ShellType.Lata, -1, feet, objects); break;
+                        case 'i': ShellPickup.Spawn(ShellType.Lampada, -1, feet, objects); break;
+                        case 'r': ShellPickup.Spawn(Shells.RandomFor(Zone), -1, feet, objects); break;
+                        case 'm': Spawn(kit.moray, feet, objects); break;
+                        case 's': Spawn(kit.crab, feet, objects); break;
+                        case 'f': Spawn(kit.angler, center, objects); break;
+                        case 'w': SpawnTentacle(kit, x, y, objects); break;
+                        case 'v': Spawn(kit.valve, feet, objects); break;
+                        case '<': SpawnCurrent(kit, center, -1f, objects); break;
+                        case '>': SpawnCurrent(kit, center, 1f, objects); break;
+                        case 'H': Spawn(kit.healFont, feet, objects); break;
+                        case 'B':
+                            var boss = Spawn(Zone == Zone.Fossa ? kit.polvo : kit.colosso, feet, objects);
+                            if (boss != null) Boss = boss.GetComponent<Boss>();
                             break;
+                        case 'x': Decor(kit.car, feet, objects); break;
+                        case 'q': Decor(kit.trafficLight, feet, objects); break;
+                        case 'z': Decor(kit.trash, feet, objects); break;
+                        case 'n': Decor(kit.bioCoral, feet, objects).gameObject.AddComponent<LightSource>().radius = 1.6f; break;
                         case 'k': Decor(kit.coral1, feet, objects); break;
                         case 'K': Decor(kit.coral2, feet, objects); break;
                         case 'p': Decor(kit.sign, feet, objects); break;
@@ -193,14 +252,41 @@ namespace MareBaixa
             }
         }
 
+        // Prefab que ainda não existe (frente em construção) só avisa, para a sala montar mesmo assim.
         static GameObject Spawn(GameObject prefab, Vector2 position, Transform parent)
         {
+            if (prefab == null)
+            {
+                Debug.LogWarning("Sala: prefab faltando em " + position);
+                return null;
+            }
             return Instantiate(prefab, position, Quaternion.identity, parent);
+        }
+
+        static void SpawnCurrent(Kit kit, Vector2 center, float direction, Transform parent)
+        {
+            var current = Spawn(kit.current, center, parent);
+            var flow = current != null ? current.GetComponent<Correnteza>() : null;
+            if (flow != null) flow.direction = direction;
+        }
+
+        // O tentáculo sai do chão; sem chão embaixo e com parede ao lado, sai da parede.
+        void SpawnTentacle(Kit kit, int x, int y, Transform parent)
+        {
+            if (kit.tentacle == null) return;
+            Vector2 up = Vector2.up;
+            Vector2 feet = new Vector2(x + .5f, y);
+            if (At(x, y - 1) != '#')
+            {
+                if (At(x - 1, y) == '#') { up = Vector2.right; feet = new Vector2(x, y + .5f); }
+                else if (At(x + 1, y) == '#') { up = Vector2.left; feet = new Vector2(x + 1f, y + .5f); }
+            }
+            TentaculoSombrio.Spawn(feet, up, parent, false);
         }
 
         static SpriteRenderer Decor(Sprite sprite, Vector2 position, Transform parent)
         {
-            var renderer = new GameObject(sprite.name, typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
+            var renderer = new GameObject(sprite != null ? sprite.name : "Decoração", typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
             renderer.transform.SetParent(parent, false);
             renderer.transform.position = position;
             renderer.sprite = sprite;

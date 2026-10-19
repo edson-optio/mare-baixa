@@ -1,0 +1,9 @@
+MARÉ BAIXA v0.2 — Blocos da Cidade e da Fossa
+Execute python3 design/tiles/v02/preparar.py com Pillow.
+Gera seis PNGs 32x32 em Assets/Art/Blocos e cópias neste diretório.
+Originais intactos de image_gen integrado em originais/; prompts.json preservado.
+Redução NEAREST, 12 cores por zona, sem dithering. Plataformas nas linhas 0–10.
+Bordas horizontais idênticas, interiores repetíveis nas quatro direções;
+a linha inferior do topo corresponde à linha superior do interior.
+previa.png mostra repetição e encaixes; validacao.json contém verificações e hashes.
+Configuração Unity a cargo do orquestrador: Point, PPU 32, sem compressão/mipmaps.

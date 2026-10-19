@@ -12,12 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3158af71d2bdf45aaa3ca31a0995d289, type: 3}
   m_Name: Kit
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.Kit
-  reefTop: {fileID: 11400000, guid: e5fca59ac853740f1be959ef77b6cf03, type: 2}
-  reefFill: {fileID: 11400000, guid: 92d6296ed9485487696c78b954caa288, type: 2}
-  reefPlatform: {fileID: 11400000, guid: e3e6d3e2fdca34caa92a4b82b9e7bebb, type: 2}
-  villageTop: {fileID: 11400000, guid: 761774ce007d74df096f61b0f8e33513, type: 2}
-  villageFill: {fileID: 11400000, guid: cca67e571cddb4984b5a5e7d56e798d3, type: 2}
-  villagePlatform: {fileID: 11400000, guid: 6ff09b3c8b2b44f12bb20a704cae7077, type: 2}
+  zones:
+  - top: {fileID: 11400000, guid: 761774ce007d74df096f61b0f8e33513, type: 2}
+    fill: {fileID: 11400000, guid: cca67e571cddb4984b5a5e7d56e798d3, type: 2}
+    platform: {fileID: 11400000, guid: 6ff09b3c8b2b44f12bb20a704cae7077, type: 2}
+    background: {fileID: 21300000, guid: 7cf78395313d04b4e9360b0ccee6fbb4, type: 3}
+    silhouettes: {fileID: 21300000, guid: 4e7d85184621f43dfa67e3c1905a3eb5, type: 3}
+    backgroundColor: {r: 0.07058824, g: 0.23921569, b: 0.28627452, a: 1}
+  - top: {fileID: 11400000, guid: e5fca59ac853740f1be959ef77b6cf03, type: 2}
+    fill: {fileID: 11400000, guid: 92d6296ed9485487696c78b954caa288, type: 2}
+    platform: {fileID: 11400000, guid: e3e6d3e2fdca34caa92a4b82b9e7bebb, type: 2}
+    background: {fileID: 21300000, guid: 8482ca328d56a447aa2b2fe630bbd6b0, type: 3}
+    silhouettes: {fileID: 21300000, guid: 33c73380a535e4704b68b96ff449ffbe, type: 3}
+    backgroundColor: {r: 0.07058824, g: 0.23921569, b: 0.28627452, a: 1}
+  - top: {fileID: 11400000, guid: 4f71ead454072452f80d4e9e236e2d69, type: 2}
+    fill: {fileID: 11400000, guid: 69d7ab338ecf84d6180f949e9564b4ad, type: 2}
+    platform: {fileID: 11400000, guid: e2440b83a3e7c41f586a8a030e3453e9, type: 2}
+    background: {fileID: 21300000, guid: 47613a40631b8438a856e4414395bc7e, type: 3}
+    silhouettes: {fileID: 21300000, guid: 9a60e75b6b8b64ab2976df0f7d39951d, type: 3}
+    backgroundColor: {r: 0.10980392, g: 0.17254902, b: 0.15686275, a: 1}
+  - top: {fileID: 11400000, guid: e272f76896934485e91b77d67d7bc0e2, type: 2}
+    fill: {fileID: 11400000, guid: 92d847f6e728448ec8fd4f31e89e07ec, type: 2}
+    platform: {fileID: 11400000, guid: bcdd48f211fbe499baa03c4176120519, type: 2}
+    background: {fileID: 21300000, guid: 79fcf7db6bd3b464b9edcc1c27d4bf09, type: 3}
+    silhouettes: {fileID: 21300000, guid: d2a377dee4bcc43c2b05a5f5b5c19673, type: 3}
+    backgroundColor: {r: 0.078431375, g: 0.09411765, b: 0.22745098, a: 1}
+  - top: {fileID: 11400000, guid: e5fca59ac853740f1be959ef77b6cf03, type: 2}
+    fill: {fileID: 11400000, guid: 92d6296ed9485487696c78b954caa288, type: 2}
+    platform: {fileID: 11400000, guid: e3e6d3e2fdca34caa92a4b82b9e7bebb, type: 2}
+    background: {fileID: 21300000, guid: f84b5b98e72414ee6a0604e75277d5b8, type: 3}
+    silhouettes: {fileID: 21300000, guid: 5b0435757def441aeb44a405ba807707, type: 3}
+    backgroundColor: {r: 0.07058824, g: 0.23921569, b: 0.28627452, a: 1}
   casco: {fileID: 5543180444269777497, guid: 601b9794ba9d642a2873072d29a39a60, type: 3}
   pearl: {fileID: 1645976960727951460, guid: 7922d07be1742467d99efb3ad6886e41, type: 3}
   alga: {fileID: 1517761030186323152, guid: c96d82076f58845b68be3e7167390f1e, type: 3}
@@ -33,16 +58,29 @@ MonoBehaviour:
   ostracia: {fileID: 5329824758248422521, guid: aa665f45458ed403cb2eaa9c8ed8dd9a, type: 3}
   lagosta: {fileID: 6493490812231739108, guid: a5d05b4d6df874fdcab64e8a960676cd, type: 3}
   bolota: {fileID: 8288063254803743143, guid: d9a8ea3b4e63f44999e1dbb391c29b81, type: 3}
+  moray: {fileID: 2642621594080983855, guid: 0b78c6ed7d7fb4fd3b33717c64349186, type: 3}
+  crab: {fileID: 4379786364858525264, guid: c90ad167e8968452f972a2b81c3b9dc1, type: 3}
+  angler: {fileID: 3907526952577484747, guid: 6fdaa5250cc93490185afdb1fac63094, type: 3}
+  tentacle: {fileID: 5645213082065567324, guid: 7671a7df788d74388abf7be2c92e1a23, type: 3}
+  valve: {fileID: 5035183238077934396, guid: 39bf4f80a61664d789c36b8b5b9ec896, type: 3}
+  current: {fileID: 6165346505749976976, guid: 8b7986b743b5b44e4bfa9c316385d1b3, type: 3}
+  healFont: {fileID: 7015854092645700046, guid: 645885ad6964145f7bc773312d6cbd3b, type: 3}
+  colosso: {fileID: 6237917703229615143, guid: 0763976c74b234d8ab2096d4e6d2a7db, type: 3}
+  polvo: {fileID: 5320576389548666216, guid: 6a8dd2a864c7a4403bf68a69f00e4c4f, type: 3}
   shellSprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: 04c31d924c4724921a8e4ae5730fe575, type: 3}
   - {fileID: 21300000, guid: ef251296dea6f4fd39254025eb55a312, type: 3}
   - {fileID: 21300000, guid: a49a4f50d6ddf4968a95da58205a6cbb, type: 3}
+  - {fileID: 21300000, guid: 71986930db65a4396bb593e91c1e184d, type: 3}
+  - {fileID: 21300000, guid: aa84beb1b489b4021a7c4b37b8e7aeb0, type: 3}
   shardSprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: 17a6de2439def47fba4d56eedb715bd2, type: 3}
   - {fileID: 21300000, guid: 14f9a68a01a174841b7bf6e080e7f99a, type: 3}
   - {fileID: 21300000, guid: 5f393338388fe424984dc715040332f4, type: 3}
+  - {fileID: 21300000, guid: 2c3907d7a87a546649aa8ac739768987, type: 3}
+  - {fileID: 21300000, guid: bcfab1b8ae46445caa18d931ab15755d, type: 3}
   sparkFrames:
   - {fileID: 21300000, guid: d1eb2237389dc444c8fdf10752dc5859, type: 3}
   - {fileID: 21300000, guid: f1ed301cb1a34463696ad54ab3cc747e, type: 3}
@@ -54,6 +92,10 @@ MonoBehaviour:
   coral2: {fileID: 21300000, guid: e79fff31b9c1d47208c766e70d0e082d, type: 3}
   sign: {fileID: 21300000, guid: 60d2d8bca8d1a4316ac10efe241631b4, type: 3}
   bottleHouse: {fileID: 21300000, guid: 600a06475c5c64a09aaab5ff2ee6d16d, type: 3}
+  car: {fileID: 21300000, guid: 99adc67433b614b599dd6fa95cd024d7, type: 3}
+  trafficLight: {fileID: 21300000, guid: 5c754326e7371416bae021a7d471d204, type: 3}
+  bioCoral: {fileID: 21300000, guid: 06e25afdd6c274432ad0667139fc344c, type: 3}
+  trash: {fileID: 21300000, guid: e82d07613e6e04893b3e361848ddca3c, type: 3}
   white: {fileID: 21300000, guid: 2ae1d88e308474a0499c06ea674b05cc, type: 3}
   waterSurface:
   - {fileID: 21300000, guid: e539b5e85ca0749f5baedf351ab64139, type: 3}
@@ -68,6 +110,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9a377d3e8219641aa938f73231c4ecf0, type: 3}
   - {fileID: 21300000, guid: 9a8ba09067672401aa8a61a741e72841, type: 3}
   cascoPortrait: {fileID: 21300000, guid: d853a3be948114fc39ed4bec14a95e2a, type: 3}
+  cutscenePanels: []
   village: {fileID: 4900000, guid: d5df8d62ba9fd432088c67ad85d7a89d, type: 3}
   reefEntrance: {fileID: 4900000, guid: 971bc7145cd7e4309901864272977fd0, type: 3}
   reefShellRoom: {fileID: 4900000, guid: 0b2d9fbd20d094db89aa477f7a770643, type: 3}
@@ -77,3 +120,27 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 9ee64e8a88c964fa78d271c1e5be3365, type: 3}
   - {fileID: 4900000, guid: 901783b0e6af6419d8c3523c13850740, type: 3}
   - {fileID: 4900000, guid: 7f6a4bd9303de4f5b9e8ba76ff49cdf2, type: 3}
+  - {fileID: 4900000, guid: cf41b7ab3b61944f09a0c35e30744ffb, type: 3}
+  - {fileID: 4900000, guid: 77885a7ed8e7e4d1f9154e8e12c3f6ae, type: 3}
+  - {fileID: 4900000, guid: 2f0f33d34263d4815ae64a123b617cf7, type: 3}
+  bubbleRoom: {fileID: 4900000, guid: 9374d4936f73c41a6bb65df8623c807c, type: 3}
+  cityEntrance: {fileID: 4900000, guid: 9912a8ac39ee140d8a80222c1ec08e49, type: 3}
+  cityBossRoom: {fileID: 4900000, guid: 46a0bbc369b9442d58343e92baa3fd8c, type: 3}
+  cityRooms:
+  - {fileID: 4900000, guid: cb01414cd54fe4b948e7c86ccd35c82b, type: 3}
+  - {fileID: 4900000, guid: 3cd7d5e7113cb4a54a521eb0ea006084, type: 3}
+  - {fileID: 4900000, guid: 16dce2a2cf78b499d9173576e83b258b, type: 3}
+  - {fileID: 4900000, guid: 1cc6c09bee7464156ac74efaae0de273, type: 3}
+  - {fileID: 4900000, guid: 6aa6279274eb14428bf6b27a311495bd, type: 3}
+  - {fileID: 4900000, guid: 01d2ce240f88e4de7ac4f8d8a3f4ae5e, type: 3}
+  - {fileID: 4900000, guid: 0fa820239dc3140dba931c90d2ac2b92, type: 3}
+  - {fileID: 4900000, guid: 45927b96374f04edbb8d10727c5e93c7, type: 3}
+  abyssEntrance: {fileID: 4900000, guid: 2d8a6a9854d74412590c34c84ea9eaff, type: 3}
+  abyssBossRoom: {fileID: 4900000, guid: 413a27c2e64804695951286bfdf7fec6, type: 3}
+  abyssRooms:
+  - {fileID: 4900000, guid: f65709cc95501478fa14b86efbc9c2b3, type: 3}
+  - {fileID: 4900000, guid: e2d10ac343b524c8d9e16391534328e5, type: 3}
+  - {fileID: 4900000, guid: d00d484ee4c3a468c990a2feb43bc003, type: 3}
+  - {fileID: 4900000, guid: 8f8fe4141e1e34c4c94caecce29db191, type: 3}
+  - {fileID: 4900000, guid: cc9e5dbe79ee7412bbf3013cd4d1b6fd, type: 3}
+  - {fileID: 4900000, guid: 52274433ecead400abf5977d635a2beb, type: 3}

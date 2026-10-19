@@ -1,0 +1,36 @@
+{
+  "tool": "image_gen integrado",
+  "date": "2026-10-18",
+  "assets": [
+    {
+      "name": "cidade-topo",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, sunken city grey cracked concrete asphalt with muted green moss, aged urban material. Terrain top surface along very top edge, solid terrain fills entire image below, horizontally seamless. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette green grey navy charcoal.",
+      "transparent": false
+    },
+    {
+      "name": "cidade-meio",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, sunken city grey cracked concrete asphalt with muted green moss, aged urban material. Solid underground fill texture seamless on all four edges, no air no platform top. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette green grey navy charcoal.",
+      "transparent": false
+    },
+    {
+      "name": "cidade-plataforma",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, sunken city grey cracked concrete asphalt with muted green moss, aged urban material. Thin floating ledge along top third with empty transparent space below, horizontally seamless. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette green grey navy charcoal.",
+      "transparent": true
+    },
+    {
+      "name": "fossa-topo",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, abyssal dark navy rock with sparse purple bioluminescent mineral veins. Terrain top surface along very top edge, solid terrain fills entire image below, horizontally seamless. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette navy dark violet purple.",
+      "transparent": false
+    },
+    {
+      "name": "fossa-meio",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, abyssal dark navy rock with sparse purple bioluminescent mineral veins. Solid underground fill texture seamless on all four edges, no air no platform top. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette navy dark violet purple.",
+      "transparent": false
+    },
+    {
+      "name": "fossa-plataforma",
+      "prompt": "One seamless 2D platformer pixel art terrain tile, abyssal dark navy rock with sparse purple bioluminescent mineral veins. Thin floating ledge along top third with empty transparent space below, horizontally seamless. Orthographic flat front view NOT isometric, square canvas, no perspective, no scenery no text no border. Chunky limited palette pixel art intended for native 32x32, crisp pixel clusters, no anti-aliasing. Palette navy dark violet purple.",
+      "transparent": true
+    }
+  ]
+}

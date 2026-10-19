@@ -41,6 +41,67 @@ namespace MareBaixa
             return (RectTransform)canvasObject.transform;
         }
 
+        // Canvas por cima de tudo, até do HUD (cutscenes e créditos). Não depende da câmera.
+        public static RectTransform OverlayCanvas(string name, int sortingOrder)
+        {
+            var canvasObject = new GameObject(name, typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
+            var canvas = canvasObject.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = sortingOrder;
+            var scaler = canvasObject.GetComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1280f, 720f);
+            scaler.matchWidthOrHeight = .5f;
+            return (RectTransform)canvasObject.transform;
+        }
+
+        // Área 16:9 centrada no pai (o resto fica com o fundo do pai, como barras de cinema).
+        public static RectTransform Widescreen(string name, Transform parent)
+        {
+            var rect = Stretch(name, parent);
+            var fitter = rect.gameObject.AddComponent<AspectRatioFitter>();
+            fitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+            fitter.aspectRatio = GameRules.TargetAspect;
+            return rect;
+        }
+
+        // Faixa presa à borda de baixo do pai, na largura toda.
+        public static RectTransform BottomBand(string name, Transform parent, float height)
+        {
+            var rect = new GameObject(name, typeof(RectTransform)).GetComponent<RectTransform>();
+            rect.SetParent(parent, false);
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = new Vector2(1f, 0f);
+            rect.pivot = BottomCenter;
+            rect.anchoredPosition = Vector2.zero;
+            rect.sizeDelta = new Vector2(0f, height);
+            return rect;
+        }
+
+        // Anel branco gerado por código, para o indicador radial de "segure para pular".
+        static Sprite ring;
+        public static Sprite Ring
+        {
+            get
+            {
+                if (ring != null) return ring;
+                const int size = 64;
+                var texture = new Texture2D(size, size, TextureFormat.RGBA32, false) { filterMode = FilterMode.Bilinear };
+                var pixels = new Color32[size * size];
+                for (int y = 0; y < size; y++)
+                for (int x = 0; x < size; x++)
+                {
+                    float distance = Vector2.Distance(new Vector2(x + .5f, y + .5f), new Vector2(size * .5f, size * .5f));
+                    float alpha = Mathf.Clamp01((6f - Mathf.Abs(distance - 25f)) / 2f);
+                    pixels[y * size + x] = new Color32(255, 255, 255, (byte)(255f * alpha));
+                }
+                texture.SetPixels32(pixels);
+                texture.Apply();
+                ring = Sprite.Create(texture, new Rect(0f, 0f, size, size), new Vector2(.5f, .5f), size);
+                return ring;
+            }
+        }
+
         // Retângulo vazio; a âncora também é o pivô, então a posição conta a partir daquele canto.
         public static RectTransform Box(string name, Transform parent, Vector2 anchor, Vector2 position, Vector2 size)
         {
@@ -178,19 +239,71 @@ namespace MareBaixa
             || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)
             || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0);
 
+        // "Segure Esc (ou E) para pular": anel que enche no canto e avisa quando o tempo fecha.
+        // Só conta um aperto que começou com o indicador já na tela (a tecla que abriu a cena não vale).
+        public class SkipHold
+        {
+            public const float Seconds = .6f;
+            readonly Image fill;
+            readonly Text label;
+            float held;
+            bool armed;
+
+            public float Amount => held / Seconds;
+
+            public SkipHold(Transform parent)
+            {
+                var area = Box("Pular", parent, TopRight, new Vector2(-24f, -20f), new Vector2(330f, 48f));
+                var back = Picture(area, Ring, Right, Vector2.zero, new Vector2(44f, 44f));
+                back.color = new Color(1f, 1f, 1f, .25f);
+                fill = Picture(area, Ring, Right, Vector2.zero, new Vector2(44f, 44f));
+                fill.type = Image.Type.Filled;
+                fill.fillMethod = Image.FillMethod.Radial360;
+                fill.fillOrigin = (int)Image.Origin360.Top;
+                fill.fillClockwise = true;
+                fill.fillAmount = 0f;
+                fill.color = GameRules.Orange;
+                label = Label(area, "segure Esc para pular", 20, Right, new Vector2(-54f, 0f), new Vector2(270f, 40f),
+                    TextAnchor.MiddleRight, GameRules.Cream);
+            }
+
+            static bool KeyHeld() =>
+                Input.GetKey(KeyCode.Escape) || Controls.Held(GameAction.Pause) || Controls.Held(GameAction.Interact);
+
+            // Chamar a cada quadro; devolve true quando o jogador segurou o bastante.
+            public bool Tick()
+            {
+                bool down = KeyHeld();
+                if (!down) armed = true;
+                held = armed && down ? held + Time.unscaledDeltaTime : 0f;
+                fill.fillAmount = Mathf.Clamp01(Amount);
+                label.color = new Color(GameRules.Cream.r, GameRules.Cream.g, GameRules.Cream.b, held > 0f ? 1f : .6f);
+                return held >= Seconds;
+            }
+        }
+
         // Navegação vertical com repetição controlada ao segurar (W/S, setas, analógico).
+        // Com horizontal = true, A/D e setas laterais também andam (direita = +1), para fileiras de botões.
         public class NavRepeat
         {
             const float FirstDelay = .35f;
             const float RepeatDelay = .12f;
+            readonly bool horizontal;
             int held;
             float nextAt;
+
+            public NavRepeat(bool horizontal = false) => this.horizontal = horizontal;
 
             // -1 sobe, +1 desce, 0 nada.
             public int Read()
             {
                 float vertical = Controls.Simulated ? 0f : Input.GetAxisRaw("Vertical");
                 int direction = vertical > .5f ? -1 : vertical < -.5f ? 1 : 0;
+                if (direction == 0 && horizontal)
+                {
+                    float side = Controls.Simulated ? 0f : Input.GetAxisRaw("Horizontal");
+                    direction = side > .5f ? 1 : side < -.5f ? -1 : 0;
+                }
                 if (direction == 0)
                 {
                     held = 0;

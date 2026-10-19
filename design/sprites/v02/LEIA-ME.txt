@@ -1,0 +1,17 @@
+MARÉ BAIXA v0.2 — sprites de campanha
+
+Este diretório guarda a extensão v0.2 sem sobrescrever o processo do protótipo.
+originais/: saídas intactas de image_gen integrado. prompts.json: especificações.
+preparar.py: execute com Python 3 + Pillow; publica somente PNGs do contrato em
+MareBaixa/Assets/Art/Gerados e cópias locais. Nenhum script Unity, cena ou .meta.
+
+NEAREST exclusivamente; quantização sem dithering em paleta de 24 cores.
+Contorno interno #101B2D, alpha binário e RGB zerado fora da silhueta.
+Correntezas usam alpha 144. Conchas preservam canvas 32x32 e encaixe à esquerda;
+encaixes.png mostra a sobreposição nos quadros existentes de Casco.
+Sprites terrestres apoiados na última linha. Inimigos aquáticos centralizados.
+previa.png: ampliação inteira NEAREST com nomes. validacao.json: dimensões,
+alpha, limites, paleta e SHA-256 dos arquivos publicados.
+
+Importação (orquestrador): PPU 32, Point, sem compressão e sem mipmaps.
+Revisão visual em folhas; integração/animação dentro do Unity cabe ao orquestrador.

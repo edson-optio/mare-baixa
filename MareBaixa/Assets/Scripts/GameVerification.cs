@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 namespace MareBaixa
 {
     // Executado somente com -selfTest. Joga sozinho o loop principal no app compilado (menu, vila,
-    // loja, run, combate, conchas, maré e ar, morte, salas sorteadas e fim da zona) e salva um
-    // relatório JSON com capturas de tela de cada sala. Usa outro save para não mexer no do jogador.
+    // loja, run, combate, conchas, maré e ar, morte, a campanha inteira com as três zonas, os chefes e
+    // a vitória) e salva um relatório JSON com capturas de tela de cada sala e de cada cutscene.
+    // Usa outro save para não mexer no do jogador.
     [DefaultExecutionOrder(-1000)]
     public class GameVerification : MonoBehaviour
     {
@@ -37,6 +38,7 @@ namespace MareBaixa
             Application.logMessageReceived += OnLog;
             yield return new WaitForSeconds(1f);
 
+            StartCoroutine(WatchCutscenes());
             yield return Step(TestMenu());
             yield return Step(TestVillage());
             yield return Step(TestRun());
@@ -67,9 +69,9 @@ namespace MareBaixa
 
         void Update()
         {
-            if (!finished && Time.realtimeSinceStartup > 300f)
+            if (!finished && Time.realtimeSinceStartup > 600f)
             {
-                report.failures.Add("Tempo esgotado: o teste não terminou em 5 minutos");
+                report.failures.Add("Tempo esgotado: o teste não terminou em 10 minutos");
                 Finish();
             }
         }
@@ -101,6 +103,40 @@ namespace MareBaixa
             yield return new WaitForEndOfFrame();
             ScreenCapture.CaptureScreenshot(Path.Combine(output, name + ".png"));
             yield return null;
+            yield return null;
+        }
+
+        // Cutscenes e créditos: fotografa cada um e pula, como um jogador apressado faria.
+        readonly List<string> cutscenesSeen = new List<string>();
+
+        IEnumerator WatchCutscenes()
+        {
+            var creditsPlaying = typeof(CreditsScreen).GetProperty("Playing");
+            var creditsSkip = typeof(CreditsScreen).GetMethod("Skip");
+            while (!finished)
+            {
+                bool credits = creditsPlaying != null && (bool)creditsPlaying.GetValue(null);
+                if (CutscenePlayer.Playing || credits)
+                {
+                    yield return new WaitForSecondsRealtime(1.2f);
+                    string name = (credits ? "creditos" : "cutscene") + "-" + (cutscenesSeen.Count + 1);
+                    cutscenesSeen.Add(name);
+                    yield return Capture(name);
+                    if (CutscenePlayer.Playing) CutscenePlayer.SkipCurrent();
+                    else creditsSkip?.Invoke(null, null);
+                    float start = Time.realtimeSinceStartup;
+                    while ((CutscenePlayer.Playing || (creditsPlaying != null && (bool)creditsPlaying.GetValue(null)))
+                           && Time.realtimeSinceStartup - start < 3f) yield return null;
+                }
+                yield return null;
+            }
+        }
+
+        static IEnumerator WaitCutscene()
+        {
+            yield return null;
+            float start = Time.realtimeSinceStartup;
+            while (CutscenePlayer.Playing && Time.realtimeSinceStartup - start < 8f) yield return null;
             yield return null;
         }
 
@@ -143,7 +179,10 @@ namespace MareBaixa
             Check(Director.Instance is VilaManager && casco != null && casco.Grounded, "Casco nasce na vila, em pé no chão" + Pos(casco));
             Check(FindObjectsByType<Npc>(FindObjectsSortMode.None).Length == 4, "Os quatro moradores estão na vila");
             Check(FindAnyObjectByType<Descent>() != null, "A descida para o Recife existe");
-            Check(Hud.PanelOpen && Hud.Dialog != null, "Primeira visita abre a história com a Vovó Búzia");
+            yield return WaitCutscene();
+            yield return new WaitForSeconds(.6f);
+            Check(cutscenesSeen.Count >= 1, "Primeira visita toca a cutscene 1 (A Pérola Roubada)");
+            Check(Hud.PanelOpen && Hud.Dialog != null, "Depois da cutscene, a Vovó Búzia conta a história");
             yield return Capture("02-vila-historia");
             for (int i = 0; i < 40 && Hud.PanelOpen; i++) yield return Press(GameAction.Interact);
             Check(!Hud.PanelOpen && Progress.Data.introSeen, "História termina apertando E e fica marcada como vista");
@@ -191,8 +230,8 @@ namespace MareBaixa
             casco.TeleportTo(descent.transform.position);
             yield return new WaitForSeconds(.3f);
             yield return Press(GameAction.Interact);
-            yield return WaitScene(GameRules.ReefScene);
-            Check(SceneManager.GetActiveScene().name == GameRules.ReefScene, "A descida leva ao Recife Raso");
+            yield return WaitScene(GameRules.RunScene);
+            Check(SceneManager.GetActiveScene().name == GameRules.RunScene, "A descida leva à run, no Recife Raso");
         }
 
         IEnumerator TalkTo(NpcKind kind)
@@ -214,9 +253,7 @@ namespace MareBaixa
             var run = Director.Instance as RunManager;
             var casco = Casco;
             var kit = Kit.Current;
-            Check(run != null && run.Rooms.Count == 2 + GameRules.ReefRandomRooms && run.Rooms[0] == kit.reefEntrance
-                  && ((IList<TextAsset>)run.Rooms).Contains(kit.reefShellRoom),
-                "Run sorteada: entrada fixa + " + GameRules.ReefRandomRooms + " salas do banco + sala de concha garantida");
+            CheckPlan(run, kit);
             Check(casco.Shell == ShellType.Tampinha && Mathf.Approximately(casco.MaxAir, 10f),
                 "Run começa com a concha escolhida e o ar comprado (10 s)");
             yield return new WaitForSeconds(.6f);
@@ -283,7 +320,10 @@ namespace MareBaixa
             // Troca de concha e habilidades
             ShellPickup.Spawn(ShellType.Espiral, -1, casco.transform.position, run.Room.transform);
             yield return null;
+            int seenBefore = cutscenesSeen.Count;
             yield return Press(GameAction.Interact);
+            yield return WaitCutscene();
+            Check(cutscenesSeen.Count > seenBefore, "Primeira concha nova toca a cutscene 2 (A Primeira Concha)");
             bool dropped = false;
             foreach (var pickup in FindObjectsByType<ShellPickup>(FindObjectsSortMode.None))
                 dropped |= pickup.type == ShellType.Tampinha;
@@ -296,7 +336,9 @@ namespace MareBaixa
             Check(casco.Dodging && casco.Invulnerable, "K rola dentro da concha e fica invulnerável");
             yield return new WaitForSeconds(.6f);
 
-            casco.SetShellHp(2);
+            yield return TestNewShells(run, casco);
+
+            casco.Equip(ShellType.Espiral, 2);
             casco.AddAlga();
             yield return Press(GameAction.Eat);
             Check(casco.ShellHp == 3 && casco.Algae == 0, "Q come a alga e recupera 1 de resistência");
@@ -329,6 +371,98 @@ namespace MareBaixa
                 "Depois de morrer volta à vila com metade das pérolas (" + total + " → " + Progress.Data.pearls + ")");
         }
 
+        void CheckPlan(RunManager run, Kit kit)
+        {
+            var plan = run.Plan;
+            bool shape = plan.Count > 0 && plan[0].room == kit.reefEntrance && ((IList<TextAsset>)run.Rooms).Contains(kit.reefShellRoom);
+            int reef = 0, bubbles = 0, city = 0, abyss = 0;
+            foreach (var step in plan)
+            {
+                if (step.zone == Zone.Recife) reef++;
+                if (step.zone == Zone.Bolha) bubbles++;
+                if (step.zone == Zone.Cidade) city++;
+                if (step.zone == Zone.Fossa) abyss++;
+            }
+            Check(shape && reef == 2 + GameRules.ReefRandomRooms,
+                "Recife: entrada fixa + " + GameRules.ReefRandomRooms + " salas do banco + sala de concha garantida (" + reef + " salas)");
+            Check(bubbles == 2 || kit.bubbleRoom == null, "Uma bolha de ar entre cada zona (" + bubbles + ")");
+            Check(city == 0 || (city == 2 + Mathf.Min(GameRules.CityRandomRooms, kit.cityRooms.Length) && plan[plan.Count - 1].zone != Zone.Cidade),
+                "Cidade Afundada: entrada + salas sorteadas + arena do Colosso (" + city + " salas)");
+            Check(abyss == 0 || abyss == 2 + Mathf.Min(GameRules.AbyssRandomRooms, kit.abyssRooms.Length),
+                "Fossa Abissal: entrada + salas sorteadas + arena do Polvo (" + abyss + " salas)");
+            // Dentro de cada zona, as salas sorteadas vêm em ordem de @nivel.
+            bool ordered = true;
+            for (int i = 2; i < plan.Count - 1; i++)
+            {
+                bool middle = plan[i].zone == plan[i - 1].zone && plan[i].zone == plan[i + 1].zone
+                              && plan[i].room != kit.reefShellRoom && plan[i - 1].room != kit.reefShellRoom
+                              && plan[i - 1].room != kit.reefEntrance && plan[i - 1].room != kit.cityEntrance && plan[i - 1].room != kit.abyssEntrance;
+                if (middle && Room.LevelOf(plan[i].room) < Room.LevelOf(plan[i - 1].room)) ordered = false;
+            }
+            Check(ordered, "Salas sorteadas de cada zona sobem de dificuldade (@nivel)");
+        }
+
+        // Lata (investida que atordoa), Lâmpada (clarão), o Siri levando a concha, a correnteza e a válvula.
+        IEnumerator TestNewShells(RunManager run, Casco casco)
+        {
+            casco.MakeInvulnerable(60f);
+            casco.Equip(ShellType.Lata, -1);
+            Check(casco.ShellHp == 6 && Shells.Get(ShellType.Lata).SpeedFactor < 1f, "Lata de Refrigerante: 6 de resistência e mais lenta");
+            yield return new WaitForSeconds(.3f);
+            // Investe para os dois lados: um deles pode estar encostado numa parede.
+            bool charged = false;
+            float distance = 0f;
+            foreach (float side in new[] { 1f, -1f })
+            {
+                Controls.SimulatedMove = side;
+                yield return null;
+                yield return null;
+                float x0 = casco.transform.position.x;
+                yield return Press(GameAction.Ability);
+                charged |= casco.Charging;
+                Controls.SimulatedMove = 0f;
+                yield return new WaitForSeconds(.4f);
+                distance = Mathf.Max(distance, Mathf.Abs(casco.transform.position.x - x0));
+                yield return new WaitForSeconds(GameRules.ChargeCooldown);
+            }
+            Check(charged, "L com a Lata faz a investida");
+            Check(distance > 1.5f, "A investida leva Casco para a frente (" + distance.ToString("F2") + ")");
+            yield return Capture("08a-lata");
+
+            casco.Equip(ShellType.Lampada, -1);
+            Check(casco.LightRadius > GameRules.LightRadius, "Lâmpada Velha aumenta a luz de Casco");
+            yield return new WaitForSeconds(.2f);
+            yield return Press(GameAction.Ability);
+            yield return Capture("08b-lampada");
+
+            ShellType stolenType;
+            casco.ClearInvulnerability();
+            bool stolen = casco.StealShell(out stolenType, out int stolenHp);
+            Check(stolen && stolenType == ShellType.Lampada && casco.Shell == ShellType.Nenhuma && !casco.Dead,
+                "Roubar a concha (Siri) deixa Casco sem concha, sem quebrar");
+            casco.MakeInvulnerable(60f);
+
+            float level = Mare.Current.Level;
+            Mare.Current.SetLevel(level + 3f);
+            Mare.Current.Drain(2f, 1f);
+            Check(Mathf.Abs(Mare.Current.Level - (level + 1f)) < .05f, "A válvula baixa a água de uma vez (Mare.Drain)");
+            yield return new WaitForSeconds(.5f);
+            Check(Mathf.Abs(Mare.Current.Level - (level + 1f)) < .05f, "Depois da válvula a água fica parada um tempo");
+            Mare.Current.SetLevel(level);
+
+            // Empurra para os dois lados: um deles pode estar encostado numa parede.
+            float drift = 0f;
+            foreach (float side in new[] { 1f, -1f })
+            {
+                float before = casco.transform.position.x;
+                for (int i = 0; i < 20; i++) { casco.Push(new Vector2(side * 3.5f, 0f)); yield return new WaitForFixedUpdate(); }
+                drift = Mathf.Max(drift, Mathf.Abs(casco.transform.position.x - before));
+                yield return new WaitForSeconds(.2f);
+            }
+            Check(drift > .6f && drift < 3f, "Correnteza empurra Casco com deriva constante (" + drift.ToString("F2") + " em 0.4 s)");
+            casco.Equip(ShellType.Espiral, -1);
+        }
+
         // ------------------------------------------------------------------ Todas as salas
 
         IEnumerator TestAllRooms()
@@ -337,17 +471,31 @@ namespace MareBaixa
             Casco.TeleportTo(descent.transform.position);
             yield return new WaitForSeconds(.3f);
             yield return Press(GameAction.Interact);
-            yield return WaitScene(GameRules.ReefScene);
+            yield return WaitScene(GameRules.RunScene);
 
             var run = Director.Instance as RunManager;
             int count = run.Rooms.Count;
             for (int i = 0; i < count; i++)
             {
+                yield return WaitCutscene();
                 var casco = Casco;
                 casco.MakeInvulnerable(120f);
+                yield return new WaitForSeconds(.3f);
                 Check(run.RoomIndex == i && casco.Grounded && !casco.HeadUnderwater,
-                    "Sala " + (i + 1) + " (" + run.Room.RoomName + ") monta e Casco começa em pé, fora d'água" + Pos(casco));
+                    "Sala " + (i + 1) + " (" + run.Plan[i].zone + " · " + run.Room.RoomName + ") monta e Casco começa em pé, fora d'água" + Pos(casco));
+                if (run.Plan[i].zone == Zone.Fossa)
+                    Check(Escuridao.Current != null, "Sala da Fossa é escura");
                 yield return Capture("sala-" + (i + 1) + "-" + run.Rooms[i].name);
+                var boss = run.Room.Boss;
+                if (boss != null)
+                {
+                    Check(!run.ExitOpen, "Arena " + run.Room.RoomName + ": a saída fica fechada com o chefe vivo");
+                    yield return new WaitForSeconds(2f);
+                    yield return Capture("chefe-" + run.Rooms[i].name);
+                    typeof(Boss).GetMethod("DefeatNow")?.Invoke(boss, null);
+                    yield return new WaitForSeconds(2.5f);
+                    Check(run.ExitOpen, "Arena " + run.Room.RoomName + ": vencer o chefe abre a saída");
+                }
                 var exit = FindAnyObjectByType<RoomExit>();
                 Check(exit != null, "Sala " + (i + 1) + " tem saída");
                 if (exit == null) yield break;
@@ -356,13 +504,17 @@ namespace MareBaixa
                 while (run.RoomIndex == i && !run.Ending && Time.realtimeSinceStartup - start < 4f) yield return null;
                 yield return new WaitForSeconds(.8f);
             }
-            Check(run.Ending && Hud.MessageVisible, "Depois da última sala, o Recife Raso é concluído");
-            yield return Capture("10-recife-concluido");
+            for (float t = 0; t < 15f && !Hud.MessageVisible; t += Time.unscaledDeltaTime) yield return null;
+            Check(run.Ending && Hud.MessageVisible && Progress.Data.victories == 1,
+                "Depois da arena do Polvo, a campanha termina em vitória (cutscene 4 e créditos)");
+            yield return Capture("10-vitoria");
             int expected = Progress.Data.pearls;
+            yield return new WaitForSecondsRealtime(.7f);   // a mensagem ignora apertos nos primeiros 0,5 s
             yield return Press(GameAction.Interact);
             yield return WaitScene(GameRules.VillageScene);
             Check(SceneManager.GetActiveScene().name == GameRules.VillageScene && Progress.Data.pearls == expected,
-                "Concluir a zona guarda todas as pérolas e volta à vila");
+                "Vencer guarda todas as pérolas e volta à vila");
+            Check(cutscenesSeen.Count >= 4, "As quatro cutscenes tocaram (" + string.Join(", ", cutscenesSeen) + ")");
         }
 
         static string Pos(Casco casco) => casco == null ? "" : " [pos " + casco.transform.position.x.ToString("F2") + ", " + casco.transform.position.y.ToString("F2") + "]";

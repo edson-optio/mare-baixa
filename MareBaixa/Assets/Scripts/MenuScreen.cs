@@ -1,28 +1,48 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MareBaixa
 {
-    // Tela inicial: arte, título, um pouco da história, os controles e os botões para jogar
-    // ou apagar o progresso. A cena Menu não tem Director; só a câmera.
+    // Tela inicial: arte, título, um pouco da história, os controles e os botões. Com progresso
+    // salvo aparecem "Continuar" e "Novo jogo" (que pergunta antes de apagar); sem, só "Novo jogo".
+    // Teclado: A/D ou W/S escolhe, Enter/E/Espaço confirma. A cena Menu não tem Director; só a câmera.
     public class MenuScreen : MonoBehaviour
     {
-        const float ConfirmWindow = 3f;
-        const string ResetLabel = "Apagar progresso";
-
         public Sprite keyArt;
         public Sprite conceptArt;
 
+        // Botão principal (Continuar com save, Novo jogo sem); o teste clica nele.
         public Button PlayButton { get; private set; }
-        public Button ResetButton { get; private set; }
+        public Button ContinueButton { get; private set; }
+        public Button NewGameButton { get; private set; }
+        public bool HasSave { get; private set; }
+        public bool ConfirmVisible => confirmPanel != null && confirmPanel.activeSelf;
         public string TitleText { get; private set; }
         public string StoryText { get; private set; }
         public string ControlsText { get; private set; }
 
         Text pearlsLabel;
-        float resetArmedUntil = -1f;
         bool loading;
+        readonly List<Button> buttons = new List<Button>();
+        readonly List<System.Action> actions = new List<System.Action>();
+        readonly UiKit.NavRepeat nav = new UiKit.NavRepeat(horizontal: true);
+        int selected;
+
+        GameObject confirmPanel;
+        Button confirmYes, confirmNo;
+        int confirmSelected = 1;
+        int confirmOpenedFrame = -1;
+        readonly UiKit.NavRepeat confirmNav = new UiKit.NavRepeat(horizontal: true);
+
+        // Tem algo a perder: já viu a história, já desceu ou guardou pérolas.
+        static bool SaveExists()
+        {
+            var data = Progress.Data;
+            return data.introSeen || data.runs > 0 || data.pearls > 0 || data.tampinhaUnlocked || data.espiralUnlocked;
+        }
 
         void Start()
         {
@@ -61,10 +81,20 @@ namespace MareBaixa
             UiKit.Label(panel, left, 21, UiKit.TopLeft, new Vector2(24f, -204f), new Vector2(330f, 170f), TextAnchor.UpperLeft);
             UiKit.Label(panel, right, 21, UiKit.TopLeft, new Vector2(370f, -204f), new Vector2(330f, 170f), TextAnchor.UpperLeft);
 
-            PlayButton = UiKit.Button(root, "Jogar  (Enter)", UiKit.BottomLeft, new Vector2(40f, 28f), Play,
-                new Vector2(340f, 64f), 30);
-            ResetButton = UiKit.Button(root, ResetLabel, UiKit.BottomLeft, new Vector2(420f, 28f), ResetProgress,
-                new Vector2(340f, 64f), 24);
+            HasSave = SaveExists();
+            if (HasSave)
+            {
+                ContinueButton = AddButton(root, "Continuar", 40f, Play);
+                NewGameButton = AddButton(root, "Novo jogo", 420f, AskNewGame);
+                PlayButton = ContinueButton;
+            }
+            else
+            {
+                NewGameButton = AddButton(root, "Novo jogo", 40f, Play);
+                PlayButton = NewGameButton;
+            }
+            Select(0);
+            BuildConfirm(root);
 
             pearlsLabel = UiKit.Label(root, "", 24, UiKit.BottomRight, new Vector2(-40f, 40f), new Vector2(440f, 40f),
                 TextAnchor.MiddleRight, GameRules.Pearl);
@@ -90,6 +120,83 @@ namespace MareBaixa
                 UiKit.Picture(root, conceptArt, UiKit.Right, new Vector2(-30f, -30f), new Vector2(460f, 500f));
         }
 
+        Button AddButton(RectTransform root, string text, float x, System.Action action)
+        {
+            int index = buttons.Count;
+            var button = UiKit.Button(root, text, UiKit.BottomLeft, new Vector2(x, 28f), () => Choose(index),
+                new Vector2(340f, 64f), 30, hover: false);
+            UiKit.OnPointer(button.gameObject, EventTriggerType.PointerEnter, () => Select(index));
+            buttons.Add(button);
+            actions.Add(action);
+            return button;
+        }
+
+        void Select(int index)
+        {
+            selected = index;
+            for (int i = 0; i < buttons.Count; i++) UiKit.Highlight(buttons[i], i == index);
+        }
+
+        void Choose(int index)
+        {
+            if (ConfirmVisible || loading) return;
+            Select(index);
+            actions[index]();
+        }
+
+        // Janela "Começar do zero?" por cima do menu. "Voltar" vem escolhido para ninguém apagar sem querer.
+        void BuildConfirm(RectTransform root)
+        {
+            var veil = UiKit.Veil(root, .7f);
+            veil.raycastTarget = true;
+            confirmPanel = veil.gameObject;
+            confirmPanel.name = "Confirmar novo jogo";
+            var frame = UiKit.Frame(veil.transform, UiKit.Center, Vector2.zero, new Vector2(760f, 320f)).transform;
+            UiKit.Label(frame, "Começar do zero?", 44, UiKit.TopCenter, new Vector2(0f, -24f), new Vector2(700f, 56f),
+                color: GameRules.Orange);
+            int pearls = Progress.Data.pearls;
+            UiKit.Label(frame,
+                "Isso apaga o progresso salvo" + (pearls > 0 ? " (" + pearls + " pérolas guardadas)" : "") +
+                ", as melhorias da vila e as conchas liberadas.",
+                24, UiKit.TopCenter, new Vector2(0f, -96f), new Vector2(680f, 90f));
+            confirmYes = UiKit.Button(frame, "Apagar e começar", UiKit.BottomCenter, new Vector2(-180f, 32f),
+                () => ChooseConfirm(0), new Vector2(320f, 60f), 26, hover: false);
+            confirmNo = UiKit.Button(frame, "Voltar", UiKit.BottomCenter, new Vector2(180f, 32f),
+                () => ChooseConfirm(1), new Vector2(320f, 60f), 26, hover: false);
+            UiKit.OnPointer(confirmYes.gameObject, EventTriggerType.PointerEnter, () => SelectConfirm(0));
+            UiKit.OnPointer(confirmNo.gameObject, EventTriggerType.PointerEnter, () => SelectConfirm(1));
+            confirmPanel.SetActive(false);
+        }
+
+        void AskNewGame()
+        {
+            confirmOpenedFrame = Time.frameCount;
+            confirmPanel.SetActive(true);
+            SelectConfirm(1);
+        }
+
+        void SelectConfirm(int index)
+        {
+            confirmSelected = index;
+            UiKit.Highlight(confirmYes, index == 0);
+            UiKit.Highlight(confirmNo, index == 1);
+        }
+
+        void ChooseConfirm(int index)
+        {
+            if (!ConfirmVisible) return;
+            confirmPanel.SetActive(false);
+            if (index == 0) NewGame();
+        }
+
+        // Novo jogo de verdade: apaga o save e vai para a vila (a Vovó Búzia e a cena 1 voltam).
+        public void NewGame()
+        {
+            Progress.Reset();
+            RefreshPearls();
+            Play();
+        }
+
         void RefreshPearls()
         {
             int pearls = Progress.Data.pearls;
@@ -103,29 +210,21 @@ namespace MareBaixa
             SceneManager.LoadScene(GameRules.VillageScene);
         }
 
-        // Primeiro clique arma; o segundo, dentro de alguns segundos, apaga de verdade.
-        void ResetProgress()
-        {
-            if (Time.unscaledTime > resetArmedUntil)
-            {
-                resetArmedUntil = Time.unscaledTime + ConfirmWindow;
-                UiKit.SetButtonText(ResetButton, "Tem certeza? Clique de novo");
-                return;
-            }
-            resetArmedUntil = -1f;
-            Progress.Reset();
-            UiKit.SetButtonText(ResetButton, "Progresso apagado");
-            RefreshPearls();
-        }
-
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) Play();
-            if (resetArmedUntil > 0f && Time.unscaledTime > resetArmedUntil)
+            if (loading) return;
+            if (ConfirmVisible)
             {
-                resetArmedUntil = -1f;
-                UiKit.SetButtonText(ResetButton, ResetLabel);
+                if (Time.frameCount == confirmOpenedFrame) return;
+                int side = confirmNav.Read();
+                if (side != 0) SelectConfirm(side < 0 ? 0 : 1);
+                if (Controls.Pressed(GameAction.Pause)) ChooseConfirm(1);
+                else if (UiKit.ConfirmPressed()) ChooseConfirm(confirmSelected);
+                return;
             }
+            int step = nav.Read();
+            if (step != 0 && buttons.Count > 0) Select((selected + step + buttons.Count) % buttons.Count);
+            if (UiKit.ConfirmPressed() && buttons.Count > 0) Choose(selected);
         }
     }
 }

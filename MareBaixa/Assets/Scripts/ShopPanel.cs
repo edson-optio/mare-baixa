@@ -8,11 +8,13 @@ namespace MareBaixa
     // Loja da vila (Ostrácia e Dona Lagosta): lista de itens com W/S ou setas, confirma com
     // E/Enter/Espaço ou clique, fecha com Esc ou na linha "Sair" que sempre vem no fim.
     // O Hud cria e monta (Build); o objeto fica desligado enquanto a loja está fechada.
+    // Com mais de MaxVisible linhas, a lista vira uma janela que rola com a seleção (setas ▲▼).
     public class ShopPanel : MonoBehaviour
     {
         const float Width = 860f;
-        const float RowHeight = 56f;
-        const float RowStep = 64f;
+        const float RowHeight = 52f;
+        const float RowStep = 60f;
+        const int MaxVisible = 8;
         const float ListTop = 120f;
         const float FooterSpace = 84f;
 
@@ -23,12 +25,15 @@ namespace MareBaixa
         readonly UiKit.NavRepeat nav = new UiKit.NavRepeat();
 
         RectTransform frame;
-        Text titleLabel, balanceLabel, statusLabel;
+        Text titleLabel, balanceLabel, statusLabel, upArrow, downArrow;
+        int first;
         Image balanceIcon;
         int openedFrame = -1;
         System.Action onClose;
 
         public int Selected { get; private set; }
+        public int FirstVisible => first;
+        public int VisibleRows => Mathf.Min(Count, MaxVisible);
         // Itens mais a linha "Sair".
         public int Count => entries.Count + 1;
         public bool IsOpen => gameObject.activeSelf;
@@ -51,6 +56,10 @@ namespace MareBaixa
             statusLabel = UiKit.Label(frame, "", 22, UiKit.BottomCenter, new Vector2(0f, 46f), new Vector2(Width - 40f, 30f));
             UiKit.Label(frame, "W/S ou setas: escolher  ·  E, Enter ou Espaço: confirmar  ·  Esc: sair", 20,
                 UiKit.BottomCenter, new Vector2(0f, 12f), new Vector2(Width - 40f, 28f), color: GameRules.Sand);
+            upArrow = UiKit.Label(frame, "▲", 20, UiKit.TopLeft, new Vector2(4f, -ListTop), new Vector2(24f, 24f),
+                color: GameRules.Turquoise);
+            downArrow = UiKit.Label(frame, "▼", 20, UiKit.TopLeft, new Vector2(4f, 0f), new Vector2(24f, 24f),
+                color: GameRules.Turquoise);
             gameObject.SetActive(false);
         }
 
@@ -64,7 +73,9 @@ namespace MareBaixa
             if (newEntries != null) entries.AddRange(newEntries);
 
             for (int i = 0; i < Count; i++) AddRow(i);
-            frame.sizeDelta = new Vector2(Width, ListTop + Count * RowStep + FooterSpace);
+            frame.sizeDelta = new Vector2(Width, ListTop + VisibleRows * RowStep + FooterSpace);
+            downArrow.rectTransform.anchoredPosition = new Vector2(4f, -ListTop - VisibleRows * RowStep + 30f);
+            first = 0;
 
             titleLabel.text = title ?? "";
             statusLabel.text = "";
@@ -80,8 +91,15 @@ namespace MareBaixa
             var button = UiKit.Button(frame, "", UiKit.TopCenter, new Vector2(0f, -ListTop - index * RowStep),
                 () => Choose(index), new Vector2(Width - 60f, RowHeight), 24, hover: false);
             UiKit.OnPointer(button.gameObject, EventTriggerType.PointerEnter, () => Select(index));
-            labels.Add(UiKit.Label(button.transform, "", 24, UiKit.Left, new Vector2(18f, 0f), new Vector2(480f, RowHeight),
-                TextAnchor.MiddleLeft));
+            // Uma linha só: a fonte encolhe (best fit) em vez de quebrar o texto. A caixa tem a altura de
+            // uma linha, então duas linhas nunca cabem.
+            var label = UiKit.Label(button.transform, "", 24, UiKit.Left, new Vector2(18f, 0f), new Vector2(480f, 30f),
+                TextAnchor.MiddleLeft);
+            label.resizeTextForBestFit = true;
+            label.resizeTextMinSize = 14;
+            label.resizeTextMaxSize = 24;
+            label.verticalOverflow = VerticalWrapMode.Truncate;
+            labels.Add(label);
             details.Add(UiKit.Label(button.transform, "", 22, UiKit.Right, new Vector2(-18f, 0f), new Vector2(290f, RowHeight),
                 TextAnchor.MiddleRight, GameRules.Sand));
             rows.Add(button);
@@ -144,8 +162,18 @@ namespace MareBaixa
             balanceIcon.sprite = Kit.Current != null ? Kit.Current.pearlIcon : null;
             balanceIcon.enabled = balanceIcon.sprite != null;
 
+            // Janela de linhas visíveis seguindo a seleção.
+            int visible = VisibleRows;
+            first = Mathf.Clamp(Selected - visible / 2, 0, Mathf.Max(0, Count - visible));
+            upArrow.enabled = first > 0;
+            downArrow.enabled = first + visible < Count;
+
             for (int i = 0; i < rows.Count; i++)
             {
+                bool shown = i >= first && i < first + visible;
+                rows[i].gameObject.SetActive(shown);
+                if (shown)
+                    ((RectTransform)rows[i].transform).anchoredPosition = new Vector2(0f, -ListTop - (i - first) * RowStep);
                 bool item = i < entries.Count;
                 bool selected = i == Selected;
                 labels[i].text = item ? entries[i].label : "Sair";

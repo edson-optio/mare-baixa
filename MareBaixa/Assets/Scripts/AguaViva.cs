@@ -57,7 +57,9 @@ namespace MareBaixa
 
         protected override void Update()
         {
-            if (Time.time >= phaseUntil) Advance();
+            // Atordoada, o ciclo congela (o clarão já apagou o choque em OnStunned).
+            if (Stunned) phaseUntil += Time.deltaTime;
+            else if (Time.time >= phaseUntil) Advance();
 
             switch (phase)
             {
@@ -96,7 +98,12 @@ namespace MareBaixa
             }
         }
 
-        static Sprite First(Sprite[] frames) => frames != null && frames.Length > 0 ? frames[0] : null;
+        // O clarão da Lâmpada desliga o choque: ela volta à calma e fica parada.
+        protected override void OnStunned()
+        {
+            phase = Phase.Calm;
+            phaseUntil = Time.time + calmTime;
+        }
 
         // Atacar durante o choque não fere a água-viva: o choque volta pela pinça.
         public override void Hit(int damage, Vector2 from)

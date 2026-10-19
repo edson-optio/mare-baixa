@@ -28,6 +28,11 @@ namespace MareBaixa
             "Baiacu bravo incha quando apanha. Bata uma vez e se afaste antes que ele exploda!",
             "Rolar dentro da concha (K) te deixa passar por qualquer golpe. Use na hora certa.",
             "Alga cura a concha. Aperte Q para comer quando ela estiver rachada.",
+            "Na Cidade Afundada, moreias moram nos canos. Espere o bote passar e belisque quando ela recolher.",
+            "Siri saqueador rouba concha! Se ele levar a sua, bata nele até ele largar.",
+            "Válvulas velhas baixam a água por um tempo... mas o barulho acorda a vizinhança.",
+            "Na Fossa quase não há luz. A Lâmpada Velha ilumina e o clarão dela atordoa os bichos.",
+            "O Ermitão Colosso rola até bater na parede. Depois fica tonto: é a sua chance.",
         };
 
         static readonly string[] BolotaLines =
@@ -41,7 +46,7 @@ namespace MareBaixa
         bool leaving;
         int buziaTip;
 
-        public override bool InputLocked => base.InputLocked || Hud.PanelOpen || leaving;
+        public override bool InputLocked => base.InputLocked || Hud.PanelOpen || leaving || CutscenePlayer.Playing;
 
         void Start()
         {
@@ -52,6 +57,7 @@ namespace MareBaixa
             Casco.MaxAir = Progress.MaxAir;
             CameraRig.SnapToTarget();
             Hud.SetTitle("Vila da Praia");
+            Sound.PlayMusic(Zone.Vila);
             buziaTip = Progress.Data.runs % BuziaTips.Length;
             StartCoroutine(Arrive());
         }
@@ -59,8 +65,9 @@ namespace MareBaixa
         IEnumerator Arrive()
         {
             Hud.SetFade(1f);
+            // Primeira visita: a cutscene 1 (A Pérola Roubada) e depois Vovó Búzia conta o resto (GDD p. 9).
+            if (!Progress.Data.introSeen) yield return CutscenePlayer.Play(CutsceneId.PerolaRoubada);
             yield return Hud.Fade(1f, 0f, .4f);
-            // Primeira visita: Vovó Búzia conta a história (substitui a cutscene 1 por enquanto).
             if (!Progress.Data.introSeen)
                 Hud.ShowDialog("Vovó Búzia", Portrait(NpcKind.Buzia), IntroLines, () =>
                 {
@@ -135,8 +142,18 @@ namespace MareBaixa
                 ShellChoice(ShellType.Comum, 0),
                 ShellChoice(ShellType.Tampinha, 6),
                 ShellChoice(ShellType.Espiral, 8),
+                ShellChoice(ShellType.Lata, 14),
+                ShellChoice(ShellType.Lampada, 16),
             };
         }
+
+        // Lata e Lâmpada só podem ser forjadas depois de achadas numa run (a ferreira precisa ver o modelo).
+        static bool Forgeable(ShellType type) => type switch
+        {
+            ShellType.Lata => Progress.Data.lataSeen,
+            ShellType.Lampada => Progress.Data.lampadaSeen,
+            _ => true,
+        };
 
         // Primeiro a ferreira forja a concha (custa pérolas); depois ela vira opção de concha inicial.
         ShopEntry ShellChoice(ShellType type, int price)
@@ -145,15 +162,18 @@ namespace MareBaixa
             return new ShopEntry
             {
                 label = Shells.Get(type).Name + " · " + Shells.Get(type).Ability,
-                detail = () => !Progress.IsUnlocked(type) ? "Forjar: " + price + " pérolas"
+                detail = () => !Progress.IsUnlocked(type) && !Forgeable(type) ? "Ache uma lá embaixo primeiro"
+                    : !Progress.IsUnlocked(type) ? "Forjar: " + price + " pérolas"
                     : data.startShell == type ? "Concha inicial ✓" : "Começar com ela",
                 onSelect = () =>
                 {
                     if (!Progress.IsUnlocked(type))
                     {
-                        if (!Spend(price)) return false;
+                        if (!Forgeable(type) || !Spend(price)) return false;
                         if (type == ShellType.Tampinha) data.tampinhaUnlocked = true;
                         if (type == ShellType.Espiral) data.espiralUnlocked = true;
+                        if (type == ShellType.Lata) data.lataUnlocked = true;
+                        if (type == ShellType.Lampada) data.lampadaUnlocked = true;
                     }
                     data.startShell = type;
                     Progress.Save();
@@ -170,7 +190,7 @@ namespace MareBaixa
             return true;
         }
 
-        // A descida para o Recife Raso.
+        // A descida para a run (começa no Recife Raso).
         public override void OnExitReached()
         {
             if (leaving) return;
@@ -182,7 +202,7 @@ namespace MareBaixa
         IEnumerator Dive()
         {
             yield return Hud.Fade(0f, 1f, .35f);
-            SceneManager.LoadScene(GameRules.ReefScene);
+            SceneManager.LoadScene(GameRules.RunScene);
         }
     }
 }

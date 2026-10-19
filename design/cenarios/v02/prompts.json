@@ -1,0 +1,36 @@
+{
+  "tool": "image_gen integrado",
+  "date": "2026-10-18",
+  "assets": [
+    {
+      "name": "fundo-cidade",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. Wide underwater sunken modern city, distant ruined buildings apartment blocks street lamps and abandoned cars, GREEN AND GREY palette with murky pale green water, soft light rays from upper left, quiet layered depth, open empty center for gameplay, buildings mostly lower half. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": false
+    },
+    {
+      "name": "silhuetas-cidade",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. single wide continuous silhouette strip of ruined city buildings broken street lamps and abandoned cars, flat dark green grey silhouettes with 3 tones, content only LOWER HALF, upper half entirely transparent, no water no sky no background. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": true
+    },
+    {
+      "name": "fundo-fossa",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. abyssal ocean trench nearly black NAVY BLUE with very sparse purple bioluminescent accents, distant towering rock walls at sides, large dark empty center, atmospheric depth, few silhouettes low contrast, no creatures no eyes. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": false
+    },
+    {
+      "name": "silhuetas-fossa",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. single wide continuous silhouette strip of very sparse abyssal rock spires and low coral forms, nearly black navy and dark purple 3 tones, low quiet shapes only LOWER HALF upper half entirely transparent, no water no sky no background. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": true
+    },
+    {
+      "name": "fundo-bolha",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. calm underwater air pocket grotto, broad tranquil air chamber enclosed by distant rounded rock arch, waterline near bottom, soft turquoise mint and cream light from above, breathing refuge with open empty center, peaceful. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": false
+    },
+    {
+      "name": "silhuetas-bolha",
+      "prompt": "Use case: illustration-story. 16:9 wide game environment background for Mare Baixa, target 640x360. single wide continuous silhouette strip of low smooth grotto rocks shells and delicate sea plants at edges, muted teal green 3 tones, peaceful air pocket refuge, content only LOWER HALF upper half entirely transparent, no water no sky no background. Cohesive polished pixel art, limited palette large clean pixel clusters, no antialiasing or smooth photographic gradients. Side view 2D platformer parallax, horizontally repeatable composition with matching left/right heights and colors. No characters, no text, no labels, no border.",
+      "transparent": true
+    }
+  ]
+}

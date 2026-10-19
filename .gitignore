@@ -16,3 +16,9 @@ Verificacao/*.log
 __pycache__/
 # Papéis dos agentes do Maestri (configuração local)
 .maestri/
+
+# Placeholders gerados pelo ArtImporter quando a arte ainda não chegou
+MareBaixa/Assets/Art/Provisorios/
+MareBaixa/Assets/Art/Provisorios.meta
+# Logs da compilação e do teste automático
+Verificacao/*.log

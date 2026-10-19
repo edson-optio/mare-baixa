@@ -13,10 +13,19 @@ namespace MareBaixa
         public int algaeLevel;        // Ostrácia: começa a run com algas
         public bool tampinhaUnlocked; // Dona Lagosta
         public bool espiralUnlocked;  // Dona Lagosta
+        public bool lataUnlocked;     // Dona Lagosta, depois de achar a Lata numa run
+        public bool lampadaUnlocked;  // Dona Lagosta, depois de achar a Lâmpada numa run
+        public bool lataSeen;
+        public bool lampadaSeen;
         public ShellType startShell = ShellType.Comum;
         public bool introSeen;
+        public bool firstShellCutsceneSeen;
+        public bool abyssCutsceneSeen;
+        public bool colossoDefeated;
+        public int victories;
         public int runs;
-        public int bestRoom;
+        public int bestRoom;          // maior número de salas vencidas numa run (todas as zonas)
+        public int bestZone;          // 1 Recife, 2 Cidade, 3 Fossa
     }
 
     public static class Progress
@@ -54,6 +63,8 @@ namespace MareBaixa
             ShellType.Comum => true,
             ShellType.Tampinha => Data.tampinhaUnlocked,
             ShellType.Espiral => Data.espiralUnlocked,
+            ShellType.Lata => Data.lataUnlocked,
+            ShellType.Lampada => Data.lampadaUnlocked,
             _ => false,
         };
     }

@@ -15,6 +15,7 @@ namespace MareBaixa
         // Fração da sala já inundada, para o indicador lateral do HUD.
         public float Fill => Mathf.InverseLerp(Bottom, Top, Level);
 
+        float holdUntil;
         SpriteRenderer body;
         SpriteRenderer surface;
         Sprite[] surfaceFrames;
@@ -52,9 +53,19 @@ namespace MareBaixa
         void OnEnable() => Current = this;
         void OnDisable() { if (Current == this) Current = null; }
 
+        // Speed negativa faz a água recuar até o fundo (vitória sobre o Polvo).
         void Update()
         {
-            Level = Mathf.Min(Level + Speed * Time.deltaTime, Top + 1f);
+            if (Time.time >= holdUntil)
+                Level = Mathf.Clamp(Level + Speed * Time.deltaTime, Bottom, Top + 1f);
+            UpdateVisual();
+        }
+
+        // Válvula: a água baixa de uma vez e fica parada alguns segundos antes de voltar a subir (GDD p. 7).
+        public void Drain(float blocks, float seconds)
+        {
+            Level = Mathf.Max(Bottom, Level - blocks);
+            holdUntil = Time.time + seconds;
             UpdateVisual();
         }
 

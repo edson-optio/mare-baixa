@@ -50,3 +50,6 @@ UNITY
 Importar apenas os 39 PNGs finais da raiz. previa.png não é spritesheet de jogo.
 Filter Mode Point, Compression None, mipmaps desativados. Manter os pivôs
 estabelecidos: centro da base nos personagens terrestres; centro nos inimigos.
+
+CAMPANHA v0.2: 38 sprites adicionais em v02/. Execute v02/preparar.py;
+originais, prompts.json, previa.png e validacao.json independentes em v02/.

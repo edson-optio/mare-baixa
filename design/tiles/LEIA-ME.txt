@@ -17,3 +17,5 @@ validacao.json: resultados técnicos dos seis tiles e cinco retratos.
 
 Unity: Filter Mode Point, Compression None, mipmaps desativados.
 Usar arquivos finais individuais; nenhum arquivo do projeto Unity foi alterado.
+
+CAMPANHA v0.2: seis blocos adicionais e processo completo em v02/.

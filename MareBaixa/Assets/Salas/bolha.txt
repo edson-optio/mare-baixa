@@ -1,0 +1,14 @@
+@nome Bolha de Ar
+@dica1 Aqui a água não sobe. A fonte cura a concha uma vez.
+########################
+#                      #
+#                      #
+#                      #
+#                      #
+#                      #
+#        o     o       #
+# C g   ===   ===  p S #
+#####      1       #####
+##### gk o  H o K n#####
+########################
+########################

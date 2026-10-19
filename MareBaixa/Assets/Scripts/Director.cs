@@ -19,6 +19,9 @@ namespace MareBaixa
         // Bloqueia o controle de Casco (diálogos, loja, telas de morte e transições).
         public virtual bool InputLocked => Paused;
 
+        // Arenas: a saída só abre depois do chefe (RoomExit consulta isto).
+        public virtual bool ExitOpen => true;
+
         // Pérolas que aparecem no HUD: as guardadas na vila mais as pegas nesta run.
         public virtual int PearlsShown => Progress.Data.pearls;
 
@@ -52,6 +55,7 @@ namespace MareBaixa
             if (Room != null) Destroy(Room.gameObject);
             Room = Room.Build(file, zone, kit);
             CameraRig.SetBounds(Room.Width, Room.Height);
+            ZoneBackground.Show(zone);
             return Room;
         }
 
@@ -63,5 +67,7 @@ namespace MareBaixa
         public virtual void OnExitReached() { }
         public virtual void OnCascoDied(string reason) { }
         public virtual void OnTalk(Npc npc) { }
+        public virtual void OnBossDefeated(Boss boss) { }
+        public virtual void OnShellEquipped(ShellType type) { }
     }
 }

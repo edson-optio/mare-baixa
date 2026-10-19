@@ -23,3 +23,5 @@ previa.png: duas repetições lado a lado de cada composição e menu final.
 preparar.py: preparação reproduzível a partir das saídas originais da sessão.
 
 Envio Maestri não executável nesta sessão: MAESTRI_SOCKET não está definido.
+
+CAMPANHA v0.2: seis cenários e processo completo em v02/.

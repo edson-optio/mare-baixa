@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Vila.unity
     guid: 5cb9e2409fc124e8db2c7c5808760b62
   - enabled: 1
-    path: Assets/Scenes/RecifeRaso.unity
-    guid: fe0e58a6de2bf474b8ae81444bdb7ec0
+    path: Assets/Scenes/Run.unity
+    guid: 2d9d99af1ccfd4dd3b0e0a78a65416bb
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
