@@ -1,0 +1,21 @@
+{
+  "ferramenta": "image_gen integrado",
+  "prompts_de_origem": [
+    "design/sprites/prompts.json",
+    "design/sprites/prompts-inflado.json",
+    "design/sprites/v02/prompts.json",
+    "design/sprites64/prompts.json",
+    "design/sprites64/prompts-casco.json",
+    "design/sprites64/prompts-siri.json",
+    "design/sprites64/etapa2/prompts-casco.json"
+  ],
+  "novas_geracoes": [
+    "casco-pulo",
+    "casco-queda",
+    "casco-ataque-1",
+    "casco-ataque-2",
+    "casco-ataque-3"
+  ],
+  "demais": "Reconstrução das bases de alta resolução preservadas; ciclos e acabamento nativos reproduzíveis em preparar.py. Efeitos simples derivados do sistema nativo existente.",
+  "originais": "Caminhos individuais nos relatórios validacao-<grupo>.json; fontes da amostra em ../originais/; arquivos novos em originais/."
+}

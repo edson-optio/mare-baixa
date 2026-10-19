@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 39d7dd40773ea41998dc25c71b36f52a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 766c789dec4d948a7adb444577ca0cea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.AirBubble
   frames:
-  - {fileID: 21300000, guid: 39d7dd40773ea41998dc25c71b36f52a, type: 3}
-  - {fileID: 21300000, guid: c2243e9d235464bf2b0b3fa33999b630, type: 3}
+  - {fileID: 21300000, guid: 766c789dec4d948a7adb444577ca0cea, type: 3}
+  - {fileID: 21300000, guid: 6b0cf2b0b28e34a45b3871f38505ed9a, type: 3}
   framesPerSecond: 3
   respawnTime: 6
   bobHeight: 0.12

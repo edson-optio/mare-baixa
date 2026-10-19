@@ -70,39 +70,39 @@ MonoBehaviour:
   shellSprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: 08397c72b1a314266aaaefbcc3e48795, type: 3}
-  - {fileID: 21300000, guid: ef251296dea6f4fd39254025eb55a312, type: 3}
+  - {fileID: 21300000, guid: b1d081a88acc34637a8ec38f52dce6f0, type: 3}
   - {fileID: 21300000, guid: e058ad2c4362a4ebdb18ebaf80839b9a, type: 3}
-  - {fileID: 21300000, guid: 71986930db65a4396bb593e91c1e184d, type: 3}
-  - {fileID: 21300000, guid: aa84beb1b489b4021a7c4b37b8e7aeb0, type: 3}
+  - {fileID: 21300000, guid: b5d6dca7fb40d4161ab23fd4040c7ce3, type: 3}
+  - {fileID: 21300000, guid: a37b5221c2d0a43e69e293f4367db13f, type: 3}
   shardSprites:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 17a6de2439def47fba4d56eedb715bd2, type: 3}
-  - {fileID: 21300000, guid: 14f9a68a01a174841b7bf6e080e7f99a, type: 3}
-  - {fileID: 21300000, guid: 5f393338388fe424984dc715040332f4, type: 3}
-  - {fileID: 21300000, guid: 2c3907d7a87a546649aa8ac739768987, type: 3}
-  - {fileID: 21300000, guid: bcfab1b8ae46445caa18d931ab15755d, type: 3}
+  - {fileID: 21300000, guid: b1dff5c87c97348b0840d427543d0ceb, type: 3}
+  - {fileID: 21300000, guid: 1e7b206ed83b84274943a630c58f8c9c, type: 3}
+  - {fileID: 21300000, guid: 92aea96e069fc4cb6a526b4dd89e0725, type: 3}
+  - {fileID: 21300000, guid: cb35805a0a09946cd8fb2a18b44ef993, type: 3}
+  - {fileID: 21300000, guid: b6ce31380dd5d43a3afede9e08498735, type: 3}
   sparkFrames:
-  - {fileID: 21300000, guid: d1eb2237389dc444c8fdf10752dc5859, type: 3}
-  - {fileID: 21300000, guid: f1ed301cb1a34463696ad54ab3cc747e, type: 3}
-  - {fileID: 21300000, guid: 45e543024bc7c4773a49260f07df2689, type: 3}
+  - {fileID: 21300000, guid: 424b7b8fa24cf4832a0e9ab0778efb70, type: 3}
+  - {fileID: 21300000, guid: 96f8f07faa02f49f9b8a3fdda76c08f5, type: 3}
+  - {fileID: 21300000, guid: a1bb3a6c33a2f49b7b0b88758834a12b, type: 3}
   seaweedFrames:
-  - {fileID: 21300000, guid: 3eca9026eed00441c85136045a71712c, type: 3}
-  - {fileID: 21300000, guid: 32eaedcf088fb4596ac1f484967933c4, type: 3}
-  coral1: {fileID: 21300000, guid: 5721e518ee5c94abab7f7dede76f624b, type: 3}
-  coral2: {fileID: 21300000, guid: e79fff31b9c1d47208c766e70d0e082d, type: 3}
-  sign: {fileID: 21300000, guid: 60d2d8bca8d1a4316ac10efe241631b4, type: 3}
-  bottleHouse: {fileID: 21300000, guid: 600a06475c5c64a09aaab5ff2ee6d16d, type: 3}
-  car: {fileID: 21300000, guid: 99adc67433b614b599dd6fa95cd024d7, type: 3}
-  trafficLight: {fileID: 21300000, guid: 5c754326e7371416bae021a7d471d204, type: 3}
-  bioCoral: {fileID: 21300000, guid: 06e25afdd6c274432ad0667139fc344c, type: 3}
-  trash: {fileID: 21300000, guid: e82d07613e6e04893b3e361848ddca3c, type: 3}
-  white: {fileID: 21300000, guid: 2ae1d88e308474a0499c06ea674b05cc, type: 3}
+  - {fileID: 21300000, guid: 30003141d9aed4a4b852c7677b74f94c, type: 3}
+  - {fileID: 21300000, guid: be3c79e1042fd4267aba1ef1b406a9c1, type: 3}
+  coral1: {fileID: 21300000, guid: 2d76a8f6e008d4c4b8886b241f263c86, type: 3}
+  coral2: {fileID: 21300000, guid: 3280795ede7a74d1fb3a612d28487818, type: 3}
+  sign: {fileID: 21300000, guid: 9a8e119f6c0244ca0ac6c723aa505c3e, type: 3}
+  bottleHouse: {fileID: 21300000, guid: 95aae8b5eb95b4a399ef1318fba4b6be, type: 3}
+  car: {fileID: 21300000, guid: 21a4409b53b144ecc9f0cee4b1b9a99e, type: 3}
+  trafficLight: {fileID: 21300000, guid: 97814e54944914f98ad8bfbdcf48dcff, type: 3}
+  bioCoral: {fileID: 21300000, guid: 9288e535f1eb5408f9f5c53d5267c94c, type: 3}
+  trash: {fileID: 21300000, guid: 49441a84495864b40a42021afef89923, type: 3}
+  white: {fileID: 21300000, guid: d412f934f436a4c43a8e7bc788bdcd29, type: 3}
   waterSurface:
-  - {fileID: 21300000, guid: e539b5e85ca0749f5baedf351ab64139, type: 3}
-  - {fileID: 21300000, guid: 8f725a5fbf3e64f3092ca6815138ff4a, type: 3}
-  pearlIcon: {fileID: 21300000, guid: 82ec7576e9c2a4a98ac7072b696506b1, type: 3}
-  algaIcon: {fileID: 21300000, guid: 91a827b032c8d4b2288314a7daccb6a2, type: 3}
-  bubbleIcon: {fileID: 21300000, guid: 39d7dd40773ea41998dc25c71b36f52a, type: 3}
+  - {fileID: 21300000, guid: 9ed88d505c262468399bdcd87823833a, type: 3}
+  - {fileID: 21300000, guid: 0a5a4be58cbd24afc8ef418bec367134, type: 3}
+  pearlIcon: {fileID: 21300000, guid: cfafe3b9d099e4d0d966a7699e226855, type: 3}
+  algaIcon: {fileID: 21300000, guid: 2c3151eb1447343d094058a44a37cb6e, type: 3}
+  bubbleIcon: {fileID: 21300000, guid: 766c789dec4d948a7adb444577ca0cea, type: 3}
   conceptArt: {fileID: 21300000, guid: 0761f7e3dc32e4667b6f0e0e61cbb25f, type: 3}
   portraits:
   - {fileID: 21300000, guid: c1a684f71624140c8a5dba25d9a66cef, type: 3}

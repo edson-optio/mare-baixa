@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 036db64dcf5ee4838801bc8d729e24a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 371400b687659410c8720bba2a662d27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,11 +173,15 @@ MonoBehaviour:
   pearlsMin: 1
   pearlsMax: 2
   calmFrames:
-  - {fileID: 21300000, guid: 036db64dcf5ee4838801bc8d729e24a8, type: 3}
-  - {fileID: 21300000, guid: b6af28c8188604d7688dad57aa05f80f, type: 3}
+  - {fileID: 21300000, guid: 371400b687659410c8720bba2a662d27, type: 3}
+  - {fileID: 21300000, guid: f6d5cac7545fb4accb3b01c489c06e3c, type: 3}
+  - {fileID: 21300000, guid: 752149720635c4f5dbe5da3c09763a47, type: 3}
+  - {fileID: 21300000, guid: 6c0c3801f16304938b2235de2738f0d4, type: 3}
   chargedFrames:
-  - {fileID: 21300000, guid: f8b7697820889443caf68681a60353cf, type: 3}
-  - {fileID: 21300000, guid: 0807d86f05a5f47eaa16f248ec75e60b, type: 3}
+  - {fileID: 21300000, guid: b6e13859e8d86464f9d08f334aaa5cc1, type: 3}
+  - {fileID: 21300000, guid: 3027298cd12324dc991d4e50c230743c, type: 3}
+  - {fileID: 21300000, guid: 7a32db66e57cb40f59c869c8ef86af24, type: 3}
+  - {fileID: 21300000, guid: ae961f5f0568245c4b120fffb3965a6a, type: 3}
   rangeX: 2
   rangeY: 0.6
   driftPeriod: 6

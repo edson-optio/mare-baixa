@@ -1,0 +1,297 @@
+{
+  "grupo": "chefes",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "colosso-anda-1.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        15,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "d6a1a1399c8a540943ed7d6967812b37584d0bf01275585f195df52f0e9c6a3a"
+    },
+    {
+      "arquivo": "colosso-anda-2.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        15,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "b42543ef395eda914e43ec650339d8e83f641b687fd0c6c866538e37c17de699"
+    },
+    {
+      "arquivo": "colosso-anda-3.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        15,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "c040e9055fd2e5d9410b2156237becaf9581548ff2f32eeceb0d8822ce431e0b"
+    },
+    {
+      "arquivo": "colosso-anda-4.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        15,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "c672b2c08a8aabeb5dc502632cd1d6ac492d1e5f11b42dc856fa4e451a7ec9d0"
+    },
+    {
+      "arquivo": "colosso-rola-1.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        21,
+        17,
+        171,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "0874cff6f55496df3d3874587dbe5efb0636cb244ef39172611b2767723f8102"
+    },
+    {
+      "arquivo": "colosso-rola-2.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        24,
+        10,
+        167,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "977b9aa59710a05d1d50d7fd4f28fb4be0bb3bcd6816e5435616987cb9b00182"
+    },
+    {
+      "arquivo": "colosso-rola-3.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        21,
+        17,
+        171,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "3c84c0d7f99ae6acd76a5e0f70241415a40b6171a69fc571e981b1f0687d1c48"
+    },
+    {
+      "arquivo": "colosso-rola-4.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        25,
+        10,
+        168,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "c7036a92d39cb91f4cc3791e8b620606ef1a72ca4751030f055505d0cfad0bee"
+    },
+    {
+      "arquivo": "colosso-tonto.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        13,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "9cc8c2a75590741a90200111fb868133909ac2843d0a96de0435f59b0853ddac"
+    },
+    {
+      "arquivo": "colosso-aviso.png",
+      "tamanho": [
+        192,
+        160
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        11,
+        190,
+        160
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "615ac373a3f53ebc9b73b357dd56d93c179f3176427b331f2c8378b512b8e3c4"
+    },
+    {
+      "arquivo": "polvo-corpo.png",
+      "tamanho": [
+        384,
+        256
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        16,
+        382,
+        256
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "ad66c5f602f2bb7d60b568dcbd254d877ae47fa0d19b1431df67a02dfdcf0563"
+    },
+    {
+      "arquivo": "polvo-olho-aberto.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        7,
+        62,
+        57
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "29bff83d72061846bca87593a242ec1cdf956461289dd3621816a329f03bc2a3"
+    },
+    {
+      "arquivo": "polvo-olho-fechado.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        9,
+        62,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "07baf3e8185396311121cd4206a9c16c3b75d3a26ad4af94690fc8a94dc94d59"
+    },
+    {
+      "arquivo": "polvo-tinta.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 8,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        9,
+        30,
+        22
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "43f3fe8f28151d0eed348487ab6465c4534fbd7d06598504243e4fca3fe50cf1"
+    }
+  ],
+  "fontes": {
+    "colosso-anda-1": "design/sprites/v02/originais/colosso-anda-1.png",
+    "colosso-rola-1": "design/sprites/v02/originais/colosso-rola-1.png",
+    "colosso-tonto": "design/sprites/v02/originais/colosso-tonto.png",
+    "colosso-aviso": "design/sprites/v02/originais/colosso-aviso.png",
+    "polvo-corpo": "design/sprites/v02/originais/polvo-corpo.png",
+    "polvo-olho-aberto": "design/sprites/v02/originais/polvo-olho-aberto.png",
+    "polvo-olho-fechado": "design/sprites/v02/originais/polvo-olho-fechado.png",
+    "polvo-tinta": "design/sprites/v02/originais/polvo-tinta.png"
+  },
+  "resampling": "NEAREST"
+}

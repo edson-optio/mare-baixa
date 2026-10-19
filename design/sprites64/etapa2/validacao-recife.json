@@ -1,0 +1,292 @@
+{
+  "grupo": "recife",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "agua-viva-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        8,
+        4,
+        54,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "5e651ea6a0b4385017d891a1fe989dcdd18bd746887846994254af4bb01e227a"
+    },
+    {
+      "arquivo": "agua-viva-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        7,
+        4,
+        53,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "da7c79a165e1dfd43d1d633abf22cde9267e2ef4a72cd1ba01f1003211e7cadf"
+    },
+    {
+      "arquivo": "agua-viva-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        9,
+        4,
+        56,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "2847c11239b24687482f18a7f5cc622c1122eb1bb30fec65463fd999275d46e2"
+    },
+    {
+      "arquivo": "agua-viva-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        11,
+        4,
+        56,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "070f60d3dbe3c49839fb96179a947cfce3e9299e6a95344762ee6f1bc6f11182"
+    },
+    {
+      "arquivo": "agua-viva-carregada-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        4,
+        61,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "299a01a8be4494b3dce59070764bc98370ce378c6b25f4cdd33051ef8e24c9ec"
+    },
+    {
+      "arquivo": "agua-viva-carregada-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        4,
+        59,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "3c97aa29c7777cb4664185fe5d8f98c77a3099d37351e4514fe1b12d34017e53"
+    },
+    {
+      "arquivo": "agua-viva-carregada-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        4,
+        61,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "973f52d837a0290be8608cfad9d1b4f9afd667fac5d58bec5ed43bcd922305e3"
+    },
+    {
+      "arquivo": "agua-viva-carregada-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        4,
+        59,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "2100e7bdec17680ca4a78ceb78080eff20a24ec3f6b834f41a48085cc9cfd42f"
+    },
+    {
+      "arquivo": "baiacu-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        10,
+        58,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "42c58feef878571124a00ce367518008b0f9f2ca262377c2e1c5e257626a3717"
+    },
+    {
+      "arquivo": "baiacu-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        10,
+        58,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "1810a82ad4d91a2d50980bb4bacf2dd93f3f8aae3ef1a6b48b78477717e13814"
+    },
+    {
+      "arquivo": "baiacu-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        10,
+        58,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "a74f57a310d46ede51e7a368e80943ff033dfd53887bdecf18f40e5ccd43c9e8"
+    },
+    {
+      "arquivo": "baiacu-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        10,
+        58,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "04a41354436dbd9ef5161cf6bc82f705fe6979062c0b5840c9c5ea2ccf3c99da"
+    },
+    {
+      "arquivo": "baiacu-inflado.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        63,
+        63
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "c7f478956346d7e801231e1f830274f2ec76e930a0bf0481f5a46058aa915ea9"
+    },
+    {
+      "arquivo": "espinho.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        30,
+        24
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "75fc2a1c1ccea6819ec525df20216de5a2a36af2951d6627b1e3b66965c063e1"
+    }
+  ],
+  "fontes": {
+    "agua-viva-base": "design/sprites/originais/agua-viva-base.png",
+    "baiacu-base": "design/sprites/originais/baiacu-base.png",
+    "baiacu-inflado": "design/sprites/originais/baiacu-inflado.png"
+  },
+  "resampling": "NEAREST"
+}

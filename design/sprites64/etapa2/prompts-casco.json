@@ -1,0 +1,30 @@
+{
+  "tool": "image_gen integrado",
+  "assets": [
+    {
+      "name": "casco-pulo",
+      "prompt": "Edit this EXACT shell-less orange hermit crab sprite: JUMP: orange thin legs tucked up in a jumping pose, pincers slightly lifted. Same head, two cream eyes on tall stalks, orange body, salmon soft abdomen left, silhouette and palette. Keep all head and torso positions and size fixed on square canvas. No shell. Keep full character within 64x64 logical grid enlarged8x, feet at bottom baseline even for air poses (game pivot). Broad contiguous readable orange pincers, dark #101B2D outline, at most24colors, no noise, no antialiasing, no text no ground shadow. Transparent background. Single frame.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-50ceaa5d-df37-47f9-af8d-279ba1ca6f6a.png"
+    },
+    {
+      "name": "casco-ataque-2",
+      "prompt": "Edit this EXACT shell-less orange hermit crab sprite: ATTACK CONTACT: nearer big orange pincer thrust far to the RIGHT edge, wide open jaws, clear strong attack silhouette. Same head, two cream eyes on tall stalks, orange body, salmon soft abdomen left, silhouette and palette. Keep all head and torso positions and size fixed on square canvas. No shell. Keep full character within 64x64 logical grid enlarged8x, feet at bottom baseline even for air poses (game pivot). Broad contiguous readable orange pincers, dark #101B2D outline, at most24colors, no noise, no antialiasing, no text no ground shadow. Transparent background. Single frame.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-01d99368-7005-454d-816a-4b275b695c28.png"
+    },
+    {
+      "name": "casco-ataque-3",
+      "prompt": "Edit this EXACT shell-less orange hermit crab sprite: ATTACK FOLLOW THROUGH: nearer big orange pincer extended to RIGHT but closing jaws and lowering slightly. Same head, two cream eyes on tall stalks, orange body, salmon soft abdomen left, silhouette and palette. Keep all head and torso positions and size fixed on square canvas. No shell. Keep full character within 64x64 logical grid enlarged8x, feet at bottom baseline even for air poses (game pivot). Broad contiguous readable orange pincers, dark #101B2D outline, at most24colors, no noise, no antialiasing, no text no ground shadow. Transparent background. Single frame.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-4c294025-c634-4131-b3ba-3cb913671492.png"
+    },
+    {
+      "name": "casco-queda",
+      "prompt": "Edit this EXACT shell-less orange hermit crab sprite: FALL: orange thin legs stretched down and spread, pincers out for balance. Same head, two cream eyes on tall stalks, orange body, salmon soft abdomen left, silhouette and palette. Keep all head and torso positions and size fixed on square canvas. No shell. Keep full character within 64x64 logical grid enlarged8x, feet at bottom baseline even for air poses (game pivot). Broad contiguous readable orange pincers, dark #101B2D outline, at most24colors, no noise, no antialiasing, no text no ground shadow. Transparent background. Single frame.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-b705e550-709c-4bdb-82f7-4e466471b6dd.png"
+    },
+    {
+      "name": "casco-ataque-1",
+      "prompt": "Edit this EXACT shell-less orange hermit crab sprite: ATTACK WINDUP: nearer big orange pincer drawn back ready to strike. Same head, two cream eyes on tall stalks, orange body, salmon soft abdomen left, silhouette and palette. Keep all head and torso positions and size fixed on square canvas. No shell. Keep full character within 64x64 logical grid enlarged8x, feet at bottom baseline even for air poses (game pivot). Broad contiguous readable orange pincers, dark #101B2D outline, at most24colors, no noise, no antialiasing, no text no ground shadow. Transparent background. Single frame.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-6cb0611a-6925-4821-80ac-ac6ee5402a78.png"
+    }
+  ]
+}

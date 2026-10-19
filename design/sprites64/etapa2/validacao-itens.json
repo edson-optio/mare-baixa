@@ -1,0 +1,565 @@
+{
+  "grupo": "itens",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "agua-superficie-1.png",
+      "tamanho": [
+        64,
+        16
+      ],
+      "cores_opacas": 1,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        1,
+        64,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "ad6257131c6fa32fed490b4bf6e0361da1a3887ebe3970e87d2d9e859c8c535d"
+    },
+    {
+      "arquivo": "agua-superficie-2.png",
+      "tamanho": [
+        64,
+        16
+      ],
+      "cores_opacas": 1,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        1,
+        64,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "6c1d70e312c4a5ea4ce0f37142407959584ef83fa7ff3ff78c908a91bf17c5fe"
+    },
+    {
+      "arquivo": "agua.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 1,
+      "alpha": [
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "10ac492948521f143ef60e8ee58190a4ea80ff9e973345b4236226c24af6813d"
+    },
+    {
+      "arquivo": "alga-decor-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        7,
+        2,
+        56,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "bc2c2f5759629029ab806cabf28fd5345b70caad0d151d0dd4e7d7aac0bd75f8"
+    },
+    {
+      "arquivo": "alga-decor-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 6,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        55,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "e55b672cc4516dc0281d33edb6f4896c79e89bab501109dcf4a40591a3eef5a5"
+    },
+    {
+      "arquivo": "alga.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        2,
+        26,
+        30
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "a3e2a8670be7dc90da39f2908367350fa263120579d51eb4c5b32ed14631de27"
+    },
+    {
+      "arquivo": "bau-aberto.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "870f4d6ca325ec901eb941ac9b0746698523565a471da68347da9dee483a869c"
+    },
+    {
+      "arquivo": "bau-fechado.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        16,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "e3de577e5e4cd2e37d992b123533ccf3b158c03d4d44c2648f60a176835ee545"
+    },
+    {
+      "arquivo": "bolha-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        6,
+        58,
+        58
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "4f5f1039da4d7b1833e27cc32dac72f39ec1679ec360bf5de6aed42ffecf538d"
+    },
+    {
+      "arquivo": "bolha-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        7,
+        60,
+        57
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "527330333a9b014a3687fc6fc763f045b1b45001f31ca0818f5b34c9af84b4cb"
+    },
+    {
+      "arquivo": "brilho-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        6,
+        27,
+        27
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "c70e35468f9383ed6e6cd17640bbc7a9846bf5917aa9e321000c5099e221b8d8"
+    },
+    {
+      "arquivo": "brilho-2.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 3,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        31,
+        31
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "2f8010f42be91762033755568c57cbd3172857271e9b45e0d6a69a69374b8c12"
+    },
+    {
+      "arquivo": "brilho-3.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 3,
+      "alpha": [
+        0,
+        140
+      ],
+      "bbox": [
+        9,
+        8,
+        25,
+        24
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "5138db792f587a3edb190d9e20bb6174a6f9d33be33911d9a76c4b1028d85083"
+    },
+    {
+      "arquivo": "carro.png",
+      "tamanho": [
+        128,
+        64
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        16,
+        126,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "e8c411950f81c870ace60ef99e21a7b156fa90b9db9b2d5065aed9efa0918c1f"
+    },
+    {
+      "arquivo": "casa-garrafa.png",
+      "tamanho": [
+        128,
+        128
+      ],
+      "cores_opacas": 20,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        24,
+        2,
+        104,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "0e27d560c2ee6ef923c92537dadbd71b725b2c70da508d474c34b4d19fc1d1d6"
+    },
+    {
+      "arquivo": "coral-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 12,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        3,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "360784f0b4f6be6bc5fe608c34eaa46f34b0b3256b2560a655de172c433456eb"
+    },
+    {
+      "arquivo": "coral-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "60bc96b35e3885fbdd8322729f6bef9979e5fc2a774cf3244649929b7f00f090"
+    },
+    {
+      "arquivo": "coral-bio.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "01e55f47d26dd69b790111e0862f5d5b6fd763d9cebedade6f3c3573f229f086"
+    },
+    {
+      "arquivo": "fonte-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        3,
+        0,
+        61,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "0e3b9550c4e8700ae7e42e7ebf0dd3cc1985c5c42d47c6bf516e7372dcaa8543"
+    },
+    {
+      "arquivo": "fonte-seca.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 13,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        9,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "b2dd6e64e11174eecf472d683a27f4530279e5c96a3a4f1e6f22766d2fc18de3"
+    },
+    {
+      "arquivo": "lixo.png",
+      "tamanho": [
+        64,
+        32
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        0,
+        59,
+        32
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "df99bd20abaa056ed3210571d43eb53279c6d61993accb511acc90809f823ced"
+    },
+    {
+      "arquivo": "perola-1.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        2,
+        29,
+        27
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "c0220cfcad5027cbe565fc6919271500fb725b92c4e30581ddcf7abf23a60839"
+    },
+    {
+      "arquivo": "perola-2.png",
+      "tamanho": [
+        32,
+        32
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        0,
+        31,
+        27
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "b6290175f28af9e38a21bbfcc6c7c70d4164695ac7458f4ca50d7f5272dccdfd"
+    },
+    {
+      "arquivo": "placa.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        11,
+        2,
+        52,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "9d05913accdaaf3cb108d0200578283a0f783f7bd9dd3c7ebc1320a97b6cb891"
+    },
+    {
+      "arquivo": "saida-fechada.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        62,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "c98ea3b5b5b3b8c767981b3a06ce97ccb5538f8713fc34433eac6fb3bbf66e4b"
+    },
+    {
+      "arquivo": "saida.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        2,
+        62,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "4327eac24f5457543873495e431aa3be1450b0961fe3f4552a8eb4db37b33539"
+    },
+    {
+      "arquivo": "semaforo.png",
+      "tamanho": [
+        32,
+        96
+      ],
+      "cores_opacas": 10,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        0,
+        27,
+        96
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "85d036ea932221aecb64abd003b2065968aa26c43f915050ef39eee7d4b0c42e"
+    }
+  ],
+  "fontes": {
+    "alga-decor-base": "design/sprites/originais/alga-decor-base.png",
+    "alga": "design/sprites/originais/alga.png",
+    "bau-aberto": "design/sprites/originais/bau-aberto.png",
+    "bau-fechado": "design/sprites/originais/bau-fechado.png",
+    "bolha-base": "design/sprites/originais/bolha-base.png",
+    "carro": "design/sprites/v02/originais/carro.png",
+    "casa-garrafa-corrigida": "design/sprites/originais/casa-garrafa-corrigida.png",
+    "coral-1": "design/sprites/originais/coral-1.png",
+    "coral-2": "design/sprites/originais/coral-2.png",
+    "coral-bio": "design/sprites/v02/originais/coral-bio.png",
+    "fonte-1": "design/sprites/v02/originais/fonte-1.png",
+    "fonte-seca": "design/sprites/v02/originais/fonte-seca.png",
+    "lixo": "design/sprites/v02/originais/lixo.png",
+    "perola-base": "design/sprites/originais/perola-base.png",
+    "placa": "design/sprites/originais/placa.png",
+    "saida": "design/sprites/originais/saida.png",
+    "semaforo": "design/sprites/v02/originais/semaforo.png"
+  },
+  "resampling": "NEAREST"
+}

@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 07fe11c25a13445cbad952dce5233ca6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f4866d1a4b094fe8b5e77617979868e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.Valvula
   frames:
-  - {fileID: 21300000, guid: 07fe11c25a13445cbad952dce5233ca6, type: 3}
-  - {fileID: 21300000, guid: 2de42c6c83dfb4ff4a1bdc29ec75596b, type: 3}
+  - {fileID: 21300000, guid: 5f4866d1a4b094fe8b5e77617979868e, type: 3}
+  - {fileID: 21300000, guid: 2640fa17ef22c4a0cb763d1cdba04b68, type: 3}
   drainBlocks: 3
   drainHold: 5
   alertRadius: 12

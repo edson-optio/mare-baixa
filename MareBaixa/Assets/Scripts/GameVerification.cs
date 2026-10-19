@@ -490,7 +490,11 @@ namespace MareBaixa
                 if (boss != null)
                 {
                     Check(!run.ExitOpen, "Arena " + run.Room.RoomName + ": a saída fica fechada com o chefe vivo");
-                    yield return new WaitForSeconds(2f);
+                    // Chega perto para o chefe acordar e caber na captura.
+                    casco.TeleportTo(new Vector2(Mathf.Max(2.5f, boss.transform.position.x - 6f), run.Room.StartPoint.y));
+                    yield return new WaitForSeconds(2.5f);
+                    Check(boss.GetComponentInChildren<SpriteRenderer>() != null && boss.GetComponentInChildren<SpriteRenderer>().isVisible,
+                        "Arena " + run.Room.RoomName + ": o chefe aparece na tela");
                     yield return Capture("chefe-" + run.Rooms[i].name);
                     typeof(Boss).GetMethod("DefeatNow")?.Invoke(boss, null);
                     yield return new WaitForSeconds(2.5f);

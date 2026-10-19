@@ -1,0 +1,93 @@
+{
+  "grupo": "vila",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "vovo-buzia.png",
+      "tamanho": [
+        96,
+        96
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        5,
+        7,
+        91,
+        96
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "784e9defa383739644f0da4b2db5af625682c2e1be671259847800e6db9f0a73"
+    },
+    {
+      "arquivo": "ostracia.png",
+      "tamanho": [
+        96,
+        96
+      ],
+      "cores_opacas": 24,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        4,
+        9,
+        92,
+        96
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "8c44a56e34c59ed586aefffb1090c6c6ff5845d2266ca7d38d8069005143f39a"
+    },
+    {
+      "arquivo": "dona-lagosta.png",
+      "tamanho": [
+        96,
+        96
+      ],
+      "cores_opacas": 16,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        23,
+        94,
+        96
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "00693707672b12efe9dec16d814309405abd594c6cbd6cf1e73774acee2c6946"
+    },
+    {
+      "arquivo": "bolota.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        14,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "ca0dacb4bbabf01b3d030a0b1c689685669f1641c401d9e3be6a81d7bf60fd3c"
+    }
+  ],
+  "fontes": {
+    "vovo-buzia": "design/sprites/originais/vovo-buzia.png",
+    "ostracia": "design/sprites/originais/ostracia.png",
+    "dona-lagosta": "design/sprites/originais/dona-lagosta.png",
+    "bolota": "design/sprites/originais/bolota.png"
+  },
+  "resampling": "NEAREST"
+}

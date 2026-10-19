@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 54cf0b53d71b541818dee491043c3c27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 338c234cfc8454941ac98a7e8512d702, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f849e7f58b9284b80b628128477f3d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.Chest
-  closedSprite: {fileID: 21300000, guid: 54cf0b53d71b541818dee491043c3c27, type: 3}
-  openSprite: {fileID: 21300000, guid: 71cddf38a5ac94bfe82ecfebba5b63ef, type: 3}
+  closedSprite: {fileID: 21300000, guid: 338c234cfc8454941ac98a7e8512d702, type: 3}
+  openSprite: {fileID: 21300000, guid: 1535f292a03914aa29e66ad004e0ff9f, type: 3}
   pearls: 5

@@ -1,0 +1,268 @@
+{
+  "sprites": [
+    {
+      "nome": "casco-parado-1",
+      "novo_box": [
+        12,
+        134,
+        256,
+        256
+      ],
+      "antigo": "casco-parado-1",
+      "antigo_box": [
+        276,
+        134,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-parado-2",
+      "novo_box": [
+        812,
+        134,
+        256,
+        256
+      ],
+      "antigo": "casco-parado-2",
+      "antigo_box": [
+        1076,
+        134,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-1",
+      "novo_box": [
+        12,
+        454,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-1",
+      "antigo_box": [
+        276,
+        454,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-2",
+      "novo_box": [
+        812,
+        454,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-2",
+      "antigo_box": [
+        1076,
+        454,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-3",
+      "novo_box": [
+        12,
+        774,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-3",
+      "antigo_box": [
+        276,
+        774,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-4",
+      "novo_box": [
+        812,
+        774,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-4",
+      "antigo_box": [
+        1076,
+        774,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-5",
+      "novo_box": [
+        12,
+        1094,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-1",
+      "antigo_box": [
+        276,
+        1094,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "casco-anda-6",
+      "novo_box": [
+        812,
+        1094,
+        256,
+        256
+      ],
+      "antigo": "casco-anda-2",
+      "antigo_box": [
+        1076,
+        1094,
+        256,
+        256
+      ],
+      "referencia": "casco"
+    },
+    {
+      "nome": "concha-comum",
+      "novo_box": [
+        12,
+        1414,
+        256,
+        256
+      ],
+      "antigo": "concha-comum",
+      "antigo_box": [
+        276,
+        1414,
+        256,
+        256
+      ],
+      "referencia": "comum"
+    },
+    {
+      "nome": "concha-espiral",
+      "novo_box": [
+        812,
+        1414,
+        256,
+        256
+      ],
+      "antigo": "concha-espiral",
+      "antigo_box": [
+        1076,
+        1414,
+        256,
+        256
+      ],
+      "referencia": "espiral-completa"
+    },
+    {
+      "nome": "siri-1",
+      "novo_box": [
+        12,
+        1734,
+        256,
+        256
+      ],
+      "antigo": "siri-1",
+      "antigo_box": [
+        276,
+        1734,
+        256,
+        256
+      ],
+      "referencia": "siri"
+    },
+    {
+      "nome": "siri-2",
+      "novo_box": [
+        812,
+        1734,
+        256,
+        256
+      ],
+      "antigo": "siri-2",
+      "antigo_box": [
+        1076,
+        1734,
+        256,
+        256
+      ],
+      "referencia": "siri"
+    },
+    {
+      "nome": "siri-3",
+      "novo_box": [
+        12,
+        2054,
+        256,
+        256
+      ],
+      "antigo": "siri-1",
+      "antigo_box": [
+        276,
+        2054,
+        256,
+        256
+      ],
+      "referencia": "siri"
+    },
+    {
+      "nome": "siri-4",
+      "novo_box": [
+        812,
+        2054,
+        256,
+        256
+      ],
+      "antigo": "siri-2",
+      "antigo_box": [
+        1076,
+        2054,
+        256,
+        256
+      ],
+      "referencia": "siri"
+    },
+    {
+      "nome": "siri-garra",
+      "novo_box": [
+        12,
+        2374,
+        256,
+        256
+      ],
+      "antigo": "siri-garra",
+      "antigo_box": [
+        276,
+        2374,
+        256,
+        256
+      ],
+      "referencia": "siri"
+    }
+  ],
+  "caminhada_box": [
+    160,
+    2716,
+    1280,
+    360
+  ],
+  "novo_ampliacao": 4,
+  "antigo_ampliacao": 8,
+  "jogo_ampliacao": 2
+}

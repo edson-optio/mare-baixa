@@ -189,7 +189,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c6507093d105a4f5c977f37a609b98e3, type: 3}
   - {fileID: 21300000, guid: fa7e5da1bf03c41e0b267880d92bf6f1, type: 3}
   claws: {fileID: 21300000, guid: 7d7ae9dacb21c4f8dba5fe087b453adc, type: 3}
-  fleeing: {fileID: 21300000, guid: 151af90e832db4e8abff2343badccd8f, type: 3}
+  fleeing: {fileID: 21300000, guid: e0766bb7beb7b426faff4fb4209617e5, type: 3}
   carried: {fileID: 4952945158093817856}
   artFacesRight: 1
   patrolSpeed: 1.2

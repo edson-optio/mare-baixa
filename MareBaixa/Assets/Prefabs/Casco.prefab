@@ -133,11 +133,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e3a426c402d6406fb5c73e045607f0e, type: 3}
   - {fileID: 21300000, guid: 6cdc53086452e48e9a286e4c65295667, type: 3}
   - {fileID: 21300000, guid: a0fa4861fa1574816a2760717ec6b5d7, type: 3}
-  jumpFrame: {fileID: 21300000, guid: 05d06d824d2ad416484b6296ef6201ce, type: 3}
-  fallFrame: {fileID: 21300000, guid: bdc1eac0d26d643e5af731f098a0d1e6, type: 3}
+  jumpFrame: {fileID: 21300000, guid: a4419e30ccb534db5a3cbe94bafe17b0, type: 3}
+  fallFrame: {fileID: 21300000, guid: f8ed8fd91882a48cf9eaa15c4db49f0b, type: 3}
   attackFrames:
-  - {fileID: 21300000, guid: 0d4c872f1cfc4439a8a82b610a61c359, type: 3}
-  - {fileID: 21300000, guid: 1f59ede0bfecc41e088fc061a299d9ed, type: 3}
+  - {fileID: 21300000, guid: 09f3a5314b32f4baab99f0de3aa18714, type: 3}
+  - {fileID: 21300000, guid: 5e0af941f7a4d40dbaf8bc34c7e732d6, type: 3}
+  - {fileID: 21300000, guid: 4278f7def31ee455da53ca230c1832c4, type: 3}
 --- !u!1 &5184883729015762190
 GameObject:
   m_ObjectHideFlags: 0

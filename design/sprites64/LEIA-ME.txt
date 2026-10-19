@@ -1,0 +1,61 @@
+MARÉ BAIXA v0.3 — CAMPANHA COMPLETA / ETAPA 2
+
+ENTREGA
+105 PNGs em MareBaixa/Assets/Art/Sprites64/, com cópias neste diretório e
+etapa2/prontos/. Cobertura dos 86 nomes de Art/Gerados, mais 19 quadros novos.
+Sete grupos publicados completos e registrados em docs/tarefas/v03-D-arte-64.md:
+Casco/conchas/cacos (23), Recife (14), Cidade (13), Fossa (10), chefes (14),
+NPCs (4), itens/decoração/efeitos (27).
+
+QUADROS NOVOS
+casco-anda: 4 -> 6; casco-ataque: 2 -> 3;
+agua-viva: 2 -> 4; agua-viva-carregada: 2 -> 4; baiacu: 2 -> 4;
+siri: 2 -> 4; pescador: 2 -> 4; tentaculo: 2 -> 4;
+colosso-anda: 2 -> 4; colosso-rola: 2 -> 4.
+Estados únicos, bolhas, brilhos, pérolas, plantas e superfícies de água mantêm
+seus nomes/quantidades. Os novos quadros devem ser usados pelo animador do jogo.
+
+CAMINHADA DO CASCO — AJUSTE APROVADO
+Seis fases contato/descida/passagem e contato oposto/descida/passagem.
+Pernas articuladas refeitas na grade, com pés alternando de x=5 a x=28,
+passagem com pé levantado, bob de 0/1/2 px e pinças com balanço de 1 px.
+Cabeça preserva identidade; conchas usam mesmo canvas/pivô, offset zero.
+65 combinações (13 poses x 5 conchas) verificadas sem sobreposição nos olhos.
+etapa2/casco-caminhada-12fps.gif: corpo, comum e espiral sobre Recife a 2x.
+Tempos GIF 80/80/90/80/80/90 ms = 500 ms por ciclo = exatamente 12 fps médio.
+etapa2/casco-passada.png: os seis quadros para inspeção dos contatos.
+
+REPRODUÇÃO
+Python 3 + Pillow. Executar: python3 design/sprites64/preparar.py
+Prepara e republica os sete grupos na ordem, sem duplicar o registro de entregas.
+Para preparar/revisar um grupo sem publicar:
+python3 design/sprites64/etapa2/preparar.py preparar casco
+Troque casco por recife, cidade, fossa, chefes, vila ou itens.
+Depois: python3 design/sprites64/etapa2/preparar.py publicar casco
+A publicação só aceita um grupo completo com os hashes verificados.
+
+FONTES E ACABAMENTO
+Bases de image_gen integrado em design/sprites/originais,
+design/sprites/v02/originais, design/sprites64/originais e etapa2/originais.
+As cinco poses novas de Casco foram geradas a partir da base aprovada.
+Outros desenhos são reconstruídos das fontes em alta resolução já guardadas,
+não ampliados dos PNGs finais de 32 px. Movimentos e encaixes são acabados na
+grade final. Cacos, espinho, brilhos e máscaras de água seguem o sistema nativo
+simples dos efeitos existentes, reconstruído na grade dobrada pelo script.
+Paletas fixas <=24 cores opacas por PNG; NEAREST exclusivamente; sem dithering.
+Contorno #101B2D, RGB zero fora da silhueta, alpha binário para sprites sólidos.
+Exceções intencionais: correntezas alpha 144, último brilho alpha 140.
+Água e superfície permanecem máscaras BRANCAS; cor/opacidade são do renderer.
+
+REVISÃO
+etapa2/previa-<grupo>.png: sprites de cada lote em fundos claro/escuro.
+etapa2/validacao-<grupo>.json: dimensões, cores, alpha, pés, fontes e hashes.
+etapa2/validacao-final.json: cobertura, duplicação das dimensões, quadros distintos,
+publicação, GIF e reprodução. etapa2/prompts.json indexa os prompts de origem.
+A amostra aprovada continua em amostra.png; LEIA-ME-amostra.txt é o registro
+histórico da Etapa 1. A caminhada final está no GIF e prévia da Etapa 2.
+
+UNITY
+64 pixels por bloco; canvas sempre o dobro do original, tamanho no mundo igual.
+Point, sem compressão/mipmaps, mesmos pivôs. O orquestrador integra os quadros
+adicionais; esta entrega não altera scripts Unity, cenas, .meta, blocos ou cenários.

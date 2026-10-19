@@ -1,0 +1,213 @@
+{
+  "grupo": "fossa",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "pescador-1.png",
+      "tamanho": [
+        96,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        94,
+        58
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "6b66122881c08658f49109746ad7c4eecb149a4b1f59a0400bb41246e4665420"
+    },
+    {
+      "arquivo": "pescador-2.png",
+      "tamanho": [
+        96,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        94,
+        58
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "c5b7d6cbe0bca119fb54ad01ed2eff0b2cef535d3a498026ca64948c36dcfb45"
+    },
+    {
+      "arquivo": "pescador-3.png",
+      "tamanho": [
+        96,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        94,
+        58
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "1e86748a291d0dacd33a9dae02f24904ff8add2ac514eb99fc56ef43ccbeb3ee"
+    },
+    {
+      "arquivo": "pescador-4.png",
+      "tamanho": [
+        96,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        5,
+        94,
+        58
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "e6ebf0f4656477e32701a2e47a63b2afb093f89a1ad53657b0bc9877a01c309f"
+    },
+    {
+      "arquivo": "pescador-boca.png",
+      "tamanho": [
+        96,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        94,
+        60
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "e3b5e0bdd56cb86b3340177c08fc7c48aa20dbb8befb8b3e5db6d7a2c2c576f2"
+    },
+    {
+      "arquivo": "tentaculo-1.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        0,
+        61,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "9b4a55c8e27f0147b54ecf775c38b4f3000ea2844b62cc49b2975501418b4a46"
+    },
+    {
+      "arquivo": "tentaculo-2.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        0,
+        64,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "ade40e146312786eecd6c6d318b5993781bf4b42c8f19ebfe856b6312906de0a"
+    },
+    {
+      "arquivo": "tentaculo-3.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        0,
+        62,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "c1eb17971ee9b43015d3c0e00146f1feaf6b34aab5f6aef061986c18b0926040"
+    },
+    {
+      "arquivo": "tentaculo-4.png",
+      "tamanho": [
+        64,
+        128
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        0,
+        60,
+        128
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "34642a4f5a3a22ed4ae07b28d7a48e6f935ffcbb8a3f71128006ce0df20d72e6"
+    },
+    {
+      "arquivo": "tentaculo-aviso.png",
+      "tamanho": [
+        64,
+        16
+      ],
+      "cores_opacas": 11,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        4,
+        62,
+        16
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "8db1a52e39ca0e85b94985f436b63685047bf62de54e6a50cb157e39e220a361"
+    }
+  ],
+  "fontes": {
+    "pescador-1": "design/sprites/v02/originais/pescador-1.png",
+    "pescador-boca": "design/sprites/v02/originais/pescador-boca.png",
+    "tentaculo-1": "design/sprites/v02/originais/tentaculo-1.png",
+    "tentaculo-aviso": "design/sprites/v02/originais/tentaculo-aviso.png"
+  },
+  "resampling": "NEAREST"
+}

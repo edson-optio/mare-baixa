@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 82ec7576e9c2a4a98ac7072b696506b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfafe3b9d099e4d0d966a7699e226855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.Pearl
   frames:
-  - {fileID: 21300000, guid: 82ec7576e9c2a4a98ac7072b696506b1, type: 3}
-  - {fileID: 21300000, guid: f0d1e962b938f437687120eb48b2588c, type: 3}
+  - {fileID: 21300000, guid: cfafe3b9d099e4d0d966a7699e226855, type: 3}
+  - {fileID: 21300000, guid: d4d47d9056d2e42218b5a62480984f2b, type: 3}
   framesPerSecond: 4
   magnetRadius: 2
   magnetSpeed: 12

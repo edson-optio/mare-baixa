@@ -1,0 +1,40 @@
+{
+  "tool": "image_gen integrado",
+  "assets": [
+    {
+      "name": "casco-parado-2",
+      "prompt": "Edit this EXACT orange hermit crab sprite into idle breathing pose: torso rises slightly one logical pixel, claws relax, feet remain on same floor. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-b94f7081-dfcd-4ca2-968e-95f8eecd0a01.png"
+    },
+    {
+      "name": "casco-anda-3",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 3 PASSING: rear thin leg swings forward beneath body while opposite leg supports body. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-cf2f0205-1aaa-47c2-abf7-06c7940901bf.png"
+    },
+    {
+      "name": "casco-anda-2",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 2 DOWN: thin legs compress and bend at knees, front foot planted, rear foot begins lifting. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-7296c8ba-f911-4524-9890-793f47b5a25b.png"
+    },
+    {
+      "name": "casco-anda-4",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 4 OPPOSITE CONTACT: opposite thin leg extended forward, other leg back. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-c71e73e7-454e-4a12-9993-77032942743c.png"
+    },
+    {
+      "name": "casco-anda-1",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 1 CONTACT: front thin leg extends forward, rear leg back, opposite middle leg planted. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-b79fbe3b-8273-42a5-a713-26269f32ef5e.png"
+    },
+    {
+      "name": "casco-anda-5",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 5 OPPOSITE DOWN: legs compress on opposite supporting foot, trailing foot lifts. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-cc1ae10b-e4fc-400b-8054-1fa5eb6e9b56.png"
+    },
+    {
+      "name": "casco-anda-6",
+      "prompt": "Edit this EXACT orange hermit crab sprite into walking step 6 OPPOSITE PASSING: opposite rear leg swings forward under body, finishing loop. This is an animation frame of the same character. Keep the square canvas, all empty margins, scale, eye shape, eye positions, head, colors, abdomen, and big pincers EXACTLY registered. Change mainly the THIN WALKING LEGS in the bottom left quadrant, do not redesign character or add a shell. At least one foot must touch the bottom edge of the canvas as in reference. Maintain all artwork inside same frame. Logical pixel grid 64x64 enlarged 8x, nearest-neighbor pixel art, #101B2D outline, no antialiasing, no noise, no text. Transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-6f64dd8d-f628-4cb6-b9b1-b7e31f043ea6.png"
+    }
+  ]
+}

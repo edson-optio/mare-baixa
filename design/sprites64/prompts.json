@@ -1,0 +1,34 @@
+{
+  "tool": "image_gen integrado",
+  "stage": 1,
+  "assets": [
+    {
+      "name": "casco-parado-1",
+      "ref": "casco",
+      "desc": "Extract and redraw ONLY this SAME shell-less orange hermit crab, facing RIGHT, isolated. Preserve his two large cream eyes on tall orange stalks, friendly small smile, TWO broad orange pincers with readable dark splits, thin orange legs, and soft curled salmon abdomen at LEFT. NO HARD SHELL. Keep exactly this appealing silhouette, broad head and solid continuous limbs, not spindly. Pose standing relaxed, feet level at bottom. Design for native 64x64 with 4-8 pixel wide eyes. Body and eyes on right, abdomen on left so a shell layer can fit left half.",
+      "prompt": "Use reference image as identity and design guide. Extract and redraw ONLY this SAME shell-less orange hermit crab, facing RIGHT, isolated. Preserve his two large cream eyes on tall orange stalks, friendly small smile, TWO broad orange pincers with readable dark splits, thin orange legs, and soft curled salmon abdomen at LEFT. NO HARD SHELL. Keep exactly this appealing silhouette, broad head and solid continuous limbs, not spindly. Pose standing relaxed, feet level at bottom. Design for native 64x64 with 4-8 pixel wide eyes. Body and eyes on right, abdomen on left so a shell layer can fit left half. Production 2D game pixel art, limited palette at most 24 colors, crisp #101B2D outline, contiguous large color clusters, no noise, no dithering, no antialiasing, no new costume. TRANSPARENT background, no ground, no shadow, no text. Single sprite only, no sheet.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-53e67f55-c8d3-47f9-86df-e1c779c76eb1.png"
+    },
+    {
+      "name": "concha-comum",
+      "ref": "comum",
+      "desc": "Extract ONLY the SAME rounded beige common shell on the crab's back, REMOVE THE ENTIRE CRAB, no eyes no claws no legs. Side view facing RIGHT, warm sandy dome with simple chunky shading and dark lower-right hollow opening, identical silhouette to this reference. The right-lower opening must be a transparent cutaway for the crab torso. Intended to overlay a shell-less crab at LEFT of a 64x64 canvas, shell artwork itself 36x38 pixels.",
+      "prompt": "Use reference image as identity and design guide. Extract ONLY the SAME rounded beige common shell on the crab's back, REMOVE THE ENTIRE CRAB, no eyes no claws no legs. Side view facing RIGHT, warm sandy dome with simple chunky shading and dark lower-right hollow opening, identical silhouette to this reference. The right-lower opening must be a transparent cutaway for the crab torso. Intended to overlay a shell-less crab at LEFT of a 64x64 canvas, shell artwork itself 36x38 pixels. Production 2D game pixel art, limited palette at most 24 colors, crisp #101B2D outline, contiguous large color clusters, no noise, no dithering, no antialiasing, no new costume. TRANSPARENT background, no ground, no shadow, no text. Single sprite only, no sheet.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-c5601c3d-83e1-44e3-91fd-c08bc5738146.png"
+    },
+    {
+      "name": "concha-espiral",
+      "ref": "espiral",
+      "desc": "Extract ONLY the SAME cream beige spiral conch shell on the crab's back, REMOVE THE ENTIRE CRAB no eyes no claws no legs. Side view facing RIGHT, clear large spiral at LEFT and open dark curved lip lower-right, identical silhouette to reference. Right-lower opening transparent cutaway for crab torso. Entire shell visible including leftmost spiral. Intended shell layer at LEFT of 64x64 canvas, shell artwork 36x48 pixels.",
+      "prompt": "Use reference image as identity and design guide. Extract ONLY the SAME cream beige spiral conch shell on the crab's back, REMOVE THE ENTIRE CRAB no eyes no claws no legs. Side view facing RIGHT, clear large spiral at LEFT and open dark curved lip lower-right, identical silhouette to reference. Right-lower opening transparent cutaway for crab torso. Entire shell visible including leftmost spiral. Intended shell layer at LEFT of 64x64 canvas, shell artwork 36x48 pixels. Production 2D game pixel art, limited palette at most 24 colors, crisp #101B2D outline, contiguous large color clusters, no noise, no dithering, no antialiasing, no new costume. TRANSPARENT background, no ground, no shadow, no text. Single sprite only, no sheet.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-4a4326b5-22d8-45e4-9416-03ca07232676.png"
+    },
+    {
+      "name": "siri-1",
+      "ref": "siri",
+      "desc": "Extract and redraw this EXACT blue scavenger crab in FRONT VIEW. Broad squat armored slate-blue central body, TWO massive blue pincers flanking it left and right with rusty orange chips, yellow menacing eyes close together in the center, small ivory mandibles, six short articulated walking legs below. Match reference proportions and personality exactly. Silhouette must be SOLID, connected, heavy and readable, never a thin side-view insect. Standing sideways gait first step. Designed as native 64x64 sprite; full width 60 pixels, body silhouette height roughly 35 pixels anchored to bottom.",
+      "prompt": "Use reference image as identity and design guide. Extract and redraw this EXACT blue scavenger crab in FRONT VIEW. Broad squat armored slate-blue central body, TWO massive blue pincers flanking it left and right with rusty orange chips, yellow menacing eyes close together in the center, small ivory mandibles, six short articulated walking legs below. Match reference proportions and personality exactly. Silhouette must be SOLID, connected, heavy and readable, never a thin side-view insect. Standing sideways gait first step. Designed as native 64x64 sprite; full width 60 pixels, body silhouette height roughly 35 pixels anchored to bottom. Production 2D game pixel art, limited palette at most 24 colors, crisp #101B2D outline, contiguous large color clusters, no noise, no dithering, no antialiasing, no new costume. TRANSPARENT background, no ground, no shadow, no text. Single sprite only, no sheet.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-036012ed-3e89-4d6e-bc91-8eaed7461c83.png"
+    }
+  ]
+}

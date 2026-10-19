@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: eabc1ddc9ad3341e99ad440ce548299a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbc3e1f28315141f2b1768e925f0f976, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -274,9 +274,9 @@ MonoBehaviour:
   maxHp: 3
   pearlsMin: 2
   pearlsMax: 3
-  hidden: {fileID: 21300000, guid: eabc1ddc9ad3341e99ad440ce548299a, type: 3}
-  strike: {fileID: 21300000, guid: 7f8352232f0a94baabc9f390fac9d3a5, type: 3}
-  retract: {fileID: 21300000, guid: 92a464ae73020455e89d0e140417eaf2, type: 3}
+  hidden: {fileID: 21300000, guid: fbc3e1f28315141f2b1768e925f0f976, type: 3}
+  strike: {fileID: 21300000, guid: 8ab3180ea4a3f456693c7dcd8b92f76e, type: 3}
+  retract: {fileID: 21300000, guid: 0c222bb71c7a84b99b71eeb39c77fc18, type: 3}
   body: {fileID: 2351318722058639105}
   sightRange: 3.5
   sightHeight: 1

@@ -1,0 +1,40 @@
+MARÉ BAIXA v0.3 — ETAPA 1 / AMOSTRA PARA APROVAÇÃO DO EDSON
+
+15 PNGs 64x64 em MareBaixa/Assets/Art/Sprites64/ e cópias neste diretório.
+Somente os nomes da Etapa 1 foram produzidos. Etapa 2 não iniciada.
+
+QUADROS
+casco-parado-1..2; casco-anda-1..6; concha-comum; concha-espiral;
+siri-1..4; siri-garra.
+Casco andando passa de 4 para 6 quadros; Siri andando passa de 2 para 4.
+Ataques de Casco e demais sprites ficam fora desta amostra.
+
+PROCESSO
+image_gen integrado usando recortes das pranchas como referência de identidade.
+originais/: gerações intactas. prompts.json, prompts-casco.json e
+prompts-siri.json: solicitações e procedência. referencia/: recortes, bases de
+animação e cópias dos antigos para comparação reproduzível.
+python3 design/sprites64/preparar.py (Python 3 + Pillow) refaz PNGs, validação,
+amostra.png e GIF. previa.py monta a folha; todas as escalas usam NEAREST.
+Sem dithering ou alpha parcial. Contorno #101B2D. Casco e conchas: paleta de
+20 cores; Siri: 18. Transparência RGB zero, pés na linha 63.
+Enquadramento de Casco e encaixes de conchas mantidos no canvas comum 64x64;
+recorte de proteção impede que conchas sobreponham olhos e hastes.
+Ajuste de contato dos pés não desloca o tronco dos quadros editados.
+
+PRÉVIA
+amostra.png: cada novo sprite 4x ao lado do antigo 8x e do recorte da prancha.
+Metade clara/escura em cada célula permite comparar a silhueta. Para quadros
+sem antigo, o texto identifica o quadro de referência (anda-5/6 vs anda-1/2;
+siri-3/4 vs siri-1/2). Recortes das pranchas mantêm proporção e usam NEAREST.
+Parte inferior: os seis passos de Casco com concha comum sobre um pedaço do
+fundo-recife, tudo a 2x; depois todos os encaixes com concha comum/espiral a 2x.
+casco-andando.gif: ciclo animado adicional, também a 2x. amostra-layout.json
+registra coordenadas e escalas. validacao.json registra dimensões, cores,
+alpha, limites e hashes. Imagens auxiliares em referencia/ são inspeções de
+processo; amostra.png é a prévia final para aprovação.
+
+UNITY
+64 pixels por bloco; o tamanho no mundo não muda. Point, sem compressão nem
+mipmaps; preservar pivôs. Nenhum script Unity, cena ou .meta foi alterado.
+Amostra entregue para aprovação; não iniciar a Etapa 2 antes do retorno.

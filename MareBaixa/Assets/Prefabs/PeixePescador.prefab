@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 529c065658db84ad49045b4f6e2b0868, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66b87e8c3e6254348b97c7466df5b61a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,9 +174,11 @@ MonoBehaviour:
   pearlsMin: 2
   pearlsMax: 3
   swimFrames:
-  - {fileID: 21300000, guid: 529c065658db84ad49045b4f6e2b0868, type: 3}
-  - {fileID: 21300000, guid: fa95d2847ed39406fa50f28afba39a72, type: 3}
-  mouthOpen: {fileID: 21300000, guid: d1c8e3bf3cc38440684d506d16b659d8, type: 3}
+  - {fileID: 21300000, guid: 66b87e8c3e6254348b97c7466df5b61a, type: 3}
+  - {fileID: 21300000, guid: 13e98e62dc763405f8ef289f78d1298a, type: 3}
+  - {fileID: 21300000, guid: d8b2f7068117e40c0a3bc7b3e9c131fa, type: 3}
+  - {fileID: 21300000, guid: 909d89c289ea24047b24d66022b4e215, type: 3}
+  mouthOpen: {fileID: 21300000, guid: 3f05e8950f5ff46f49b63386fd9aba28, type: 3}
   lure: {fileID: 3426290455587255567}
   artFacesRight: 1
   rangeX: 1.5

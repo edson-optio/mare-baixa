@@ -1,0 +1,86 @@
+{
+  "data": "2026-10-18",
+  "completo": true,
+  "total": 105,
+  "nomes_originais_cobertos": 86,
+  "quadros_adicionais": [
+    "agua-viva-3.png",
+    "agua-viva-4.png",
+    "agua-viva-carregada-3.png",
+    "agua-viva-carregada-4.png",
+    "baiacu-3.png",
+    "baiacu-4.png",
+    "casco-anda-5.png",
+    "casco-anda-6.png",
+    "casco-ataque-3.png",
+    "colosso-anda-3.png",
+    "colosso-anda-4.png",
+    "colosso-rola-3.png",
+    "colosso-rola-4.png",
+    "pescador-3.png",
+    "pescador-4.png",
+    "siri-3.png",
+    "siri-4.png",
+    "tentaculo-3.png",
+    "tentaculo-4.png"
+  ],
+  "grupos": [
+    {
+      "grupo": "casco",
+      "quantidade": 23
+    },
+    {
+      "grupo": "recife",
+      "quantidade": 14
+    },
+    {
+      "grupo": "cidade",
+      "quantidade": 13
+    },
+    {
+      "grupo": "fossa",
+      "quantidade": 10
+    },
+    {
+      "grupo": "chefes",
+      "quantidade": 14
+    },
+    {
+      "grupo": "vila",
+      "quantidade": 4
+    },
+    {
+      "grupo": "itens",
+      "quantidade": 27
+    }
+  ],
+  "dimensoes_dobradas": true,
+  "copias_design_staging_unity_identicas": true,
+  "reproducao_hashes_identicos": true,
+  "maximo_cores_opacas": 24,
+  "ciclos_quadros_distintos": {
+    "casco-anda": 6,
+    "casco-ataque": 3,
+    "agua-viva": 4,
+    "agua-viva-carregada": 4,
+    "baiacu": 4,
+    "siri": 4,
+    "pescador": 4,
+    "tentaculo": 4,
+    "colosso-anda": 4,
+    "colosso-rola": 4
+  },
+  "casco_cabeca_registrada_com_bob": true,
+  "combinacoes_de_conchas_sem_cobrir_olhos": 65,
+  "gif_tempos_ms": [
+    80,
+    80,
+    90,
+    80,
+    80,
+    90
+  ],
+  "gif_fps_medio": 12,
+  "mascaras_agua_brancas": true,
+  "revisao_visual": "Prévias de sete grupos, contatos do Casco, GIF e ajuste da deformação do Colosso inspecionados."
+}

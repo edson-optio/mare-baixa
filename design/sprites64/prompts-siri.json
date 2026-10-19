@@ -1,0 +1,25 @@
+{
+  "tool": "image_gen integrado",
+  "assets": [
+    {
+      "name": "siri-2",
+      "prompt": "Edit this EXACT front-view armored blue crab sprite into sideways walking gait DOWN: six short legs flex, alternating feet planted. Preserve the same broad heavy continuous silhouette, slate blue body, rusty orange claw chips, central small golden eyes and mandibles. This is the SAME crab not a redesign. Keep square canvas, transparent top padding, scale, body position and ground baseline registered exactly; feet on bottom pixel row. Never change to side view, never make limbs thin or disconnected. Logical 64x64 pixel grid enlarged 8x. Limited 20-color palette, #101B2D outline, no antialiasing no dithering, no ground no shadow no text. Genuine transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-a7e209ae-0c80-4e71-850f-baf334dafa6e.png"
+    },
+    {
+      "name": "siri-3",
+      "prompt": "Edit this EXACT front-view armored blue crab sprite into sideways walking gait OPPOSITE CONTACT: alternate legs extend left and right. Preserve the same broad heavy continuous silhouette, slate blue body, rusty orange claw chips, central small golden eyes and mandibles. This is the SAME crab not a redesign. Keep square canvas, transparent top padding, scale, body position and ground baseline registered exactly; feet on bottom pixel row. Never change to side view, never make limbs thin or disconnected. Logical 64x64 pixel grid enlarged 8x. Limited 20-color palette, #101B2D outline, no antialiasing no dithering, no ground no shadow no text. Genuine transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-fa35d1a2-64ff-49bf-9407-15b25123657c.png"
+    },
+    {
+      "name": "siri-4",
+      "prompt": "Edit this EXACT front-view armored blue crab sprite into sideways walking gait PASSING: alternate legs draw inward for a smooth loop. Preserve the same broad heavy continuous silhouette, slate blue body, rusty orange claw chips, central small golden eyes and mandibles. This is the SAME crab not a redesign. Keep square canvas, transparent top padding, scale, body position and ground baseline registered exactly; feet on bottom pixel row. Never change to side view, never make limbs thin or disconnected. Logical 64x64 pixel grid enlarged 8x. Limited 20-color palette, #101B2D outline, no antialiasing no dithering, no ground no shadow no text. Genuine transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-2200c7f0-17da-4d54-917f-22d1d0a44fee.png"
+    },
+    {
+      "name": "siri-garra",
+      "prompt": "Edit this EXACT front-view armored blue crab sprite into ATTACK: both enormous pincers OPEN their jaws wider and lift slightly; keep central armored body and yellow eyes unchanged. Preserve the same broad heavy continuous silhouette, slate blue body, rusty orange claw chips, central small golden eyes and mandibles. This is the SAME crab not a redesign. Keep square canvas, transparent top padding, scale, body position and ground baseline registered exactly; feet on bottom pixel row. Never change to side view, never make limbs thin or disconnected. Logical 64x64 pixel grid enlarged 8x. Limited 20-color palette, #101B2D outline, no antialiasing no dithering, no ground no shadow no text. Genuine transparent background.",
+      "source": "/Users/edson/.codex/generated_images/01a15171-edb0-7d30-9c46-f21157dbf07d/exec-8c517736-e256-4ad9-8598-91275f2a0477.png"
+    }
+  ]
+}

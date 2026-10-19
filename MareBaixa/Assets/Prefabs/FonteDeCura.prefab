@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: eb62eea6da7d84a168f4c3a2a0ff4123, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0194a79ebc7d749baaf00e64cef43c0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,5 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MareBaixa.FonteDeCura
   radius: 1.4
-  full: {fileID: 21300000, guid: eb62eea6da7d84a168f4c3a2a0ff4123, type: 3}
-  dry: {fileID: 21300000, guid: a528ef884cf0344d385564d8987dd109, type: 3}
+  full: {fileID: 21300000, guid: 0194a79ebc7d749baaf00e64cef43c0e, type: 3}
+  dry: {fileID: 21300000, guid: ee8eca83fec8347e3a47149eee43cd50, type: 3}

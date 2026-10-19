@@ -1,0 +1,294 @@
+{
+  "etapa": 1,
+  "esperados": 15,
+  "entregues": 15,
+  "completo": true,
+  "filtro": "NEAREST",
+  "arquivos": [
+    {
+      "arquivo": "casco-parado-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "1e6d5c7ff65813eb6f2b58c8c403e75d8fce62c6d5a395df7c72cb7a59cb179f"
+    },
+    {
+      "arquivo": "casco-parado-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        59,
+        64
+      ],
+      "sha256": "b82e9f24427265b2facee1c309113fe72bcbdb91c663931fe3e1d86a05a986f9"
+    },
+    {
+      "arquivo": "casco-anda-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "34bce5c57f6b51bf3c3cc11b0cf522bf3284f96a3b38b5b3fa1c8b02c0c03f19"
+    },
+    {
+      "arquivo": "casco-anda-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "c2419e65699e194a91c5e59e579157c526ad2ba3f7db8592a251224a6e209318"
+    },
+    {
+      "arquivo": "casco-anda-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "df121cb3502750083aa53127759af721551f83527b5957fbc6262df288f590cb"
+    },
+    {
+      "arquivo": "casco-anda-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "0602eda7511b6fdf4998e4ee210466a7e1f8d4781fb91e67f20be1cad3f2319a"
+    },
+    {
+      "arquivo": "casco-anda-5.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "7ffcc1738da1154dbec09e5df67c01958449815eab4ab1fcfa35fe8d73d4cfd3"
+    },
+    {
+      "arquivo": "casco-anda-6.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "sha256": "42f2b6b99234b378f139ab963dbc58ea11dde5123de5088570ec19d136e86fe8"
+    },
+    {
+      "arquivo": "concha-comum.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        16,
+        36,
+        54
+      ],
+      "sha256": "a41d8204dc996dbc35c8989f636b3820148737cb872bbddf3b48ac812cfce72d"
+    },
+    {
+      "arquivo": "concha-espiral.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        6,
+        32,
+        54
+      ],
+      "sha256": "e839bec87bd8a6961e3b9d4a6799c309875ada99481b40e6455469dd197da6b0"
+    },
+    {
+      "arquivo": "siri-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        28,
+        62,
+        64
+      ],
+      "sha256": "31c128e9ec3505cb2bb7f076928131e3b0bbd98f9d6819a931cc996896bfd69e"
+    },
+    {
+      "arquivo": "siri-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        28,
+        62,
+        64
+      ],
+      "sha256": "6fc21ce01a84194553d171cd3f055f464292cac74fc17b23121304d7c2300575"
+    },
+    {
+      "arquivo": "siri-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        28,
+        62,
+        64
+      ],
+      "sha256": "27745fd16293971a7c8c65f6ea06953abac6751292df93b081f2b0575e5d3402"
+    },
+    {
+      "arquivo": "siri-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        28,
+        62,
+        64
+      ],
+      "sha256": "6422e0529a76cdd9209f323eba0e977ff1f7b854fb81e8d928daa76beae19e82"
+    },
+    {
+      "arquivo": "siri-garra.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        21,
+        64,
+        64
+      ],
+      "sha256": "8abc664da500fb4a4db8a8e083ce7aa76a0399824101b1fbac46c103fa215a4b"
+    }
+  ]
+}

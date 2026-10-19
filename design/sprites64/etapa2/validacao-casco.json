@@ -1,0 +1,477 @@
+{
+  "grupo": "casco",
+  "completo": true,
+  "arquivos": [
+    {
+      "arquivo": "casco-parado-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        58,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "1e6d5c7ff65813eb6f2b58c8c403e75d8fce62c6d5a395df7c72cb7a59cb179f"
+    },
+    {
+      "arquivo": "casco-parado-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        59,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "b82e9f24427265b2facee1c309113fe72bcbdb91c663931fe3e1d86a05a986f9"
+    },
+    {
+      "arquivo": "casco-anda-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        59,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "99c809dc4dbb1118a6ad72ad6b70fb574b029f58bc0e8abd6d810b5f86cb38cf"
+    },
+    {
+      "arquivo": "casco-anda-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        7,
+        58,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "56432123f876231034d8fd8870064868798c1effbcc5c1f51ba9cb7a900c1be3"
+    },
+    {
+      "arquivo": "casco-anda-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        6,
+        57,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "6ca8e91b96656653cae2ab236d958134b9981f7ae4afd1d91b85b4574fbd5c75"
+    },
+    {
+      "arquivo": "casco-anda-4.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        57,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "62853e28949e2ddf7b98f1b263a21d17ec12c2d4e5bca2f861da47c3d55a3800"
+    },
+    {
+      "arquivo": "casco-anda-5.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        7,
+        58,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "4510f406e5b36a01ad6f120b24e1e0131a9db20bba3e8252111cae2504977d13"
+    },
+    {
+      "arquivo": "casco-anda-6.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        6,
+        59,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "2707ced91a6eab3b4040cff1e2229bc391a8e994063b8ea86667ada1c6ecd852"
+    },
+    {
+      "arquivo": "casco-pulo.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        61,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "7d77f886d1c4cf3f1d47eb0ae47c8e95e0e1dcf82ce0caae68487c53baaa5470"
+    },
+    {
+      "arquivo": "casco-queda.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        63,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "ae1435c5c5d617864992b1ef491f7767664bce28e8006f5a3c1c22ceaad85df1"
+    },
+    {
+      "arquivo": "casco-ataque-1.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "9a6aad6c0046ee06e861a87dddde0d4123aacc3fb05a04f0626f432c1f214950"
+    },
+    {
+      "arquivo": "casco-ataque-2.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        8,
+        64,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "48e514bd02dfc27069c64c62aafc9117120ee9ff92bed157b60b37d25a4a74a2"
+    },
+    {
+      "arquivo": "casco-ataque-3.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 18,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        2,
+        8,
+        62,
+        64
+      ],
+      "pes_ultima_linha": true,
+      "sha256": "573d5c399a4c04f3cfb9a70baa7021ed607971b2c42e48baff0428b0b9fc62ef"
+    },
+    {
+      "arquivo": "concha-comum.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 14,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        16,
+        36,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "a41d8204dc996dbc35c8989f636b3820148737cb872bbddf3b48ac812cfce72d"
+    },
+    {
+      "arquivo": "concha-tampinha.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 17,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        24,
+        36,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "3950b1b802916a2cf5e49b93c4d10e9d0951c30b078d2da0b1c631079a3d9edf"
+    },
+    {
+      "arquivo": "concha-espiral.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        6,
+        32,
+        54
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "e839bec87bd8a6961e3b9d4a6799c309875ada99481b40e6455469dd197da6b0"
+    },
+    {
+      "arquivo": "concha-lata.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 15,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        6,
+        36,
+        53
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "3c71462380b6a4ef8a937708b9b770cc676df0133b248aff565050fe210c0779"
+    },
+    {
+      "arquivo": "concha-lampada.png",
+      "tamanho": [
+        64,
+        64
+      ],
+      "cores_opacas": 19,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        0,
+        14,
+        36,
+        53
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "1cd5f23765fe41bba51d3d3e9cec4dc4b4a7440275fe08f726f121fdfa851c73"
+    },
+    {
+      "arquivo": "caco-areia.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "e79e479a3d4bdd6326c7cd3887454a27aa63dae8ea9c7e0e9ec6ab5508284247"
+    },
+    {
+      "arquivo": "caco-creme.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "ca59864ffe877c6479944a146f0f4221378a7de4205b2fae3a0b823126f8275e"
+    },
+    {
+      "arquivo": "caco-turquesa.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "0f885eed64f50e27f755a2d563fbed26c0302e9878195446d729e9c8a1f2f03a"
+    },
+    {
+      "arquivo": "caco-lata.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "038b9e3f2d0eee1c93bb883ed12a9592a71e899df6ccd64a4b8503ce80b3bd84"
+    },
+    {
+      "arquivo": "caco-lampada.png",
+      "tamanho": [
+        16,
+        16
+      ],
+      "cores_opacas": 4,
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        1,
+        1,
+        15,
+        16
+      ],
+      "pes_ultima_linha": false,
+      "sha256": "b0cef23f9cd03322f09c2dbd2ef85e2ff4ebef4b61d9d1b69459d81928213cf9"
+    }
+  ],
+  "fontes": {
+    "casco-pulo": "design/sprites64/etapa2/originais/casco-pulo.png",
+    "casco-queda": "design/sprites64/etapa2/originais/casco-queda.png",
+    "casco-ataque-1": "design/sprites64/etapa2/originais/casco-ataque-1.png",
+    "casco-ataque-2": "design/sprites64/etapa2/originais/casco-ataque-2.png",
+    "casco-ataque-3": "design/sprites64/etapa2/originais/casco-ataque-3.png",
+    "concha-tampinha": "design/sprites/originais/concha-tampinha.png",
+    "concha-lata": "design/sprites/v02/originais/concha-lata.png",
+    "concha-lampada": "design/sprites/v02/originais/concha-lampada.png"
+  },
+  "resampling": "NEAREST"
+}

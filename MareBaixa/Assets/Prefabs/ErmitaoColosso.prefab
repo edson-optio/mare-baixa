@@ -127,13 +127,17 @@ MonoBehaviour:
   pearlReward: 15
   art: {fileID: 5442119553030988287}
   walkFrames:
-  - {fileID: 21300000, guid: 78b2429d2a728453099eff5f5f562493, type: 3}
-  - {fileID: 21300000, guid: 52a85630f9b214434bb6138c814fe7ac, type: 3}
+  - {fileID: 21300000, guid: c1271658e96e74f7f9d0c3aabcc3aad7, type: 3}
+  - {fileID: 21300000, guid: 85d22600a88c344f9a362c054529f17f, type: 3}
+  - {fileID: 21300000, guid: 90afda427946e42699ef0ccd6573ea01, type: 3}
+  - {fileID: 21300000, guid: fe20a844bbfd2448ab0a0cf2c895b915, type: 3}
   rollFrames:
-  - {fileID: 21300000, guid: 0490c1cc8563042cabe4464604920927, type: 3}
-  - {fileID: 21300000, guid: de92ccf02d3b543eab786a1a779c9fbb, type: 3}
-  dizzySprite: {fileID: 21300000, guid: e81ad7c1eb1ac467ba7ee5f3f225641f, type: 3}
-  warnSprite: {fileID: 21300000, guid: 0bbfc8e33f0dc4d559eb7b75ad2ad833, type: 3}
+  - {fileID: 21300000, guid: 610176eebe41b47c1a01c91281eb9e33, type: 3}
+  - {fileID: 21300000, guid: 5b5ec1cc31a664666b6442ad95cc7671, type: 3}
+  - {fileID: 21300000, guid: 6dd7effe280cb4f27b3da2b91eb193e4, type: 3}
+  - {fileID: 21300000, guid: 72a056273786744d6b5fc07c1ebd7101, type: 3}
+  dizzySprite: {fileID: 21300000, guid: dee808ccb031c4ced9cf52ab62bd483c, type: 3}
+  warnSprite: {fileID: 21300000, guid: a1aba5654879a4586944ab5c3d08f10e, type: 3}
   artFacesRight: 0
   walkSpeed: 1.6
   walkTime: 2.2
@@ -234,7 +238,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 78b2429d2a728453099eff5f5f562493, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1271658e96e74f7f9d0c3aabcc3aad7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

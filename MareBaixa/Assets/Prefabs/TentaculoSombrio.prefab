@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 565bdd06f10b34f8790ff8416b8c3c92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74877ab80f3414577855436d3d5a6f2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,9 +183,11 @@ MonoBehaviour:
   pearlsMin: 1
   pearlsMax: 2
   frames:
-  - {fileID: 21300000, guid: 565bdd06f10b34f8790ff8416b8c3c92, type: 3}
-  - {fileID: 21300000, guid: 8a8d759387d5e4646b9e99fdcca199f3, type: 3}
-  warning: {fileID: 21300000, guid: a1f462763be7749099a9d15fef0f5642, type: 3}
+  - {fileID: 21300000, guid: 74877ab80f3414577855436d3d5a6f2f, type: 3}
+  - {fileID: 21300000, guid: 7e946fa1af9c24cfb9f0d915f83ea21b, type: 3}
+  - {fileID: 21300000, guid: dc2e909ae4fa3477d8521764dceb7ba4, type: 3}
+  - {fileID: 21300000, guid: 2523c54e7d4184db7995bbd0068ab5c1, type: 3}
+  warning: {fileID: 21300000, guid: 27d6c0fe1121b4cfa9bb4f098fe627da, type: 3}
   intervalMin: 3
   intervalMax: 4.5
   warningTime: 0.8
