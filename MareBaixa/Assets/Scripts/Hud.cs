@@ -15,7 +15,7 @@ namespace MareBaixa
         const float AirBarWidth = 200f;
         const float TideHeight = 320f;
         const float FlashTime = .18f;
-        const float BossBarWidth = 600f;
+        const float BossBarWidth = 520f;
         const float MapWidth = 800f;
         const float BannerWidth = 580f;
         const float BannerHold = 2.2f;
@@ -187,10 +187,11 @@ namespace MareBaixa
             tideGroup.SetActive(false);
         }
 
-        // Embaixo no centro: nome do chefe e a vida, com um rastro claro que acompanha o dano.
+        // No topo, logo abaixo do título (longe do chão onde a luta acontece): nome do chefe e a vida,
+        // com um rastro claro que acompanha o dano. Cabe entre o painel da concha e a régua da maré.
         void BuildBossBar()
         {
-            var area = UiKit.Box("Chefe", root, UiKit.BottomCenter, new Vector2(0f, 122f), new Vector2(BossBarWidth + 40f, 66f));
+            var area = UiKit.Box("Chefe", root, UiKit.TopCenter, new Vector2(0f, -56f), new Vector2(BossBarWidth + 40f, 66f));
             bossGroup = area.gameObject.AddComponent<CanvasGroup>();
             bossGroup.alpha = 0f;
             bossGroup.blocksRaycasts = false;

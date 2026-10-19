@@ -28,20 +28,20 @@ MonoBehaviour:
   - top: {fileID: 11400000, guid: 4f71ead454072452f80d4e9e236e2d69, type: 2}
     fill: {fileID: 11400000, guid: 69d7ab338ecf84d6180f949e9564b4ad, type: 2}
     platform: {fileID: 11400000, guid: e2440b83a3e7c41f586a8a030e3453e9, type: 2}
-    background: {fileID: 21300000, guid: 47613a40631b8438a856e4414395bc7e, type: 3}
-    silhouettes: {fileID: 21300000, guid: 9a60e75b6b8b64ab2976df0f7d39951d, type: 3}
+    background: {fileID: 21300000, guid: cc8d5ffd720214e45b1a09ec5085e963, type: 3}
+    silhouettes: {fileID: 21300000, guid: 927518fda81204deb90baf355ed8d2ea, type: 3}
     backgroundColor: {r: 0.10980392, g: 0.17254902, b: 0.15686275, a: 1}
   - top: {fileID: 11400000, guid: e272f76896934485e91b77d67d7bc0e2, type: 2}
     fill: {fileID: 11400000, guid: 92d847f6e728448ec8fd4f31e89e07ec, type: 2}
     platform: {fileID: 11400000, guid: bcdd48f211fbe499baa03c4176120519, type: 2}
-    background: {fileID: 21300000, guid: 79fcf7db6bd3b464b9edcc1c27d4bf09, type: 3}
-    silhouettes: {fileID: 21300000, guid: d2a377dee4bcc43c2b05a5f5b5c19673, type: 3}
+    background: {fileID: 21300000, guid: ececce563154f4ade8e70c6aeb2bd6e2, type: 3}
+    silhouettes: {fileID: 21300000, guid: ac601ffe9b4df4a44b90c46d34638156, type: 3}
     backgroundColor: {r: 0.078431375, g: 0.09411765, b: 0.22745098, a: 1}
   - top: {fileID: 11400000, guid: e5fca59ac853740f1be959ef77b6cf03, type: 2}
     fill: {fileID: 11400000, guid: 92d6296ed9485487696c78b954caa288, type: 2}
     platform: {fileID: 11400000, guid: e3e6d3e2fdca34caa92a4b82b9e7bebb, type: 2}
-    background: {fileID: 21300000, guid: f84b5b98e72414ee6a0604e75277d5b8, type: 3}
-    silhouettes: {fileID: 21300000, guid: 5b0435757def441aeb44a405ba807707, type: 3}
+    background: {fileID: 21300000, guid: 1482a1ab9190d4993a2aab50a9b72ba6, type: 3}
+    silhouettes: {fileID: 21300000, guid: 1575963f4b484427e9227ec2e3bf4473, type: 3}
     backgroundColor: {r: 0.07058824, g: 0.23921569, b: 0.28627452, a: 1}
   casco: {fileID: 5543180444269777497, guid: 601b9794ba9d642a2873072d29a39a60, type: 3}
   pearl: {fileID: 1645976960727951460, guid: 7922d07be1742467d99efb3ad6886e41, type: 3}

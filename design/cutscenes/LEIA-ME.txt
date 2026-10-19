@@ -1,0 +1,16 @@
+MARÉ BAIXA v0.2 — Cutscenes
+16 quadros individuais: cena1 (5), cena2 (3), cena3 (3), cena4 (5).
+Finais 640x360 RGBA opacos, máximo 48 cores, pixel art sem legendas na imagem.
+Execute python3 design/cutscenes/preparar.py com Pillow para reproduzir e publicar
+em MareBaixa/Assets/Art/Cutscenes/. Não modifica scripts Unity, cenas ou .meta.
+originais/: gerações intactas de image_gen integrado; prompts.json: cada pedido.
+Recorte central mínimo para 16:9; redução somente NEAREST e quantização sem dithering.
+previa.png: todos os quadros; previa-cena1..4.png: folhas na resolução final.
+Nomes aparecem somente nas folhas de revisão, nunca nos PNGs de jogo.
+validacao.json: dimensões, cores, alpha, recorte e hash de cada PNG publicado.
+
+Continuidade visual: Casco laranja, olhos em hastes e pinças; Búzia com concha
+espiral alta e bengala; Bolota dourado com barriga creme e espinhos curtos;
+Pérola Lunar esfera marfim luminosa; Polvo azul-marinho, roxo e olhos ciano.
+Cenas: roubo e enchente / primeira concha / revelação dos olhos / maré baixa.
+Importação e temporização no jogo ficam a cargo do orquestrador.
