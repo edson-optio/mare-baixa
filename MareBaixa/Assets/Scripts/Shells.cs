@@ -26,9 +26,9 @@ namespace MareBaixa
             new ShellInfo("Sem concha", 0, GameRules.NakedSpeedFactor, "Um golpe e acabou"),
             new ShellInfo("Concha Comum", 3, 1f, "Nenhuma habilidade"),
             new ShellInfo("Tampinha de Garrafa", 2, 1.2f, "Pulo duplo"),
-            new ShellInfo("Concha Espiral", 4, 1f, "Ataque giratório dos dois lados"),
-            new ShellInfo("Lata de Refrigerante", 6, .8f, "Investida que derruba inimigos"),
-            new ShellInfo("Lâmpada Velha", 3, 1f, "Clarão que atordoa e ilumina"),
+            new ShellInfo("Concha Espiral", 4, 1f, "Giro dos dois lados"),
+            new ShellInfo("Lata de Refrigerante", 6, .8f, "Investida que derruba"),
+            new ShellInfo("Lâmpada Velha", 3, 1f, "Clarão que atordoa"),
         };
 
         // Conchas novas que a sala sorteia com "r" em cada zona (GDD p. 7: onde aparece).

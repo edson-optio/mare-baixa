@@ -1,0 +1,296 @@
+{
+  "completo": true,
+  "esperados": 16,
+  "entregues": 16,
+  "filtro": "NEAREST",
+  "arquivos": [
+    {
+      "arquivo": "cena1-1.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "2e0eaa501ee10151d7758e94a0b1f1fecdb54e1d02a35996c5c7a3f205bb9a64"
+    },
+    {
+      "arquivo": "cena1-2.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "dce209493fc1c125eb12d78cd8f50f782122c880ab7693f8c3426cbb01f17620"
+    },
+    {
+      "arquivo": "cena1-3.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1671,
+        940
+      ],
+      "sha256": "b8f826abe89e2873293977a77741a5c740cb062ca7f4279a61f606a9c3ba458c"
+    },
+    {
+      "arquivo": "cena1-4.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "b01b1051e358e5c56e5957b8347933578529818d8363cc4c5c69037a07b06f8a"
+    },
+    {
+      "arquivo": "cena1-5.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "06c1bae36d1764839a42e22a72e0cccee28ff29b02df7de5a2002aeb0f9e1acf"
+    },
+    {
+      "arquivo": "cena2-1.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "780f08a15ca9fab839ec36b7ebb46a677a0ee684a4defd7e14467dd01bbde2f8"
+    },
+    {
+      "arquivo": "cena2-2.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "b5d0611685b1fca584dee557ca2c5b2adf826eee9d9c710105a70ac0326770b4"
+    },
+    {
+      "arquivo": "cena2-3.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "90b896eac2eacbfd93264275f488ef3357d041059aadbec233b4b581fa66feb1"
+    },
+    {
+      "arquivo": "cena3-1.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "81fa98e33da60cbf8bedaa4c1b62af03cd40836306d2e789268f62b62e6f13f1"
+    },
+    {
+      "arquivo": "cena3-2.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "7c82ff1214ec70bbb054ba6ee547ba676f4ec221bdd0b2620c8ed5b9f6ab1c16"
+    },
+    {
+      "arquivo": "cena3-3.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "cc9164dd3ba50ebd0e21d4995dd1b2ac8c2bba0dbde7f913cd1b31b57b8b825e"
+    },
+    {
+      "arquivo": "cena4-1.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "2afb558982084b85fba42c3851401f82570cec363ff7cdd8746c01b74cc2c4ab"
+    },
+    {
+      "arquivo": "cena4-2.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "9813f02722fcbbecb3cb1e16c15ea3c58e07ae8605f2bc9a29eafe23deec498a"
+    },
+    {
+      "arquivo": "cena4-3.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "0998a376705167d8f22c46c322131736f41e7eb58885a6c9c6415c9bd90b2398"
+    },
+    {
+      "arquivo": "cena4-4.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "bbf2df49215ac00d358ee7b2fe4a3826a77063f5711ced9b54423c3b800b7ae7"
+    },
+    {
+      "arquivo": "cena4-5.png",
+      "tamanho": [
+        640,
+        360
+      ],
+      "cores": 48,
+      "alpha": [
+        255
+      ],
+      "recorte_original": [
+        0,
+        0,
+        1672,
+        940
+      ],
+      "sha256": "48bf6f30be8ffabcbf2d93dc98a1ab346bae143523579260a05dd104b1a8a57f"
+    }
+  ]
+}

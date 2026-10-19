@@ -17,7 +17,7 @@ namespace MareBaixa
         const float FlashTime = .18f;
         const float BossBarWidth = 520f;
         const float MapWidth = 800f;
-        const float BannerWidth = 580f;
+        const float BannerWidth = 560f;   // de x 360 a 920: não encosta no painel de algas
         const float BannerHold = 2.2f;
         const float BannerSlide = .35f;
         const float BannerOffset = 140f;
@@ -131,9 +131,9 @@ namespace MareBaixa
 
             UiKit.Frame(area, UiKit.TopLeft, new Vector2(16f, -16f), new Vector2(340f, 100f));
             shellIcon = UiKit.Picture(area, null, UiKit.TopLeft, new Vector2(24f, -30f), new Vector2(72f, 72f));
-            shellName = UiKit.Label(area, "", 24, UiKit.TopLeft, new Vector2(108f, -20f), new Vector2(240f, 30f),
+            shellName = UiKit.Label(area, "", 22, UiKit.TopLeft, new Vector2(104f, -20f), new Vector2(248f, 30f),
                 TextAnchor.MiddleLeft);
-            shellAbility = UiKit.Label(area, "", 17, UiKit.TopLeft, new Vector2(108f, -48f), new Vector2(240f, 22f),
+            shellAbility = UiKit.Label(area, "", 22, UiKit.TopLeft, new Vector2(104f, -50f), new Vector2(248f, 26f),
                 TextAnchor.MiddleLeft, GameRules.Sand);
             for (int i = 0; i < MaxPips; i++)
             {
@@ -398,7 +398,7 @@ namespace MareBaixa
                 float groupWidth = (end - first) * step;
                 string name = zone == Zone.Bolha ? "Bolha" : plan[first].zoneName;
                 UiKit.Label(mapArea, name ?? "", 17, UiKit.TopCenter, new Vector2(x + groupWidth * .5f, 0f),
-                    new Vector2(Mathf.Max(groupWidth, 80f), 24f), color: color);
+                    new Vector2(Mathf.Max(groupWidth, 80f), 24f), color: color).horizontalOverflow = HorizontalWrapMode.Overflow;
 
                 for (int i = first; i < end; i++)
                 {
@@ -491,7 +491,7 @@ namespace MareBaixa
         // Linha curta embaixo do nome da concha: tecla e habilidade.
         public static string AbilityHint(ShellType type) => type switch
         {
-            ShellType.Tampinha => "Espaço no ar: pulo duplo",
+            ShellType.Tampinha => "Espaço 2×: pulo duplo",
             ShellType.Espiral => "L: giro",
             ShellType.Lata => "L: investida",
             ShellType.Lampada => "L: clarão",

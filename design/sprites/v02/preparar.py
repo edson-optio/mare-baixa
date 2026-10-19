@@ -16,7 +16,7 @@ palette.putpalette(flat + list(bytes.fromhex(COLORS[0])) * (256-len(COLORS)))
 def prepare(spec):
     name=spec['name']; w,h=spec['width'],spec['height']
     if name=='saida-fechada':
-        out=Image.open(P.parent/'saida.png').convert('RGBA')
+        out=Image.open(P/'originais/saida-existente.png').convert('RGBA')
         d=ImageDraw.Draw(out)
         for x in (10,15,20):
             d.rectangle((x-1,17,x+1,60),fill=INK)

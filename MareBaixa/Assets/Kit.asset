@@ -69,9 +69,9 @@ MonoBehaviour:
   polvo: {fileID: 5320576389548666216, guid: 6a8dd2a864c7a4403bf68a69f00e4c4f, type: 3}
   shellSprites:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 04c31d924c4724921a8e4ae5730fe575, type: 3}
+  - {fileID: 21300000, guid: 08397c72b1a314266aaaefbcc3e48795, type: 3}
   - {fileID: 21300000, guid: ef251296dea6f4fd39254025eb55a312, type: 3}
-  - {fileID: 21300000, guid: a49a4f50d6ddf4968a95da58205a6cbb, type: 3}
+  - {fileID: 21300000, guid: e058ad2c4362a4ebdb18ebaf80839b9a, type: 3}
   - {fileID: 21300000, guid: 71986930db65a4396bb593e91c1e184d, type: 3}
   - {fileID: 21300000, guid: aa84beb1b489b4021a7c4b37b8e7aeb0, type: 3}
   shardSprites:
@@ -110,7 +110,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9a377d3e8219641aa938f73231c4ecf0, type: 3}
   - {fileID: 21300000, guid: 9a8ba09067672401aa8a61a741e72841, type: 3}
   cascoPortrait: {fileID: 21300000, guid: d853a3be948114fc39ed4bec14a95e2a, type: 3}
-  cutscenePanels: []
+  cutscenePanels:
+  - {fileID: 21300000, guid: 7d18330c60fc94cf9a04bc05da38de9e, type: 3}
+  - {fileID: 21300000, guid: a980f464b68254cc6821a2a778a31020, type: 3}
+  - {fileID: 21300000, guid: d14ccc694af1149d19df28d25b41149d, type: 3}
+  - {fileID: 21300000, guid: fa14088383bf14a739309a077d5e4b12, type: 3}
+  - {fileID: 21300000, guid: 4b371991aa84a45e587e1784c6ee776c, type: 3}
+  - {fileID: 21300000, guid: 5ca2d6b30bcc9463183a247c9643c2f8, type: 3}
+  - {fileID: 21300000, guid: 7755164e2a8c249278d94cf681c55bd9, type: 3}
+  - {fileID: 21300000, guid: ce66aab8e88f646a9a502124bd1fe03e, type: 3}
+  - {fileID: 21300000, guid: 3b19d05453c224f74835035e2012a8fc, type: 3}
+  - {fileID: 21300000, guid: 72744d726936a4a87997b7d7a7604d3c, type: 3}
+  - {fileID: 21300000, guid: c4cfb9d033cc04fbfa197fc0c7dd0159, type: 3}
+  - {fileID: 21300000, guid: 262809fe263ae4674aeb0cc10406db34, type: 3}
+  - {fileID: 21300000, guid: 754f27e83ceed41179cbee18169d0f7e, type: 3}
+  - {fileID: 21300000, guid: b5348212ce65e49a8bf3745d8581e55f, type: 3}
+  - {fileID: 21300000, guid: f7fd1594749714f43863f92f7acf7215, type: 3}
+  - {fileID: 21300000, guid: 6f1a9b1fe15534358a9bbcfdcb072c0f, type: 3}
   village: {fileID: 4900000, guid: d5df8d62ba9fd432088c67ad85d7a89d, type: 3}
   reefEntrance: {fileID: 4900000, guid: 971bc7145cd7e4309901864272977fd0, type: 3}
   reefShellRoom: {fileID: 4900000, guid: 0b2d9fbd20d094db89aa477f7a770643, type: 3}

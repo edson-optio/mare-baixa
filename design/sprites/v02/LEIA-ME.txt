@@ -15,3 +15,8 @@ alpha, limites, paleta e SHA-256 dos arquivos publicados.
 
 Importação (orquestrador): PPU 32, Point, sem compressão e sem mipmaps.
 Revisão visual em folhas; integração/animação dentro do Unity cabe ao orquestrador.
+
+Ajustes na grade final: valvula-2 preserva cano e aro de valvula-1 e gira
+os raios do registro; saida-fechada preserva o arco existente (cópia fixa em
+originais/saida-existente.png) e adiciona grade/sucata. As propostas geradas
+para esses dois estados também foram guardadas intactas para referência.

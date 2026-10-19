@@ -14,3 +14,6 @@ espiral alta e bengala; Bolota dourado com barriga creme e espinhos curtos;
 Pérola Lunar esfera marfim luminosa; Polvo azul-marinho, roxo e olhos ciano.
 Cenas: roubo e enchente / primeira concha / revelação dos olhos / maré baixa.
 Importação e temporização no jogo ficam a cargo do orquestrador.
+
+Correções de identidade de Búzia: prompts-correcoes.json; versões descartadas
+com barba preservadas em originais/. Os PNGs finais estão sem esse detalhe.

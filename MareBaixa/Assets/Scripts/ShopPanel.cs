@@ -11,10 +11,14 @@ namespace MareBaixa
     // Com mais de MaxVisible linhas, a lista vira uma janela que rola com a seleção (setas ▲▼).
     public class ShopPanel : MonoBehaviour
     {
-        const float Width = 860f;
+        const float Width = 900f;
         const float RowHeight = 52f;
         const float RowStep = 60f;
         const int MaxVisible = 8;
+        const float RowWidth = Width - 60f;
+        const float CellMargin = 18f;   // borda da linha até o texto, dos dois lados
+        const float ColumnGap = 16f;    // folga mínima entre o nome e o detalhe
+        const float MaxDetailWidth = 360f;
         const float ListTop = 120f;
         const float FooterSpace = 84f;
 
@@ -25,7 +29,8 @@ namespace MareBaixa
         readonly UiKit.NavRepeat nav = new UiKit.NavRepeat();
 
         RectTransform frame;
-        Text titleLabel, balanceLabel, statusLabel, upArrow, downArrow;
+        Text titleLabel, balanceLabel, statusLabel;
+        Image upArrow, downArrow;
         int first;
         Image balanceIcon;
         int openedFrame = -1;
@@ -56,10 +61,11 @@ namespace MareBaixa
             statusLabel = UiKit.Label(frame, "", 22, UiKit.BottomCenter, new Vector2(0f, 46f), new Vector2(Width - 40f, 30f));
             UiKit.Label(frame, "W/S ou setas: escolher  ·  E, Enter ou Espaço: confirmar  ·  Esc: sair", 20,
                 UiKit.BottomCenter, new Vector2(0f, 12f), new Vector2(Width - 40f, 28f), color: GameRules.Sand);
-            upArrow = UiKit.Label(frame, "▲", 20, UiKit.TopLeft, new Vector2(4f, -ListTop), new Vector2(24f, 24f),
-                color: GameRules.Turquoise);
-            downArrow = UiKit.Label(frame, "▼", 20, UiKit.TopLeft, new Vector2(4f, 0f), new Vector2(24f, 24f),
-                color: GameRules.Turquoise);
+            upArrow = UiKit.Picture(frame, UiKit.Triangle, UiKit.TopLeft, new Vector2(6f, -ListTop - 4f), new Vector2(18f, 10f));
+            upArrow.color = GameRules.Turquoise;
+            downArrow = UiKit.Picture(frame, UiKit.Triangle, UiKit.TopLeft, new Vector2(6f, 0f), new Vector2(18f, 10f));
+            downArrow.color = GameRules.Turquoise;
+            downArrow.rectTransform.localEulerAngles = new Vector3(0f, 0f, 180f);
             gameObject.SetActive(false);
         }
 
@@ -74,7 +80,7 @@ namespace MareBaixa
 
             for (int i = 0; i < Count; i++) AddRow(i);
             frame.sizeDelta = new Vector2(Width, ListTop + VisibleRows * RowStep + FooterSpace);
-            downArrow.rectTransform.anchoredPosition = new Vector2(4f, -ListTop - VisibleRows * RowStep + 30f);
+            downArrow.rectTransform.anchoredPosition = new Vector2(6f, -ListTop - VisibleRows * RowStep + 16f);
             first = 0;
 
             titleLabel.text = title ?? "";
@@ -89,18 +95,18 @@ namespace MareBaixa
         void AddRow(int index)
         {
             var button = UiKit.Button(frame, "", UiKit.TopCenter, new Vector2(0f, -ListTop - index * RowStep),
-                () => Choose(index), new Vector2(Width - 60f, RowHeight), 24, hover: false);
+                () => Choose(index), new Vector2(RowWidth, RowHeight), 24, hover: false);
             UiKit.OnPointer(button.gameObject, EventTriggerType.PointerEnter, () => Select(index));
             // Uma linha só: a fonte encolhe (best fit) em vez de quebrar o texto. A caixa tem a altura de
             // uma linha, então duas linhas nunca cabem.
-            var label = UiKit.Label(button.transform, "", 24, UiKit.Left, new Vector2(18f, 0f), new Vector2(480f, 30f),
+            var label = UiKit.Label(button.transform, "", 22, UiKit.Left, new Vector2(CellMargin, 0f), new Vector2(500f, 30f),
                 TextAnchor.MiddleLeft);
             label.resizeTextForBestFit = true;
-            label.resizeTextMinSize = 14;
-            label.resizeTextMaxSize = 24;
+            label.resizeTextMinSize = 16;
+            label.resizeTextMaxSize = label.fontSize;
             label.verticalOverflow = VerticalWrapMode.Truncate;
             labels.Add(label);
-            details.Add(UiKit.Label(button.transform, "", 22, UiKit.Right, new Vector2(-18f, 0f), new Vector2(290f, RowHeight),
+            details.Add(UiKit.Label(button.transform, "", 22, UiKit.Right, new Vector2(-CellMargin, 0f), new Vector2(320f, RowHeight),
                 TextAnchor.MiddleRight, GameRules.Sand));
             rows.Add(button);
         }
@@ -178,9 +184,21 @@ namespace MareBaixa
                 bool selected = i == Selected;
                 labels[i].text = item ? entries[i].label : "Sair";
                 details[i].text = item ? Detail(entries[i]) : "";
+                FitColumns(labels[i], details[i]);
                 details[i].color = selected ? GameRules.Cream : GameRules.Sand;
                 UiKit.Highlight(rows[i], selected);
             }
+        }
+
+        // O detalhe ocupa só a largura do próprio texto (até MaxDetailWidth); o nome fica com o resto da
+        // linha menos a folga, e o best fit encolhe o nome se ainda assim não couber.
+        static void FitColumns(Text label, Text detail)
+        {
+            float detailWidth = Mathf.Min(Mathf.Ceil(detail.preferredWidth), MaxDetailWidth);
+            detail.rectTransform.sizeDelta = new Vector2(detailWidth, detail.rectTransform.sizeDelta.y);
+            float gap = detailWidth > 0f ? ColumnGap : 0f;
+            float labelWidth = RowWidth - 2f * CellMargin - detailWidth - gap;
+            label.rectTransform.sizeDelta = new Vector2(labelWidth, label.rectTransform.sizeDelta.y);
         }
 
         static string Detail(ShopEntry entry) => entry.detail != null ? entry.detail() ?? "" : "";

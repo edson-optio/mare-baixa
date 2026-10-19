@@ -1,0 +1,37 @@
+{
+  "data": "2026-10-18",
+  "total_pngs": 66,
+  "grupos": [
+    {
+      "processo": "design/sprites/v02",
+      "destino": "MareBaixa/Assets/Art/Gerados",
+      "arquivos": 38,
+      "validacao": "ok"
+    },
+    {
+      "processo": "design/tiles/v02",
+      "destino": "MareBaixa/Assets/Art/Blocos",
+      "arquivos": 6,
+      "validacao": "ok"
+    },
+    {
+      "processo": "design/cenarios/v02",
+      "destino": "MareBaixa/Assets/Art/Cenarios",
+      "arquivos": 6,
+      "validacao": "ok"
+    },
+    {
+      "processo": "design/cutscenes",
+      "destino": "MareBaixa/Assets/Art/Cutscenes",
+      "arquivos": 16,
+      "validacao": "ok"
+    }
+  ],
+  "verificacoes": [
+    "dimensoes",
+    "hashes Unity",
+    "igualdade copia de design e Unity"
+  ],
+  "revisao_visual": "38 sprites, encaixes, mosaicos, parallax e 16 quadros revisados",
+  "integracao_unity": "a cargo do orquestrador; nenhum script Unity, cena ou .meta editado por esta frente"
+}

@@ -1,0 +1,15 @@
+{
+  "tool": "image_gen integrado",
+  "edits": [
+    {
+      "name": "cena1-5",
+      "prompt": "Edit this pixel art cinematic panel. Change ONLY the elderly hermit crab on the LEFT: REMOVE the white beard and any white moustache completely. She is Vovó Búzia, a kind elderly GRANDMOTHER orange hermit crab, with a simple orange face and gentle mouth, tiny pale eyebrows are okay, NO beard. Keep her large beige spiral shell, walking stick, orange body and claws, eye stalks, pose and size unchanged. Keep the small orange crab on the right, flooded shell village, lighting, composition, pixel art, colors entirely unchanged. No text. Preserve 16:9 framing.",
+      "original_descartado": "originais/cena1-5-com-barba-descartada.png"
+    },
+    {
+      "name": "cena4-3",
+      "prompt": "Edit this pixel art celebration panel. Change ONLY the elderly orange hermit crab toward the LEFT wearing a very tall beige spiral shell and holding a walking stick: REMOVE her white beard and white moustache completely, replace with her plain orange face and gentle smiling mouth. She is Vovó Búzia, a kindly elderly GRANDMOTHER crab, no beard. Keep shell, cane, pose, body and size. Preserve EVERY other character, the glowing pearl, village, bunting, composition, lighting, pixel art and all objects unchanged. No text. Preserve 16:9 framing.",
+      "original_descartado": "originais/cena4-3-com-barba-descartada.png"
+    }
+  ]
+}

@@ -21,8 +21,39 @@ namespace MareBaixa
         public static readonly Vector2 BottomCenter = new Vector2(.5f, 0f);
         public static readonly Vector2 BottomRight = new Vector2(1f, 0f);
 
+        // Fonte do jogo inteiro: Pixelify Sans (OFL, Assets/Fonts/Resources, licença ao lado). Um pixel do
+        // desenho dela vale FontPixel pontos de tamanho (as maiúsculas têm 7 pixels de altura), então todo
+        // tamanho é arredondado para múltiplo disso e o texto sai nítido. Sem o arquivo, volta à fonte do Unity.
+        public const string FontName = "PixelifySans";
+        public const int FontPixel = 11;
+
         static Font font;
-        public static Font Font => font ? font : font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        public static Font Font
+        {
+            get
+            {
+                if (font != null) return font;
+                font = Resources.Load<Font>(FontName);
+                if (font == null) return font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                SharpenFont(font);
+                UnityEngine.Font.textureRebuilt += SharpenFont;
+                return font;
+            }
+        }
+
+        // A textura da fonte dinâmica é refeita quando ganha letras novas; mantém o filtro Point.
+        static void SharpenFont(Font changed)
+        {
+            if (changed != font || changed.material == null || changed.material.mainTexture == null) return;
+            changed.material.mainTexture.filterMode = FilterMode.Point;
+        }
+
+        // Tamanho mais próximo que cai na grade de pixels da fonte (mínimo 2 pixels = 22).
+        public static int PixelSize(int size)
+        {
+            if (Font.name != FontName) return size;
+            return Mathf.Max(2, Mathf.RoundToInt(size / (float)FontPixel)) * FontPixel;
+        }
 
         public static RectTransform Canvas(string name)
         {
@@ -32,6 +63,7 @@ namespace MareBaixa
             canvas.worldCamera = Camera.main;
             canvas.planeDistance = 5f;
             canvas.sortingOrder = 100;
+            canvas.pixelPerfect = true;   // texto e pixel art alinhados à grade da tela
             var scaler = canvasObject.GetComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1280f, 720f);
@@ -48,6 +80,7 @@ namespace MareBaixa
             var canvas = canvasObject.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = sortingOrder;
+            canvas.pixelPerfect = true;
             var scaler = canvasObject.GetComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1280f, 720f);
@@ -102,6 +135,27 @@ namespace MareBaixa
             }
         }
 
+        // Triângulo apontando para cima, em pixels duros (a fonte não tem ▲▼). Gire 180° para baixo.
+        static Sprite triangle;
+        public static Sprite Triangle
+        {
+            get
+            {
+                if (triangle != null) return triangle;
+                const int width = 9, height = 5;
+                var texture = new Texture2D(width, height, TextureFormat.RGBA32, false) { filterMode = FilterMode.Point };
+                var pixels = new Color32[width * height];
+                for (int y = 0; y < height; y++)
+                for (int x = 0; x < width; x++)
+                    pixels[y * width + x] = Mathf.Abs(x - width / 2) <= height - 1 - y
+                        ? new Color32(255, 255, 255, 255) : new Color32(255, 255, 255, 0);
+                texture.SetPixels32(pixels);
+                texture.Apply();
+                triangle = Sprite.Create(texture, new Rect(0f, 0f, width, height), new Vector2(.5f, .5f), width);
+                return triangle;
+            }
+        }
+
         // Retângulo vazio; a âncora também é o pivô, então a posição conta a partir daquele canto.
         public static RectTransform Box(string name, Transform parent, Vector2 anchor, Vector2 position, Vector2 size)
         {
@@ -141,7 +195,7 @@ namespace MareBaixa
             var label = rect.gameObject.AddComponent<Text>();
             label.font = Font;
             label.text = text;
-            label.fontSize = size;
+            label.fontSize = PixelSize(size);
             label.alignment = alignment;
             label.color = color ?? GameRules.Cream;
             label.horizontalOverflow = HorizontalWrapMode.Wrap;

@@ -6,13 +6,13 @@
       "name": "concha-lata",
       "width": 32,
       "height": 32,
-      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: battered green soda can shell no crab. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+      "prompt": "Create one isolated game sprite: a battered green soda can used as the shell of a tiny hermit crab, ONLY the empty can shell without crab. Side view facing right, open dark rim on right, tilted slightly, green weathered metal and cream silver rim. Chunky limited palette pixel art designed to be legible at 20x22 pixels, dark #101B2D one pixel outline, no anti-aliasing, no text, no shadow or ground. Genuine transparent background. Center object with padding. Style matches charming underwater pixel game Mare Baixa."
     },
     {
       "name": "concha-lampada",
       "width": 32,
       "height": 32,
-      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: antique glowing golden bulb shell no crab. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+      "prompt": "One isolated game sprite, antique light bulb used as hermit crab shell, ONLY bulb no animal. Side view glass bulb golden lit filament, screw base left, rounded glass dome right. Chunky pixel art legible at 20x22 pixels, limited palette golden cream and navy #101B2D outline, no antialiasing, no text, no ground shadow, genuine transparent background. Centered with padding. Charming underwater game Mare Baixa."
     },
     {
       "name": "caco-lata",
@@ -114,7 +114,8 @@
       "name": "valvula-2",
       "width": 32,
       "height": 32,
-      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: rusty pipe valve green grey metal red orange wheel diagonal X spokes rotated pipe below. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: rusty pipe valve green grey metal red orange wheel diagonal X spokes rotated pipe below. Side view 2D platformer, designed for 32x32 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art.",
+      "acabamento": "Quadro final preserva cano de valvula-1 e muda raios na grade; geração original guardada como proposta."
     },
     {
       "name": "correnteza-1",
@@ -144,7 +145,8 @@
       "name": "saida-fechada",
       "width": 32,
       "height": 64,
-      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: vertical underwater ancient stone doorway blocked entirely by rusty metal bars and scrap trash moss green stone arch. Side view 2D platformer, designed for 32x64 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art."
+      "prompt": "Use case: stylized-concept. One isolated production game sprite for Mare Baixa: vertical underwater ancient stone doorway blocked entirely by rusty metal bars and scrap trash moss green stone arch. Side view 2D platformer, designed for 32x64 native pixels. Charming chunky pixel art with large readable color clusters, limited 12 color palette, outline #101B2D, no antialiasing, no gradients, no text labels, no drop shadow or scenery. Entire object visible centered with small padding. Grounded subjects feet/base at bottom. Transparent background. Consistent underwater game art.",
+      "acabamento": "Quadro final usa saida-existente.png com grade e sucata na grade; geração original guardada como proposta."
     },
     {
       "name": "colosso-anda-1",

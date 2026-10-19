@@ -12,6 +12,10 @@ namespace MareBaixa.Editor
     public static class ArtImporter
     {
         public const string GeneratedPath = "Assets/Art/Gerados/";
+        // v0.3: os mesmos sprites com o dobro de resolução (64 px por bloco). O tamanho no mundo não muda;
+        // quando a versão 64 existe, ela substitui a de Gerados.
+        public const string HighResPath = "Assets/Art/Sprites64/";
+        public const int HighResPixelsPerUnit = 64;
         public const string SceneryPath = "Assets/Art/Cenarios/";
         public const string ConceptPath = "Assets/Art/Conceito/";
         public const string PortraitsPath = "Assets/Art/Retratos/";
@@ -54,6 +58,8 @@ namespace MareBaixa.Editor
                 bool feet = FeetPivot.Any(prefix => name.StartsWith(prefix));
                 Import(path, feet ? new Vector2(.5f, 0f) : new Vector2(.5f, .5f), false);
             }
+            foreach (string path in Pngs(HighResPath))
+                Import(path, PivotOf(Path.GetFileNameWithoutExtension(path)), false, HighResPixelsPerUnit);
             foreach (string path in Pngs(SceneryPath))
                 Import(path, new Vector2(.5f, .5f), Path.GetFileName(path).StartsWith("silhuetas"));
             foreach (string path in Pngs(ConceptPath).Concat(Pngs(PortraitsPath)).Concat(Pngs(BlocksPath)).Concat(Pngs(CutscenesPath)))
@@ -67,13 +73,13 @@ namespace MareBaixa.Editor
             ? Directory.GetFiles(folder, "*.png").Select(p => p.Replace('\\', '/')).ToArray()
             : new string[0];
 
-        static void Import(string path, Vector2 pivot, bool repeat)
+        static void Import(string path, Vector2 pivot, bool repeat, int pixelsPerUnit = PixelsPerUnit)
         {
             AssetDatabase.ImportAsset(path);
             var importer = (TextureImporter)AssetImporter.GetAtPath(path);
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Single;
-            importer.spritePixelsPerUnit = PixelsPerUnit;
+            importer.spritePixelsPerUnit = pixelsPerUnit;
             importer.filterMode = FilterMode.Point;
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             importer.mipmapEnabled = false;
@@ -112,7 +118,8 @@ namespace MareBaixa.Editor
         }
 
         public static Tile TileAsset(string name) => AssetDatabase.LoadAssetAtPath<Tile>(TilesPath + name + ".asset");
-        public static Sprite Sprite(string name) => Load(GeneratedPath, name);
+        public static Sprite Sprite(string name) =>
+            AssetDatabase.LoadAssetAtPath<Sprite>(HighResPath + name + ".png") ?? Load(GeneratedPath, name);
         public static Sprite Scenery(string name) => Load(SceneryPath, name);
 
         // Todos os quadros de cutscene que existirem (cena1-1, cena1-2...). Os que faltam, o jogo desenha.
@@ -169,10 +176,21 @@ namespace MareBaixa.Editor
         public static Sprite Concept(string name) => AssetDatabase.LoadAssetAtPath<Sprite>(ConceptPath + name + ".png");
         public static Sprite Portrait(string name) => AssetDatabase.LoadAssetAtPath<Sprite>(PortraitsPath + name + ".png");
 
+        // Quadros prefixo-1, prefixo-2...: pelo menos "count", e mais se a arte trouxer mais quadros (a versão
+        // 64 tem animações mais longas). Uma animação nunca mistura as duas resoluções.
         public static Sprite[] Frames(string prefix, int count)
         {
-            var frames = new Sprite[count];
-            for (int i = 0; i < count; i++) frames[i] = Sprite(prefix + "-" + (i + 1));
+            string folder = File.Exists(HighResPath + prefix + "-1.png") ? HighResPath : GeneratedPath;
+            int total = count;
+            while (File.Exists(folder + prefix + "-" + (total + 1) + ".png")) total++;
+            var frames = new Sprite[total];
+            for (int i = 0; i < total; i++)
+            {
+                string name = prefix + "-" + (i + 1);
+                frames[i] = folder == HighResPath && File.Exists(folder + name + ".png")
+                    ? AssetDatabase.LoadAssetAtPath<Sprite>(folder + name + ".png")
+                    : Load(GeneratedPath, name);
+            }
             return frames;
         }
     }

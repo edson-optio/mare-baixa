@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 24429b1c4a62b42d68e83818a07ada15, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e12fa5a79cd848cfbb0250f0979d0d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,9 +184,11 @@ MonoBehaviour:
   pearlsMin: 2
   pearlsMax: 4
   walkFrames:
-  - {fileID: 21300000, guid: 24429b1c4a62b42d68e83818a07ada15, type: 3}
-  - {fileID: 21300000, guid: 1293f3bdbe1134c0ebb40afff85cf794, type: 3}
-  claws: {fileID: 21300000, guid: cd68e410bd0ed4badaed68ef25784735, type: 3}
+  - {fileID: 21300000, guid: 4e12fa5a79cd848cfbb0250f0979d0d2, type: 3}
+  - {fileID: 21300000, guid: 8a4b4842fecfa4338b3226157595e0f9, type: 3}
+  - {fileID: 21300000, guid: c6507093d105a4f5c977f37a609b98e3, type: 3}
+  - {fileID: 21300000, guid: fa7e5da1bf03c41e0b267880d92bf6f1, type: 3}
+  claws: {fileID: 21300000, guid: 7d7ae9dacb21c4f8dba5fe087b453adc, type: 3}
   fleeing: {fileID: 21300000, guid: 151af90e832db4e8abff2343badccd8f, type: 3}
   carried: {fileID: 4952945158093817856}
   artFacesRight: 1
@@ -281,7 +283,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 04c31d924c4724921a8e4ae5730fe575, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08397c72b1a314266aaaefbcc3e48795, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

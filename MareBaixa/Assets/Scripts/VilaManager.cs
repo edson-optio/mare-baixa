@@ -162,9 +162,9 @@ namespace MareBaixa
             return new ShopEntry
             {
                 label = Shells.Get(type).Name + " · " + Shells.Get(type).Ability,
-                detail = () => !Progress.IsUnlocked(type) && !Forgeable(type) ? "Ache uma lá embaixo primeiro"
+                detail = () => !Progress.IsUnlocked(type) && !Forgeable(type) ? "Ache uma na run"
                     : !Progress.IsUnlocked(type) ? "Forjar: " + price + " pérolas"
-                    : data.startShell == type ? "Concha inicial ✓" : "Começar com ela",
+                    : data.startShell == type ? "Concha inicial (atual)" : "Começar com ela",
                 onSelect = () =>
                 {
                     if (!Progress.IsUnlocked(type))
