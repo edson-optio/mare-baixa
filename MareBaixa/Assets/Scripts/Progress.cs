@@ -18,6 +18,9 @@ namespace MareBaixa
         public bool lataSeen;
         public bool lampadaSeen;
         public ShellType startShell = ShellType.Comum;
+        public WeaponType startWeapon;
+        public int weaponsUnlocked;   // bits por WeaponType; pinças sempre disponíveis
+        public RunCheckpoint checkpoint;
         public bool introSeen;
         public bool firstShellCutsceneSeen;
         public bool abyssCutsceneSeen;
@@ -57,6 +60,14 @@ namespace MareBaixa
         }
 
         public static float MaxAir => GameRules.BaseAir + Data.airLevel * GameRules.AirPerUpgrade;
+
+        public static bool HasCheckpoint => Data.checkpoint != null && Data.checkpoint.Valid;
+        public static bool IsWeaponUnlocked(WeaponType type) => Weapons.Valid(type)
+            && (type == WeaponType.Pincas || (Data.weaponsUnlocked & (1 << (int)type)) != 0);
+        public static WeaponType StartWeapon => IsWeaponUnlocked(Data.startWeapon) ? Data.startWeapon : WeaponType.Pincas;
+
+        // Recarrega do armazenamento, inclusive nos testes de fechar/reabrir o jogo.
+        public static void Reload() => data = null;
 
         public static bool IsUnlocked(ShellType type) => type switch
         {

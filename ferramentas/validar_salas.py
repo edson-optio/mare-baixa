@@ -23,11 +23,11 @@ from pathlib import Path
 
 PASTA_SALAS = Path(__file__).resolve().parent.parent / "MareBaixa" / "Assets" / "Salas"
 
-LEGENDA = set("#=CSDjboTaOcterkKgphVYLU123456789 msfwv<>HBlixqnz")
+LEGENDA = set("#=CSDjboTaOcterkKgphVYLU123456789 msfwv<>HBlixqnzRuFE")
 SOLIDO = "#"
 PLATAFORMA = "="
 INIMIGOS = "jbmsfw"
-APOIADOS = "CSDTctelirBHvsmkKgphxqzVYLU"   # ficam em pé: precisam de # ou = embaixo (w tem regra própria)
+APOIADOS = "CSDTctelirBHvsmkKgphxqzVYLURuFE"   # ficam em pé: precisam de # ou = embaixo (w tem regra própria)
 
 # Física simplificada de Casco, em blocos (pulo real ≈ 2.5 de altura e ≈ 4 de alcance).
 SUBIDA_MAX = 2      # altura que dá para subir num pulo
@@ -342,6 +342,34 @@ def validar(caminho):
         alcancadas = [s for s in saidas if s in vistos]
         if not alcancadas:
             erros.append(f"não há caminho de C até {marca_saida}")
+        # Armadilhas: lugar onde dá para cair a partir de C, mas de onde não se chega mais à saída
+        # (o jogador ficaria esperando a maré afogá-lo). Busca de trás para a frente a partir da saída.
+        if alcancadas:
+            volta = {}
+            for celula in vistos:
+                for prox, _ in sala.vizinhos(*celula):
+                    volta.setdefault(prox, []).append(celula)
+            saem = set(alcancadas)
+            pilha = list(alcancadas)
+            while pilha:
+                for anterior in volta.get(pilha.pop(), []):
+                    if anterior not in saem:
+                        saem.add(anterior)
+                        pilha.append(anterior)
+            presas = sorted(vistos - saem)
+            while presas:
+                grupo, pilha = set(), [presas[0]]
+                while pilha:
+                    l, c = pilha.pop()
+                    if (l, c) in grupo:
+                        continue
+                    grupo.add((l, c))
+                    pilha += [v for v in presas if abs(v[0] - l) <= 3 and abs(v[1] - c) <= 3]
+                presas = [v for v in presas if v not in grupo]
+                linhas = sorted({l + 1 for l, _ in grupo})
+                colunas = sorted({c + 1 for _, c in grupo})
+                erros.append(f"armadilha: quem cai nas linhas {linhas[0]}-{linhas[-1]}, colunas "
+                             f"{colunas[0]}-{colunas[-1]} não consegue voltar para a saída")
         # itens fora de alcance (só aviso: podem estar em lugares para nadar)
         for ch in "oTarcteliHv":
             for (l, c) in sala.procurar(ch):

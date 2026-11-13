@@ -78,6 +78,8 @@ namespace MareBaixa.Editor
             {
                 null, S("concha-comum"), S("concha-tampinha"), S("concha-espiral"), S("concha-lata"), S("concha-lampada"),
             };
+            kit.weaponSprites = new[] { null, S("arma-canudo"), S("arma-garfo"), S("arma-escova") };
+            kit.benchSprite = S("banco-descanso");
             kit.shardSprites = new[]
             {
                 null, S("caco-areia"), S("caco-turquesa"), S("caco-creme"), S("caco-lata"), S("caco-lampada"),
@@ -425,7 +427,7 @@ namespace MareBaixa.Editor
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Standalone, "br.cc7140.marebaixa");
             PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);
-            SetProperty("ProjectSettings/ProjectSettings.asset", "activeInputHandler", 0); // Input Manager clássico
+            SetProperty("ProjectSettings/ProjectSettings.asset", "activeInputHandler", 2); // Teclado legado + gamepads pelo Input System
             SetGroundLayer();
             QualitySettings.vSyncCount = 1;
             QualitySettings.antiAliasing = 0;

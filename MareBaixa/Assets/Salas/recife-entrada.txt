@@ -1,7 +1,7 @@
 @nome Entrada do Recife
 @mare 0.08
 @dica1 A / D para andar, Espaço para pular. Segure Espaço para pular mais alto.
-@dica2 J belisca. Acerte o Baiacu, mas se afaste quando ele inchar: solta espinhos.
+@dica2 Pegue o canudo com E / RB. J / botão de ataque usa a arma equipada. Cuidado com os espinhos do Baiacu!
 @dica3 K rola dentro da concha. Enquanto rola, nada te machuca.
 @dica4 A maré sobe sem parar. Com a cabeça debaixo d'água o ar acaba; as bolhas recarregam o ar.
 @dica5 A saída leva à próxima sala. Chegue lá antes que a maré te alcance.
@@ -16,7 +16,7 @@
 #                                      #####
 #   1    o   2      3              o   #####
 #       ###              4        ##########
-# C   p ###    k b             K  ##########
+# C u p ###    k b             K  ##########
 ######################   O   ###############
 ###################### o g o ###############
 ############################################

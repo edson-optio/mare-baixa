@@ -26,6 +26,10 @@ namespace MareBaixa
         GameObject status;
         Image shellIcon;
         Text shellName, shellAbility;
+        Text weaponName, weaponDetail;
+        Image weaponIcon;
+        Text toastLabel, checkpointLabel;
+        float toastUntil;
         readonly Image[] pips = new Image[MaxPips];
         readonly Image[] algae = new Image[GameRules.MaxAlgae];
         Image pearlIcon;
@@ -57,10 +61,10 @@ namespace MareBaixa
         Text messageTitle, messageBody, messageFooter;
 
         GameObject pausePanel;
-        Button resumeButton, giveUpButton;
+        Button resumeButton, giveUpButton, menuButton;
         int pauseSelected;
         int pauseOpenedFrame = -1;
-        System.Action onResume, onGiveUp;
+        System.Action onResume, onGiveUp, onMenu;
         readonly UiKit.NavRepeat pauseNav = new UiKit.NavRepeat();
 
         Image flash, fade;
@@ -82,6 +86,7 @@ namespace MareBaixa
         public bool TideVisible => tideGroup.activeSelf;
         public string ShellText => shellName.text;
         public string AbilityText => shellAbility.text;
+        public string WeaponText => weaponName.text;
         public bool BossBarVisible => bossGroup.alpha > .01f;
         public string BossText => bossName.text;
         public int MapCells { get; private set; }
@@ -106,6 +111,8 @@ namespace MareBaixa
             promptLabel = UiKit.Label(root, "", 26, UiKit.BottomCenter, new Vector2(0f, 78f), new Vector2(800f, 36f),
                 color: GameRules.Sand);
             hintLabel = UiKit.Label(root, "", 22, UiKit.BottomCenter, new Vector2(0f, 22f), new Vector2(1000f, 50f));
+            toastLabel = UiKit.Label(root, "", 23, UiKit.BottomCenter, new Vector2(0f, 132f), new Vector2(1080f, 42f),
+                color: GameRules.Turquoise);
 
             Dialog = UiKit.Stretch("Diálogo", root).gameObject.AddComponent<DialogBox>();
             Dialog.Build();
@@ -135,6 +142,9 @@ namespace MareBaixa
                 TextAnchor.MiddleLeft);
             shellAbility = UiKit.Label(area, "", 22, UiKit.TopLeft, new Vector2(104f, -50f), new Vector2(248f, 26f),
                 TextAnchor.MiddleLeft, GameRules.Sand);
+            shellAbility.resizeTextForBestFit = true;
+            shellAbility.resizeTextMinSize = 15;
+            shellAbility.resizeTextMaxSize = 22;
             for (int i = 0; i < MaxPips; i++)
             {
                 pips[i] = UiKit.Panel(area, UiKit.TopLeft, new Vector2(110f + i * 36f, -80f), new Vector2(28f, 16f),
@@ -153,12 +163,19 @@ namespace MareBaixa
                 new Vector2(pearlX, -132f), new Vector2(40f, 40f));
             pearlLabel = UiKit.Label(area, "", 26, UiKit.TopLeft, new Vector2(pearlX + 48f, -132f), new Vector2(150f, 40f),
                 TextAnchor.MiddleLeft, GameRules.Pearl);
+
+            UiKit.Frame(area, UiKit.TopLeft, new Vector2(16f, -188f), new Vector2(340f, 66f));
+            weaponIcon = UiKit.Picture(area, null, UiKit.TopLeft, new Vector2(24f, -199f), new Vector2(64f, 42f));
+            weaponName = UiKit.Label(area, "", 21, UiKit.TopLeft, new Vector2(96f, -193f), new Vector2(250f, 28f),
+                TextAnchor.MiddleLeft, GameRules.Cream);
+            weaponDetail = UiKit.Label(area, "", 18, UiKit.TopLeft, new Vector2(96f, -222f), new Vector2(250f, 25f),
+                TextAnchor.MiddleLeft, GameRules.Sand);
         }
 
         // Barra de ar logo abaixo do estado; só aparece quando falta ar.
         void BuildAir(Kit kit)
         {
-            airGroup = UiKit.Box("Ar", root, UiKit.TopLeft, new Vector2(16f, -188f), new Vector2(340f, 44f)).gameObject;
+            airGroup = UiKit.Box("Ar", root, UiKit.TopLeft, new Vector2(16f, -262f), new Vector2(340f, 44f)).gameObject;
             var area = airGroup.transform;
             airIcon = UiKit.Picture(area, kit != null ? kit.bubbleIcon : null, UiKit.Left, new Vector2(4f, 0f),
                 new Vector2(36f, 36f));
@@ -244,16 +261,19 @@ namespace MareBaixa
             var frame = UiKit.Frame(veil.transform, UiKit.Center, Vector2.zero, new Vector2(880f, 640f)).transform;
             UiKit.Label(frame, "PAUSA", 60, UiKit.TopCenter, new Vector2(0f, -18f), new Vector2(600f, 72f), color: GameRules.Orange);
             mapArea = UiKit.Box("Mapa", frame, UiKit.TopCenter, new Vector2(0f, -96f), new Vector2(MapWidth + 40f, 112f));
-            resumeButton = PauseButton(frame, "Continuar", -224f, 0);
-            giveUpButton = PauseButton(frame, "Desistir (voltar à vila)", -294f, 1);
-            UiKit.Label(frame, "CONTROLES", 22, UiKit.TopCenter, new Vector2(0f, -376f), new Vector2(700f, 30f),
+            checkpointLabel = UiKit.Label(frame, "", 19, UiKit.TopCenter, new Vector2(0f, -188f), new Vector2(800f, 30f),
+                color: GameRules.Sand);
+            resumeButton = PauseButton(frame, "Continuar", -228f, 0);
+            giveUpButton = PauseButton(frame, "Voltar à vila (apaga o banco)", -296f, 1);
+            menuButton = PauseButton(frame, "Menu (mantém o último banco)", -364f, 2);
+            UiKit.Label(frame, "CONTROLES", 22, UiKit.TopCenter, new Vector2(0f, -440f), new Vector2(700f, 30f),
                 color: GameRules.Turquoise);
             UiKit.Label(frame,
-                "A/D ou setas: mover   ·   Espaço: pular (segure para ir mais alto)\n" +
-                "J: pinças   ·   K: rolar na concha   ·   L: habilidade da concha\n" +
-                "E: pegar concha / conversar   ·   Q: comer alga   ·   Esc: pausa",
-                20, UiKit.TopCenter, new Vector2(0f, -410f), new Vector2(800f, 110f));
-            UiKit.Label(frame, "W/S escolhe  ·  E ou Enter confirma  ·  Esc continua", 18, UiKit.BottomCenter,
+                "A/D / analógico: mover   ·   Espaço / {padJump}: pular (segure)\n" +
+                "J / {padAttack}: atacar · K / {padDodge}: rolar · L / {padAbility}: habilidade\n" +
+                "E / RB (R1): interagir · Q / LB (L1): alga · Esc / Start: pausa",
+                20, UiKit.TopCenter, new Vector2(0f, -473f), new Vector2(800f, 100f));
+            UiKit.Label(frame, "W/S / direcional escolhe · Enter / {padJump} confirma · Esc / Start continua", 18, UiKit.BottomCenter,
                 new Vector2(0f, 16f), new Vector2(760f, 28f), color: GameRules.Sand);
             pausePanel.SetActive(false);
         }
@@ -346,10 +366,20 @@ namespace MareBaixa
 
         public void HideMessage() => messagePanel.SetActive(false);
 
-        public void ShowPause(System.Action resume, System.Action giveUp)
+        public void Toast(string message, float seconds = 3f)
+        {
+            toastLabel.text = message;
+            toastUntil = Time.time + seconds;
+        }
+
+        public void ShowPause(System.Action resume, System.Action giveUp, System.Action menu)
         {
             onResume = resume;
             onGiveUp = giveUp;
+            onMenu = menu;
+            checkpointLabel.text = Progress.HasCheckpoint
+                ? "Banco salvo na etapa " + (Progress.Data.checkpoint.roomIndex + 1) + " · ao sair, volta ao último descanso"
+                : "Nenhum banco salvo · descanse num abrigo para guardar a jornada";
             pauseOpenedFrame = Time.frameCount;
             BuildMap();
             pausePanel.SetActive(true);
@@ -379,40 +409,29 @@ namespace MareBaixa
                 return;
             }
 
-            // Grupos de salas seguidas da mesma zona.
-            var starts = new List<int>();
-            for (int i = 0; i < plan.Count; i++)
-                if (i == 0 || plan[i].zone != plan[i - 1].zone) starts.Add(i);
-            const float GroupGap = 26f;
-            float step = Mathf.Min(36f, (MapWidth - (starts.Count - 1) * GroupGap) / plan.Count);
+            var legend = new[] { Zone.Recife, Zone.Cidade, Zone.Fossa, Zone.Bolha };
+            var names = new[] { "Recife", "Cidade", "Fossa", "Abrigos / bancos" };
+            for (int i = 0; i < legend.Length; i++)
+                UiKit.Label(mapArea, names[i], 18, UiKit.TopCenter, new Vector2(-300f + i * 200f, 0f),
+                    new Vector2(190f, 26f), color: ZoneColor(legend[i]));
+            float step = Mathf.Min(32f, MapWidth / plan.Count);
             float cell = step * .78f;
-            float x = -(plan.Count * step + (starts.Count - 1) * GroupGap) * .5f;
+            float x = -(plan.Count * step) * .5f;
             int current = Mathf.Clamp(run.RoomIndex, 0, plan.Count - 1);
-
-            for (int g = 0; g < starts.Count; g++)
+            for (int i = 0; i < plan.Count; i++)
             {
-                int first = starts[g];
-                int end = g + 1 < starts.Count ? starts[g + 1] : plan.Count;
-                var zone = plan[first].zone;
-                Color color = ZoneColor(zone);
-                float groupWidth = (end - first) * step;
-                string name = zone == Zone.Bolha ? "Bolha" : plan[first].zoneName;
-                UiKit.Label(mapArea, name ?? "", 17, UiKit.TopCenter, new Vector2(x + groupWidth * .5f, 0f),
-                    new Vector2(Mathf.Max(groupWidth, 80f), 24f), color: color).horizontalOverflow = HorizontalWrapMode.Overflow;
-
-                for (int i = first; i < end; i++)
-                {
-                    float cx = x + (i - first) * step + step * .5f;
-                    bool here = i == current;
-                    float size = here ? cell * 1.25f : cell;
-                    var square = UiKit.Panel(mapArea, UiKit.TopCenter, new Vector2(cx, -46f + size * .5f - cell * .5f),
-                        new Vector2(size, size), i < current ? color : here ? GameRules.Orange : GameRules.Ink);
-                    var border = square.gameObject.AddComponent<Outline>();
-                    border.effectColor = i < current || here ? GameRules.Ink : color;
-                    border.effectDistance = new Vector2(2f, -2f);
-                    MapCells++;
-                }
-                x += groupWidth + GroupGap;
+                Color color = ZoneColor(plan[i].zone);
+                float cx = x + i * step + step * .5f;
+                bool here = i == current;
+                float size = here ? cell * 1.25f : cell;
+                var square = UiKit.Panel(mapArea, UiKit.TopCenter, new Vector2(cx, -44f),
+                    new Vector2(size, size), here ? GameRules.Orange : i < current ? color : GameRules.Ink);
+                var border = square.gameObject.AddComponent<Outline>();
+                border.effectColor = here ? GameRules.Cream : color;
+                border.effectDistance = new Vector2(2f, -2f);
+                if (Progress.HasCheckpoint && Progress.Data.checkpoint.roomIndex == i)
+                    UiKit.Panel(mapArea, UiKit.TopCenter, new Vector2(cx, -74f), new Vector2(cell, 4f), GameRules.Cream);
+                MapCells++;
             }
 
             UiKit.Label(mapArea, plan[current].zoneName + "  ·  sala " + (current + 1) + " de " + plan.Count, 20,
@@ -433,12 +452,13 @@ namespace MareBaixa
             pauseSelected = index;
             UiKit.Highlight(resumeButton, index == 0);
             UiKit.Highlight(giveUpButton, index == 1);
+            UiKit.Highlight(menuButton, index == 2);
         }
 
         void ChoosePause(int index)
         {
             if (!pausePanel.activeSelf) return;
-            var action = index == 0 ? onResume : onGiveUp;
+            var action = index == 0 ? onResume : index == 1 ? onGiveUp : onMenu;
             action?.Invoke();
         }
 
@@ -470,6 +490,12 @@ namespace MareBaixa
             shellName.color = naked ? GameRules.Danger : GameRules.Cream;
             shellName.enabled = !naked || UiKit.Blink(.6f);
             shellAbility.text = AbilityHint(casco.Shell);
+            if (casco.AbilityCooldown > 0f) shellAbility.text += " · " + casco.AbilityCooldown.ToString("F1") + "s";
+            var weapon = Weapons.Get(casco.Weapon);
+            weaponName.text = weapon.Name;
+            weaponDetail.text = Controls.FormatHints("J / {padAttack} · " + weapon.Damage + " dano");
+            weaponIcon.sprite = Weapons.Sprite(casco.Weapon);
+            weaponIcon.enabled = weaponIcon.sprite != null;
 
             for (int i = 0; i < pips.Length; i++)
             {
@@ -489,14 +515,14 @@ namespace MareBaixa
         }
 
         // Linha curta embaixo do nome da concha: tecla e habilidade.
-        public static string AbilityHint(ShellType type) => type switch
+        public static string AbilityHint(ShellType type) => Controls.FormatHints(type switch
         {
-            ShellType.Tampinha => "Espaço 2×: pulo duplo",
-            ShellType.Espiral => "L: giro",
-            ShellType.Lata => "L: investida",
-            ShellType.Lampada => "L: clarão",
+            ShellType.Tampinha => "Espaço / {padJump} 2×: pulo duplo",
+            ShellType.Espiral => "L / {padAbility}: cambalhota",
+            ShellType.Lata => "L / {padAbility}: investida",
+            ShellType.Lampada => "L / {padAbility}: clarão",
             _ => "",
-        };
+        });
 
         void UpdateBossBar()
         {
@@ -559,13 +585,15 @@ namespace MareBaixa
             PromptText = prompt ?? "";
             hintLabel.text = HintText;
             promptLabel.text = PromptText;
+            toastLabel.enabled = Time.time < toastUntil && !busy;
         }
 
         void UpdatePause()
         {
             if (!pausePanel.activeSelf || Time.frameCount == pauseOpenedFrame) return;
+            if (Controls.BackPressed) { onResume?.Invoke(); return; }
             int step = pauseNav.Read();
-            if (step != 0) SelectPause((pauseSelected + step + 2) % 2);
+            if (step != 0) SelectPause((pauseSelected + step + 3) % 3);
             if (UiKit.ConfirmPressed()) ChoosePause(pauseSelected);
         }
 

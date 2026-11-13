@@ -100,7 +100,7 @@ namespace MareBaixa
             bandImage.color = new Color(GameRules.Ink.r, GameRules.Ink.g, GameRules.Ink.b, .78f);
             bandImage.raycastTarget = false;
             caption = UiKit.Label(band, "", 30, UiKit.Center, new Vector2(0f, 4f), new Vector2(1060f, 120f));
-            arrow = UiKit.Label(band, "E  >", 22, UiKit.BottomRight, new Vector2(-24f, 12f), new Vector2(100f, 30f),
+            arrow = UiKit.Label(band, "E / {padConfirm} >", 22, UiKit.BottomRight, new Vector2(-24f, 12f), new Vector2(100f, 30f),
                 TextAnchor.MiddleRight, GameRules.Turquoise);
 
             sceneTitle = UiKit.Label(stage, scene.title.ToUpperInvariant(), 26, UiKit.TopLeft, new Vector2(28f, -22f),

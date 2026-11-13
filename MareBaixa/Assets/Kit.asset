@@ -74,6 +74,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e058ad2c4362a4ebdb18ebaf80839b9a, type: 3}
   - {fileID: 21300000, guid: b5d6dca7fb40d4161ab23fd4040c7ce3, type: 3}
   - {fileID: 21300000, guid: a37b5221c2d0a43e69e293f4367db13f, type: 3}
+  weaponSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: c4b37d94067ea4bc4988266282392d2d, type: 3}
+  - {fileID: 21300000, guid: 9a82488ca831c4347aec5b9ae211a1b0, type: 3}
+  - {fileID: 21300000, guid: b2f6c1cafef5949ad977b1fb16a4154a, type: 3}
+  benchSprite: {fileID: 21300000, guid: a281cd616e6e74e368ad13345a85eedb, type: 3}
   shardSprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: b1dff5c87c97348b0840d427543d0ceb, type: 3}

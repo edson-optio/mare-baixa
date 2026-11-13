@@ -59,7 +59,7 @@ namespace MareBaixa
                 TextAnchor.MiddleRight);
             balanceIcon = UiKit.Picture(frame, null, UiKit.TopRight, new Vector2(-26f, -72f), new Vector2(34f, 34f));
             statusLabel = UiKit.Label(frame, "", 22, UiKit.BottomCenter, new Vector2(0f, 46f), new Vector2(Width - 40f, 30f));
-            UiKit.Label(frame, "W/S ou setas: escolher  ·  E, Enter ou Espaço: confirmar  ·  Esc: sair", 20,
+            UiKit.Label(frame, "W/S / direcional: escolher · Enter / {padJump}: confirmar · Esc / {padDodge}: sair", 20,
                 UiKit.BottomCenter, new Vector2(0f, 12f), new Vector2(Width - 40f, 28f), color: GameRules.Sand);
             upArrow = UiKit.Picture(frame, UiKit.Triangle, UiKit.TopLeft, new Vector2(6f, -ListTop - 4f), new Vector2(18f, 10f));
             upArrow.color = GameRules.Turquoise;
@@ -157,7 +157,7 @@ namespace MareBaixa
             if (Time.frameCount == openedFrame) return;
             int step = nav.Read();
             if (step != 0) Select((Selected + step + Count) % Count);
-            if (Controls.Pressed(GameAction.Pause)) Close();
+            if (Controls.CancelPressed) Close();
             else if (UiKit.ConfirmPressed()) Confirm();
         }
 

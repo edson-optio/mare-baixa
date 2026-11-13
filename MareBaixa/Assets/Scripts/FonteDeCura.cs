@@ -22,7 +22,7 @@ namespace MareBaixa
             radius = 1.4f;
         }
 
-        public override string Prompt => Used ? "A fonte secou" : "E: beber da fonte";
+        public override string Prompt => Used ? "A fonte secou" : Controls.InteractHint + ": beber da fonte";
 
         void Awake()
         {

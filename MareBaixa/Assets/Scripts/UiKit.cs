@@ -70,6 +70,8 @@ namespace MareBaixa
             scaler.matchWidthOrHeight = .5f;
             if (Object.FindAnyObjectByType<EventSystem>() == null)
                 new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
+            // Os painéis fazem sua própria navegação; o módulo legado atende apenas ao mouse.
+            EventSystem.current.sendNavigationEvents = false;
             return (RectTransform)canvasObject.transform;
         }
 
@@ -195,6 +197,8 @@ namespace MareBaixa
             var label = rect.gameObject.AddComponent<Text>();
             label.font = Font;
             label.text = text;
+            if (text != null && text.Contains("{pad"))
+                label.gameObject.AddComponent<ControllerHintLabel>().Bind(label, text);
             label.fontSize = PixelSize(size);
             label.alignment = alignment;
             label.color = color ?? GameRules.Cream;
@@ -288,10 +292,7 @@ namespace MareBaixa
         public static bool Blink(float period = .5f) => Mathf.Repeat(Time.unscaledTime, period) < period * .5f;
 
         // Confirmar em menus: E, Enter, Espaço ou botão A do controle.
-        public static bool ConfirmPressed() =>
-            Controls.Pressed(GameAction.Interact)
-            || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)
-            || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0);
+        public static bool ConfirmPressed() => Controls.ConfirmPressed;
 
         // "Segure Esc (ou E) para pular": anel que enche no canto e avisa quando o tempo fecha.
         // Só conta um aperto que começou com o indicador já na tela (a tecla que abriu a cena não vale).
@@ -317,7 +318,7 @@ namespace MareBaixa
                 fill.fillClockwise = true;
                 fill.fillAmount = 0f;
                 fill.color = GameRules.Orange;
-                label = Label(area, "segure Esc para pular", 20, Right, new Vector2(-54f, 0f), new Vector2(270f, 40f),
+                label = Label(area, "segure Esc / Start para pular", 20, Right, new Vector2(-54f, 0f), new Vector2(270f, 40f),
                     TextAnchor.MiddleRight, GameRules.Cream);
             }
 
@@ -351,11 +352,11 @@ namespace MareBaixa
             // -1 sobe, +1 desce, 0 nada.
             public int Read()
             {
-                float vertical = Controls.Simulated ? 0f : Input.GetAxisRaw("Vertical");
+                float vertical = Controls.Navigation.y;
                 int direction = vertical > .5f ? -1 : vertical < -.5f ? 1 : 0;
                 if (direction == 0 && horizontal)
                 {
-                    float side = Controls.Simulated ? 0f : Input.GetAxisRaw("Horizontal");
+                    float side = Controls.Navigation.x;
                     direction = side > .5f ? 1 : side < -.5f ? -1 : 0;
                 }
                 if (direction == 0)

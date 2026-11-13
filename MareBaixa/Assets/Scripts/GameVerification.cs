@@ -12,7 +12,7 @@ namespace MareBaixa
     // a vitória) e salva um relatório JSON com capturas de tela de cada sala e de cada cutscene.
     // Usa outro save para não mexer no do jogador.
     [DefaultExecutionOrder(-1000)]
-    public class GameVerification : MonoBehaviour
+    public partial class GameVerification : MonoBehaviour
     {
         [Serializable] class Report { public bool passed; public List<string> checks = new List<string>(); public List<string> failures = new List<string>(); }
         readonly Report report = new Report();
@@ -42,6 +42,7 @@ namespace MareBaixa
             yield return Step(TestMenu());
             yield return Step(TestVillage());
             yield return Step(TestRun());
+            yield return Step(TestEquipmentAndCheckpoints());
             yield return Step(TestAllRooms());
             Finish();
         }
@@ -223,6 +224,22 @@ namespace MareBaixa
             Check(Progress.Data.tampinhaUnlocked && Progress.Data.startShell == ShellType.Tampinha && Progress.Data.pearls == 11
                   && casco.Shell == ShellType.Tampinha, "Dona Lagosta forja a Tampinha (6 pérolas) e ela vira a concha inicial");
             yield return Capture("05-forja-lagosta");
+            Hud.Shop.Select(6); // primeira arma, depois das cinco conchas e das pinças
+            Hud.Shop.Confirm();
+            yield return null;
+            Check(Progress.IsWeaponUnlocked(WeaponType.Canudo) && Progress.Data.startWeapon == WeaponType.Canudo
+                  && casco.Weapon == WeaponType.Canudo && Progress.Data.pearls == 6,
+                "Comprar espada de canudo custa 5 pérolas, equipa e libera arma inicial permanente");
+            Hud.Shop.Confirm();
+            Check(Progress.Data.pearls == 6, "Reequipar arma comprada não cobra novamente");
+            Hud.Shop.Select(8);
+            Hud.Shop.Confirm();
+            Check(!Progress.IsWeaponUnlocked(WeaponType.Escova) && Progress.Data.pearls == 6
+                && casco.Weapon == WeaponType.Canudo, "Compra sem pérolas suficientes preserva saldo e arma");
+            yield return Capture("05b-forja-armas");
+            Progress.Reload();
+            Check(Progress.IsWeaponUnlocked(WeaponType.Canudo) && Progress.StartWeapon == WeaponType.Canudo,
+                "Arma comprada persiste ao recarregar o save");
             yield return Press(GameAction.Pause);
 
             // Descer
@@ -256,6 +273,9 @@ namespace MareBaixa
             CheckPlan(run, kit);
             Check(casco.Shell == ShellType.Tampinha && Mathf.Approximately(casco.MaxAir, 10f),
                 "Run começa com a concha escolhida e o ar comprado (10 s)");
+            Check(casco.Weapon == WeaponType.Canudo, "Run começa com a arma escolhida na forja");
+            Check(FindAnyObjectByType<WeaponPickup>()?.Type == WeaponType.Canudo, "Entrada do Recife oferece uma espada de canudo");
+            casco.EquipWeapon(WeaponType.Pincas); // ainda verifica o combate original sem arma
             yield return new WaitForSeconds(.6f);
             Check(casco.Grounded, "Casco pousa no chão da entrada do Recife" + Pos(casco));
             yield return Capture("06-recife-entrada");
@@ -331,7 +351,7 @@ namespace MareBaixa
                 "E troca pela Concha Espiral e a Tampinha fica no chão");
             yield return Press(GameAction.Ability);
             Check(casco.Spinning, "L com a Espiral faz o ataque giratório");
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.7f);
             yield return Press(GameAction.Dodge);
             Check(casco.Dodging && casco.Invulnerable, "K rola dentro da concha e fica invulnerável");
             yield return new WaitForSeconds(.6f);
@@ -385,7 +405,7 @@ namespace MareBaixa
             }
             Check(shape && reef == 2 + GameRules.ReefRandomRooms,
                 "Recife: entrada fixa + " + GameRules.ReefRandomRooms + " salas do banco + sala de concha garantida (" + reef + " salas)");
-            Check(bubbles == 2 || kit.bubbleRoom == null, "Uma bolha de ar entre cada zona (" + bubbles + ")");
+            Check(bubbles == 6 || kit.bubbleRoom == null, "Seis abrigos: entre trechos, zonas e antes dos dois chefes (" + bubbles + ")");
             Check(city == 0 || (city == 2 + Mathf.Min(GameRules.CityRandomRooms, kit.cityRooms.Length) && plan[plan.Count - 1].zone != Zone.Cidade),
                 "Cidade Afundada: entrada + salas sorteadas + arena do Colosso (" + city + " salas)");
             Check(abyss == 0 || abyss == 2 + Mathf.Min(GameRules.AbyssRandomRooms, kit.abyssRooms.Length),
@@ -485,6 +505,15 @@ namespace MareBaixa
                     "Sala " + (i + 1) + " (" + run.Plan[i].zone + " · " + run.Room.RoomName + ") monta e Casco começa em pé, fora d'água" + Pos(casco));
                 if (run.Plan[i].zone == Zone.Fossa)
                     Check(Escuridao.Current != null, "Sala da Fossa é escura");
+                if (run.Plan[i].zone == Zone.Bolha)
+                {
+                    var bench = run.Room.GetComponentInChildren<BancoDescanso>();
+                    Check(bench != null && Mare.Current == null, "Abrigo tem banco de descanso e não tem maré");
+                    casco.TeleportTo(bench.Feet);
+                    yield return new WaitForSeconds(.2f);
+                    yield return Press(GameAction.Interact);
+                    yield return new WaitForSeconds(1.1f);
+                }
                 yield return Capture("sala-" + (i + 1) + "-" + run.Rooms[i].name);
                 var boss = run.Room.Boss;
                 if (boss != null)
@@ -511,6 +540,7 @@ namespace MareBaixa
             for (float t = 0; t < 15f && !Hud.MessageVisible; t += Time.unscaledDeltaTime) yield return null;
             Check(run.Ending && Hud.MessageVisible && Progress.Data.victories == 1,
                 "Depois da arena do Polvo, a campanha termina em vitória (cutscene 4 e créditos)");
+            Check(!Progress.HasCheckpoint, "Vitória encerra o checkpoint da jornada concluída");
             yield return Capture("10-vitoria");
             int expected = Progress.Data.pearls;
             yield return new WaitForSecondsRealtime(.7f);   // a mensagem ignora apertos nos primeiros 0,5 s

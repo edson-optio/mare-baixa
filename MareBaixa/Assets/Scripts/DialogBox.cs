@@ -40,7 +40,7 @@ namespace MareBaixa
                 new Vector2(Width - PortraitSpace - 30f, 36f), TextAnchor.MiddleLeft, GameRules.Orange);
             bodyLabel = UiKit.Label(frame, "", 33, UiKit.TopLeft, new Vector2(PortraitSpace, -56f),
                 new Vector2(Width - PortraitSpace - 30f, 110f), TextAnchor.UpperLeft);
-            arrowLabel = UiKit.Label(frame, "E  >", 22, UiKit.BottomRight, new Vector2(-18f, 10f), new Vector2(120f, 30f),
+            arrowLabel = UiKit.Label(frame, "E / {padConfirm} >", 22, UiKit.BottomRight, new Vector2(-18f, 10f), new Vector2(120f, 30f),
                 TextAnchor.MiddleRight, GameRules.Turquoise);
             gameObject.SetActive(false);
         }

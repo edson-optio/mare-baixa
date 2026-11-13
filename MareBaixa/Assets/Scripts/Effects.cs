@@ -8,6 +8,7 @@ namespace MareBaixa
     {
         static Effects instance;
         float stopUntil;
+        static Material trailMaterial;
 
         static Effects Instance
         {
@@ -46,6 +47,40 @@ namespace MareBaixa
             animator.loop = false;
             animator.destroyWhenDone = true;
             animator.Play(kit.sparkFrames, 18f);
+        }
+
+        public static void Afterimage(SpriteRenderer source, Color color)
+        {
+            if (source == null || source.sprite == null) return;
+            var go = new GameObject("Rastro da Espiral", typeof(SpriteRenderer), typeof(CombatTrail));
+            go.transform.SetPositionAndRotation(source.transform.position, source.transform.rotation);
+            go.transform.localScale = source.transform.lossyScale;
+            var art = go.GetComponent<SpriteRenderer>();
+            art.sprite = source.sprite;
+            art.sortingOrder = source.sortingOrder - 1;
+            art.color = new Color(color.r, color.g, color.b, .5f);
+        }
+
+        public static void Slash(Vector2 center, float facing, float reach, Color color, bool thrust)
+        {
+            if (trailMaterial == null) trailMaterial = new Material(Shader.Find("Sprites/Default"));
+            var go = new GameObject("Rastro do golpe", typeof(LineRenderer), typeof(CombatTrail));
+            var line = go.GetComponent<LineRenderer>();
+            line.sharedMaterial = trailMaterial;
+            line.sortingOrder = 24;
+            line.startWidth = .09f;
+            line.endWidth = .025f;
+            line.startColor = color;
+            line.endColor = new Color(color.r, color.g, color.b, .25f);
+            line.positionCount = thrust ? 2 : 12;
+            for (int i = 0; i < line.positionCount; i++)
+            {
+                float t = (float)i / (line.positionCount - 1);
+                float angle = Mathf.Lerp(55f, -50f, t) * Mathf.Deg2Rad;
+                Vector2 point = thrust ? new Vector2(Mathf.Lerp(.45f, reach, t) * facing, .05f)
+                    : new Vector2(Mathf.Cos(angle) * reach * facing, Mathf.Sin(angle) * .6f);
+                line.SetPosition(i, center + point);
+            }
         }
 
         // A concha se desfaz em cacos que voam e somem.

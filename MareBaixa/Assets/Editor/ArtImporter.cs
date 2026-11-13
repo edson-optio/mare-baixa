@@ -30,7 +30,7 @@ namespace MareBaixa.Editor
         {
             "casco-", "concha-", "vovo-buzia", "ostracia", "dona-lagosta", "bolota", "saida", "placa",
             "coral-", "alga-decor-", "casa-garrafa", "bau-", "siri-", "tentaculo-", "valvula-", "fonte-",
-            "colosso-", "carro", "semaforo", "lixo", "moreia-",
+            "colosso-", "carro", "semaforo", "lixo", "moreia-", "banco-",
         };
 
         // Tamanho em pixels dos placeholders (o mesmo combinado na tarefa de arte); o resto é 32x32.
@@ -56,7 +56,7 @@ namespace MareBaixa.Editor
             {
                 string name = Path.GetFileNameWithoutExtension(path);
                 bool feet = FeetPivot.Any(prefix => name.StartsWith(prefix));
-                Import(path, feet ? new Vector2(.5f, 0f) : new Vector2(.5f, .5f), false);
+                Import(path, PivotOf(name), false);
             }
             foreach (string path in Pngs(HighResPath))
                 Import(path, PivotOf(Path.GetFileNameWithoutExtension(path)), false, HighResPixelsPerUnit);
@@ -126,7 +126,14 @@ namespace MareBaixa.Editor
         public static Sprite[] Cutscenes() => Pngs(CutscenesPath)
             .Select(p => AssetDatabase.LoadAssetAtPath<Sprite>(p)).Where(s => s != null).ToArray();
 
-        static Vector2 PivotOf(string name) => FeetPivot.Any(prefix => name.StartsWith(prefix)) ? new Vector2(.5f, 0f) : new Vector2(.5f, .5f);
+        // Armas: o pivô fica no meio do cabo (pixel medido em cada PNG de Sprites64), que é onde a
+        // pinça de Casco segura.
+        static Vector2 PivotOf(string name) =>
+            name == "arma-canudo" ? new Vector2(14f / 96f, 14f / 32f)
+            : name == "arma-garfo" ? new Vector2(16f / 128f, 17f / 36f)
+            : name == "arma-escova" ? new Vector2(11f / 88f, 22f / 48f)
+            : name.StartsWith("arma-") ? new Vector2(.1f, .5f)
+            : FeetPivot.Any(prefix => name.StartsWith(prefix)) ? new Vector2(.5f, 0f) : new Vector2(.5f, .5f);
 
         // A arte de verdade quando existe; senão, um placeholder com o mesmo nome.
         static Sprite Load(string folder, string name)

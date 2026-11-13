@@ -16,6 +16,7 @@ namespace MareBaixa
     //   B  chefe da arena (Ermitão Colosso na Cidade, Polvo Abissal na Fossa)
     //   v  válvula   <  >  correnteza   H  fonte de cura (bolha de ar)
     //   o  pérola   T  baú   a  alga   O  bolha de ar
+    //   R  banco de descanso (só em abrigos)   u  espada de canudo   F  lança de garfo   E  martelo de escova
     //   c  Concha Comum   t  Tampinha   e  Espiral   l  Lata   i  Lâmpada
     //   r  concha nova sorteada (Tampinha/Espiral no Recife, Lata/Lâmpada mais fundo)
     //   k  K  corais   g  algas   p  placa   h  casa de garrafa   x  carro   q  semáforo
@@ -218,6 +219,10 @@ namespace MareBaixa
                         case '<': SpawnCurrent(kit, center, -1f, objects); break;
                         case '>': SpawnCurrent(kit, center, 1f, objects); break;
                         case 'H': Spawn(kit.healFont, feet, objects); break;
+                        case 'R': BancoDescanso.Spawn(feet, objects); break;
+                        case 'u': WeaponPickup.Spawn(WeaponType.Canudo, feet, objects); break;
+                        case 'F': WeaponPickup.Spawn(WeaponType.Garfo, feet, objects); break;
+                        case 'E': WeaponPickup.Spawn(WeaponType.Escova, feet, objects); break;
                         case 'B':
                             var boss = Spawn(Zone == Zone.Fossa ? kit.polvo : kit.colosso, feet, objects);
                             if (boss != null) Boss = boss.GetComponent<Boss>();

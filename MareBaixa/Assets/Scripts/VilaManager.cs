@@ -17,7 +17,8 @@ namespace MareBaixa
             "Lá embaixo fica Coralina, a cidade dos humanos que afundou. O Polvo Abissal mora no fundo dela.",
             "Alguém precisa descer. E você é pequeno o bastante para passar por qualquer fresta.",
             "A concha é sua casa e sua armadura. Sem ela, um golpe basta. Troque sempre que achar uma melhor.",
-            "Junte pérolas. Ostrácia troca por melhorias e Dona Lagosta forja conchas. A descida fica à direita.",
+            "Junte pérolas. Ostrácia vende melhorias. Dona Lagosta forja conchas e transforma lixo humano em armas!",
+            "Nos abrigos, deite no banco para salvar a jornada. Se a maré te levar, você volta ao último banco. A descida fica à direita.",
         };
 
         static readonly string[] BuziaTips =
@@ -33,6 +34,9 @@ namespace MareBaixa
             "Válvulas velhas baixam a água por um tempo... mas o barulho acorda a vizinhança.",
             "Na Fossa quase não há luz. A Lâmpada Velha ilumina e o clarão dela atordoa os bichos.",
             "O Ermitão Colosso rola até bater na parede. Depois fica tonto: é a sua chance.",
+            "A Espiral faz uma cambalhota que avança, protege e machuca os bichos. Use a habilidade da concha!",
+            "Um canudo vira espada, um garfo vira lança... Ache armas nas salas ou compre na forja para começar com elas.",
+            "Deite nos bancos dos abrigos. Eles guardam a jornada, as pérolas e o equipamento, mesmo se fechar o jogo.",
         };
 
         static readonly string[] BolotaLines =
@@ -144,6 +148,33 @@ namespace MareBaixa
                 ShellChoice(ShellType.Espiral, 8),
                 ShellChoice(ShellType.Lata, 14),
                 ShellChoice(ShellType.Lampada, 16),
+                WeaponChoice(WeaponType.Pincas),
+                WeaponChoice(WeaponType.Canudo),
+                WeaponChoice(WeaponType.Garfo),
+                WeaponChoice(WeaponType.Escova),
+            };
+        }
+
+        ShopEntry WeaponChoice(WeaponType type)
+        {
+            var weapon = Weapons.Get(type);
+            return new ShopEntry
+            {
+                label = weapon.Name + " · " + weapon.Damage + " dano · " + weapon.Style,
+                detail = () => !Progress.IsWeaponUnlocked(type) ? "Comprar: " + weapon.Price + " pérolas"
+                    : Progress.Data.startWeapon == type ? "Arma inicial (atual)" : "Equipar · grátis",
+                onSelect = () =>
+                {
+                    if (!Progress.IsWeaponUnlocked(type))
+                    {
+                        if (!Spend(weapon.Price)) return false;
+                        Progress.Data.weaponsUnlocked |= 1 << (int)type;
+                    }
+                    Progress.Data.startWeapon = type;
+                    Casco.EquipWeapon(type);
+                    Progress.Save();
+                    return true;
+                },
             };
         }
 

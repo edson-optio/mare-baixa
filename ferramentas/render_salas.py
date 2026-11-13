@@ -22,6 +22,7 @@ SPRITES = {
     "t": "concha-tampinha", "e": "concha-espiral", "r": "concha-espiral", "k": "coral-1", "K": "coral-2",
     "g": "alga-decor-1", "p": "placa", "h": "casa-garrafa", "V": "vovo-buzia", "Y": "ostracia",
     "L": "dona-lagosta", "U": "bolota",
+    "R": "banco-descanso", "u": "arma-canudo", "F": "arma-garfo", "E": "arma-escova",
     "m": "moreia-escondida", "s": "siri-1", "f": "pescador-1", "w": "tentaculo-1", "v": "valvula-1",
     "<": "correnteza-1", ">": "correnteza-1", "H": "fonte-1", "B": "colosso-anda-1",
     "P": "polvo-corpo", "l": "concha-lata", "i": "concha-lampada", "x": "carro", "q": "semaforo", "n": "coral-bio", "z": "lixo",

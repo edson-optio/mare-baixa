@@ -68,23 +68,23 @@ namespace MareBaixa
             UiKit.Label(panel, "CONTROLES", 24, UiKit.TopLeft, new Vector2(24f, -166f), new Vector2(672f, 32f),
                 TextAnchor.MiddleLeft, GameRules.Turquoise);
             string left =
-                "A / D: mover\n" +
-                "Espaço: pular (segure para\npular mais alto)\n" +
-                "J: pinças\n" +
-                "K: rolar na concha";
+                "A/D / analógico: mover\n" +
+                "Espaço / {padJump}: pular\n(segure para pular mais alto)\n" +
+                "J / {padAttack}: atacar\n" +
+                "K / {padDodge}: rolar";
             string right =
-                "L: habilidade da concha\n" +
-                "E: pegar concha / conversar\n" +
-                "Q: comer alga\n" +
-                "Esc: pausa";
-            ControlsText = left + "\n" + right;
+                "L / {padAbility}: habilidade\n" +
+                "E / RB (R1): interagir\n" +
+                "Q / LB (L1): comer alga\n" +
+                "Esc / Start: pausa";
+            ControlsText = Controls.FormatHints(left + "\n" + right);
             UiKit.Label(panel, left, 21, UiKit.TopLeft, new Vector2(24f, -204f), new Vector2(330f, 170f), TextAnchor.UpperLeft);
             UiKit.Label(panel, right, 21, UiKit.TopLeft, new Vector2(370f, -204f), new Vector2(330f, 170f), TextAnchor.UpperLeft);
 
             HasSave = SaveExists();
             if (HasSave)
             {
-                ContinueButton = AddButton(root, "Continuar", 40f, Play);
+                ContinueButton = AddButton(root, Progress.HasCheckpoint ? "Continuar do banco" : "Continuar", 40f, Play);
                 NewGameButton = AddButton(root, "Novo jogo", 420f, AskNewGame);
                 PlayButton = ContinueButton;
             }
@@ -157,7 +157,7 @@ namespace MareBaixa
             int pearls = Progress.Data.pearls;
             UiKit.Label(frame,
                 "Isso apaga o progresso salvo" + (pearls > 0 ? " (" + pearls + " pérolas guardadas)" : "") +
-                ", as melhorias da vila e as conchas liberadas.",
+                ", as melhorias, as armas, as conchas e o banco salvo.",
                 24, UiKit.TopCenter, new Vector2(0f, -96f), new Vector2(680f, 90f));
             confirmYes = UiKit.Button(frame, "Apagar e começar", UiKit.BottomCenter, new Vector2(-180f, 32f),
                 () => ChooseConfirm(0), new Vector2(320f, 60f), 26, hover: false);
@@ -207,7 +207,7 @@ namespace MareBaixa
         {
             if (loading) return;
             loading = true;
-            SceneManager.LoadScene(GameRules.VillageScene);
+            SceneManager.LoadScene(Progress.HasCheckpoint ? GameRules.RunScene : GameRules.VillageScene);
         }
 
         void Update()
@@ -218,7 +218,7 @@ namespace MareBaixa
                 if (Time.frameCount == confirmOpenedFrame) return;
                 int side = confirmNav.Read();
                 if (side != 0) SelectConfirm(side < 0 ? 0 : 1);
-                if (Controls.Pressed(GameAction.Pause)) ChooseConfirm(1);
+                if (Controls.CancelPressed) ChooseConfirm(1);
                 else if (UiKit.ConfirmPressed()) ChooseConfirm(confirmSelected);
                 return;
             }

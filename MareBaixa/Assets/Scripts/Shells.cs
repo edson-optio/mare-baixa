@@ -26,7 +26,7 @@ namespace MareBaixa
             new ShellInfo("Sem concha", 0, GameRules.NakedSpeedFactor, "Um golpe e acabou"),
             new ShellInfo("Concha Comum", 3, 1f, "Nenhuma habilidade"),
             new ShellInfo("Tampinha de Garrafa", 2, 1.2f, "Pulo duplo"),
-            new ShellInfo("Concha Espiral", 4, 1f, "Giro dos dois lados"),
+            new ShellInfo("Concha Espiral", 4, 1f, "Cambalhota ofensiva"),
             new ShellInfo("Lata de Refrigerante", 6, .8f, "Investida que derruba"),
             new ShellInfo("Lâmpada Velha", 3, 1f, "Clarão que atordoa"),
         };

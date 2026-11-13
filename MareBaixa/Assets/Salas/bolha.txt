@@ -1,14 +1,14 @@
 @nome Bolha de Ar
-@dica1 Aqui a água não sobe. A fonte cura a concha uma vez.
+@dica1 Descanse no banco com E / RB: salva a jornada, guarda pérolas e recupera concha, ar e algas.
 ########################
 #                      #
 #                      #
 #                      #
 #                      #
 #                      #
-#        o     o       #
+#        n     n       #
 # C g   ===   ===  p S #
 #####      1       #####
-##### gk o  H o K n#####
+##### g H   R   K n#####
 ########################
 ########################

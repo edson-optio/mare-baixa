@@ -4,6 +4,8 @@
 #
 # Uso: sh ferramentas/compilar.sh          (monta o projeto)
 #      sh ferramentas/compilar.sh build    (monta e gera Entrega/MareBaixa.app)
+#      sh ferramentas/compilar.sh gamepad  (testa os eventos do gamepad virtual)
+#      sh ferramentas/compilar.sh devices  (inspeciona os controles conectados)
 # Sai com código 1 se houver erro de compilação ou se o Unity falhar.
 
 RAIZ="$(cd "$(dirname "$0")/.." && pwd)"
@@ -12,6 +14,9 @@ TRAVA="${TMPDIR:-/tmp}/mare-baixa-unity.lock"
 LOG="$RAIZ/Verificacao/unity-compilar.log"
 METODO=MareBaixa.Editor.ProjectBuilder.CreateProject
 [ "$1" = "build" ] && METODO=MareBaixa.Editor.ProjectBuilder.BuildAll
+[ "$1" = "gamepad" ] && METODO=MareBaixa.Editor.GamepadVerification.Run
+[ "$1" = "devices" ] && METODO=MareBaixa.Editor.GamepadVerification.DescribeDevices
+[ "$1" = "observe" ] && METODO=MareBaixa.Editor.GamepadVerification.ObserveDevices
 
 espera=0
 until mkdir "$TRAVA" 2>/dev/null; do
@@ -23,7 +28,12 @@ done
 trap 'rmdir "$TRAVA" 2>/dev/null' EXIT INT TERM
 
 mkdir -p "$RAIZ/Verificacao"
-"$UNITY" -batchmode -quit -projectPath "$RAIZ/MareBaixa" -executeMethod "$METODO" -logFile "$LOG"
+if [ "$1" = "gamepad" ] || [ "$1" = "observe" ]; then
+  # O teste entra em Play Mode e encerra o editor quando terminar.
+  "$UNITY" -batchmode -projectPath "$RAIZ/MareBaixa" -executeMethod "$METODO" -logFile "$LOG"
+else
+  "$UNITY" -batchmode -quit -projectPath "$RAIZ/MareBaixa" -executeMethod "$METODO" -logFile "$LOG"
+fi
 codigo=$?
 
 erros=$(grep -E "error CS[0-9]+|Exception:|Falha no build" "$LOG" | sort -u)
@@ -33,5 +43,5 @@ if [ -n "$erros" ] || [ $codigo -ne 0 ]; then
   echo "Log completo: $LOG"
   exit 1
 fi
-grep -E "MARE_PROJECT_READY|MARE_BUILD_READY" "$LOG" | tail -2
+grep -E "MARE_PROJECT_READY|MARE_BUILD_READY|MARE_GAMEPAD_TESTS|MARE_DEVICES_READY" "$LOG" | tail -2
 echo "OK: compilou sem erros."

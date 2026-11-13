@@ -27,7 +27,7 @@ namespace MareBaixa
             get
             {
                 var info = Shells.Get(type);
-                return "E: vestir " + info.Name + " (" + HpShown + "/" + info.Resistance + ")";
+                return Controls.InteractHint + ": vestir " + info.Name + " (" + HpShown + "/" + info.Resistance + ")";
             }
         }
 

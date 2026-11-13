@@ -15,7 +15,7 @@ namespace MareBaixa
             radius = 1.5f;
         }
 
-        public override string Prompt => "E: mergulhar no " + GameRules.ReefName;
+        public override string Prompt => Controls.InteractHint + ": mergulhar no " + GameRules.ReefName;
 
         void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 

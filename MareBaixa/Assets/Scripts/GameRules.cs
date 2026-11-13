@@ -30,10 +30,12 @@ namespace MareBaixa
         public const float DodgeTime = .3f;
         public const float DodgeSpeed = 11f;
         public const float DodgeCooldown = .55f;
-        public const float SpinCooldown = 1.1f;
-        public const float SpinActiveTime = .3f;
-        public const float SpinRadius = 1.4f;
-        public const int SpinDamage = 2;
+        public const float SpinCooldown = 1.65f;
+        public const float SpinActiveTime = .58f;
+        public const float SpinRadius = 1.1f;
+        public const float SpinSpeed = 13.5f;
+        public const float SpinJumpSpeed = 8.5f;
+        public const int SpinDamage = 3;
         public const float ChargeTime = .35f;           // investida da Lata
         public const float ChargeSpeed = 13f;
         public const float ChargeCooldown = 1.2f;

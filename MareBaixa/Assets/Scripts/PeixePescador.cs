@@ -36,7 +36,9 @@ namespace MareBaixa
         public float mouthRadius = .5f;
 
         [Header("Isca")]
-        public float lureOffset = .75f;
+        // Posição da lâmpada desenhada na antena do sprite (pescador-1..4, 96×64 a 64 PPU).
+        public float lureOffset = .62f;
+        public float lureHeight = .14f;
         public float lureRadius = 1.2f;
 
         Phase phase = Phase.Drift;
@@ -141,7 +143,7 @@ namespace MareBaixa
         void UpdateLure()
         {
             if (lure == null) return;
-            lure.transform.localPosition = new Vector3(facing * lureOffset, .1f, 0f);
+            lure.transform.localPosition = new Vector3(facing * lureOffset, lureHeight, 0f);
             float pulse = 1f + Mathf.Sin(Time.time * 2.2f) * .08f;
             lure.radius = lureRadius * pulse * (Stunned ? .4f : 1f);
         }

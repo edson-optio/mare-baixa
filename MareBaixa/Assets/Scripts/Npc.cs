@@ -29,7 +29,7 @@ namespace MareBaixa
             radius = 1.6f;
         }
 
-        public override string Prompt => "E: falar com " + displayName;
+        public override string Prompt => Controls.InteractHint + ": falar com " + displayName;
 
         public static string DefaultName(NpcKind kind)
         {

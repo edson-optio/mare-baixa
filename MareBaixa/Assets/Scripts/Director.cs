@@ -46,6 +46,7 @@ namespace MareBaixa
             Casco = Instantiate(kit.casco, position, Quaternion.identity);
             Casco.name = "Casco";
             Casco.Equip(shell, Shells.Get(shell).Resistance);
+            Casco.EquipWeapon(Progress.StartWeapon);
             CameraRig.target = Casco.transform;
             return Casco;
         }

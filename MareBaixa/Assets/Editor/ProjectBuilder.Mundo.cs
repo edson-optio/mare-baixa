@@ -52,13 +52,17 @@ namespace MareBaixa.Editor
             // A isca fica acima da escuridão (sorting 60): no escuro é só ela que aparece.
             var lure = Sprite("Isca", S("pescador-isca"), 61);
             lure.transform.SetParent(go.transform, false);
-            lure.transform.localPosition = new Vector3(.75f, .1f, 0f);
+            lure.transform.localPosition = new Vector3(.62f, .14f, 0f);
             var light = lure.AddComponent<LightSource>();
             light.radius = 1.2f;
             var angler = go.AddComponent<PeixePescador>();
             angler.swimFrames = swim;
             angler.mouthOpen = S("pescador-boca");
             angler.lure = light;
+            angler.lureOffset = .62f;
+            angler.lureHeight = .14f;
+            // A luz da isca cobre o corpo inteiro: no escuro dá para ver que é um peixe.
+            angler.lureRadius = 1.7f;
             return Save<GameObject>(go, "PeixePescador");
         }
 

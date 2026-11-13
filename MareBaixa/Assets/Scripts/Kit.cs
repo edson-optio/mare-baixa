@@ -53,6 +53,8 @@ namespace MareBaixa
 
         [Header("Sprites")]
         public Sprite[] shellSprites;   // índice = ShellType (0 = sem concha)
+        public Sprite[] weaponSprites;  // índice = WeaponType (0 = pinças)
+        public Sprite benchSprite;
         public Sprite[] shardSprites;   // cacos da concha quebrando, mesmo índice
         public Sprite[] sparkFrames;
         public Sprite[] seaweedFrames;
