@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Maré Baixa — Manual de Instruções</title>
+<style>
+  @font-face { font-family: "Pixelify"; src: url("../../../MareBaixa/Assets/Fonts/Resources/PixelifySans.ttf"); }
+  :root {
+    --navy: #13232f; --navy2: #1b3242; --teal: #2f9c96; --teal-l: #d8efec;
+    --orange: #ef7a22; --sand: #fbf3e4; --ink: #1d2830; --mute: #5a6872; --line: #d9cdb6;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; color: var(--ink);
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 10.4pt; line-height: 1.45;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 16mm 17mm 14mm; position: relative; overflow: hidden;
+    page-break-after: always; background: var(--sand); }
+  .page:last-child { page-break-after: auto; }
+  .folio { position: absolute; bottom: 8mm; left: 17mm; right: 17mm; display: flex; justify-content: space-between;
+    font-family: "Pixelify"; font-size: 9pt; color: var(--mute); border-top: 1px solid var(--line); padding-top: 2mm; }
+  h1, h2, h3 { font-family: "Pixelify", monospace; font-weight: 400; margin: 0; }
+  h2 { font-size: 22pt; color: var(--navy); margin-bottom: 1mm; }
+  h2 .n { color: var(--orange); margin-right: 3mm; }
+  .lead { color: var(--mute); margin: 0 0 6mm; font-size: 11pt; }
+  h3 { font-size: 13pt; color: var(--teal); margin: 6mm 0 2mm; }
+  p { margin: 0 0 3mm; }
+  b { color: var(--navy); }
+  img { display: block; max-width: 100%; image-rendering: pixelated; }
+  .shot { border: 3px solid var(--navy); border-radius: 3px; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9.6pt; }
+  th { font-family: "Pixelify"; font-weight: 400; font-size: 10pt; text-align: left; background: var(--navy);
+    color: #fff; padding: 1.6mm 2.4mm; }
+  td { padding: 1.6mm 2.4mm; border-bottom: 1px solid var(--line); vertical-align: top; background: #fffaf1; }
+  tr:nth-child(even) td { background: #f7eedd; }
+  kbd { font-family: "Pixelify"; font-size: 9.5pt; background: var(--navy); color: #fff; border-radius: 2px;
+    padding: .2mm 1.4mm; white-space: nowrap; }
+  .pad { font-family: "Pixelify"; font-size: 9.5pt; border: 1.2px solid var(--navy); color: var(--navy);
+    border-radius: 9px; padding: 0 1.6mm; white-space: nowrap; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+  .box { background: var(--navy); color: #e9f2f1; padding: 4mm 5mm; border-radius: 3px; margin: 3mm 0; }
+  .box b { color: #ffb36b; }
+  .box h3 { color: #7fd3cb; margin-top: 0; }
+  .tip { border-left: 4px solid var(--orange); background: #fff6e8; padding: 2.5mm 4mm; margin: 3mm 0; }
+  ul { margin: 0 0 3mm; padding-left: 5mm; } li { margin-bottom: 1.2mm; }
+  .tag { display: inline-block; font-family: "Pixelify"; font-size: 9pt; padding: 0 1.8mm; border-radius: 2px; color: #fff; }
+  .t-recife { background: #2f9c96; } .t-cidade { background: #5f7a4f; } .t-fossa { background: #4b3a7a; }
+  .callouts { counter-reset: c; list-style: none; padding: 0; columns: 2; column-gap: 7mm; }
+  .callouts li { counter-increment: c; break-inside: avoid; padding-left: 7mm; position: relative; }
+  .callouts li::before { content: counter(c); position: absolute; left: 0; top: .2mm; width: 5mm; height: 5mm;
+    background: var(--orange); color: #fff; font-family: "Pixelify"; font-size: 9pt; text-align: center; line-height: 5mm; border-radius: 50%; }
+  figure { margin: 0; } figcaption { font-size: 9pt; color: var(--mute); margin-top: 1.5mm; }
+
+  /* Capa */
+  .cover { background: var(--navy); color: #fff; padding: 0; }
+  .cover .art { height: 172mm; background: url("img/capa.png") center/cover; image-rendering: pixelated; position: relative; }
+  .cover .art::after { content: ""; position: absolute; inset: auto 0 0 0; height: 40mm;
+    background: linear-gradient(transparent, var(--navy)); }
+  .cover .txt { padding: 4mm 17mm 0; }
+  .cover h1 { font-size: 54pt; color: var(--orange); line-height: 1; text-shadow: 3px 3px 0 #000; }
+  .cover .tagline { font-family: "Pixelify"; font-size: 15pt; color: #f6e7c8; margin: 3mm 0 7mm; }
+  .cover .kind { font-family: "Pixelify"; font-size: 12pt; color: #7fd3cb; letter-spacing: .08em; }
+  .cover .team { position: absolute; left: 17mm; right: 17mm; bottom: 13mm; display: flex; justify-content: space-between;
+    align-items: flex-end; font-size: 9.5pt; color: #b9c8cc; border-top: 1px solid #355063; padding-top: 4mm; }
+  .cover .team b { color: #fff; font-weight: 600; }
+
+  /* Thumbnails */
+  .thumbs figure { margin-bottom: 5mm; display: grid; grid-template-columns: 102mm 1fr; gap: 5mm; align-items: center; }
+  .thumbs figcaption { font-size: 10pt; color: var(--ink); margin: 0; }
+  .thumbs figcaption h3 { margin-top: 0; }
+  .thumbs .num { font-family: "Pixelify"; color: var(--orange); font-size: 26pt; line-height: 1; }
+</style>
+</head>
+<body>
+
+<!-- 1. Capa -->
+<section class="page cover">
+  <div class="art"></div>
+  <div class="txt">
+    <div class="kind">MANUAL DE INSTRUÇÕES</div>
+    <h1>MARÉ BAIXA</h1>
+    <div class="tagline">A maré está subindo. Escolha bem a sua concha.</div>
+    <p style="color:#d4dfe1; max-width: 150mm">Roguelite de ação 2D com plataforma para PC e navegador.
+      Teclado ou controle (Xbox e PlayStation). Classificação indicativa: a partir de 10 anos.</p>
+  </div>
+  <div class="team">
+    <div>
+      <b>Edson Pedreira de Oliveira Júnior</b> · 22.123.038-6<br>
+      <b>Henrique Bassan Rebechi</b> · 22.223.083-1<br>
+      <b>Matheo Campanelli de Aquino Esteves</b> · 22.123.045-1
+    </div>
+    <div style="text-align:right">CC7140 · Desenvolvimento de Jogos<br>Unity 6.3 · 2026</div>
+  </div>
+</section>
+
+<!-- 2. História e objetivo -->
+<section class="page">
+  <h2><span class="n">01</span>A história</h2>
+  <p class="lead">Coralina, uma cidade humana que afundou há tanto tempo que os animais esqueceram quem a construiu.</p>
+  <div class="cols">
+    <div>
+      <p>Numa noite de lua cheia, o <b>Polvo Abissal</b> roubou a <b>Pérola Lunar</b>, a joia que controla as
+        marés. Sem ela, a água não para de subir, e a <b>Vila da Praia</b> está afundando.</p>
+      <p><b>Casco</b> é um caranguejo-ermitão jovem que nunca achou uma concha do tamanho certo. Corajoso, meio
+        desajeitado e pequeno o bastante para passar por qualquer fresta, ele aceita descer pelos recifes, pelas
+        ruas da cidade afundada e pela escuridão da fossa para trazer a pérola de volta.</p>
+      <p>No caminho, Casco veste o que o mar oferece: conchas, tampinhas, latas e até uma lâmpada velha. O lixo
+        que os humanos deixaram vira casa, armadura e arma.</p>
+    </div>
+    <figure>
+      <img class="shot" src="img/cutscene-1.png" alt="Cutscene A Pérola Roubada">
+      <figcaption>Cutscene 1, “A Pérola Roubada”: um tentáculo leva a pérola durante a noite.</figcaption>
+    </figure>
+  </div>
+
+  <h2 style="margin-top:8mm"><span class="n">02</span>O objetivo</h2>
+  <p class="lead">Descer até o fundo da Fossa Abissal, vencer o Polvo e recuperar a Pérola Lunar.</p>
+  <div class="box">
+    <h3>Como funciona uma jornada</h3>
+    <ul>
+      <li><b>Vila da Praia</b>: escolha a concha e a arma iniciais e gaste pérolas em melhorias.</li>
+      <li><b>Recife Raso</b> → <b>bolha de ar</b> → <b>Cidade Afundada</b> e o <b>Ermitão Colosso</b> →
+        <b>bolha de ar</b> → <b>Fossa Abissal</b> e o <b>Polvo Abissal</b>.</li>
+      <li>As salas de cada zona são <b>sorteadas</b> a cada jornada. A entrada de cada zona e a arena do chefe são
+        sempre as mesmas.</li>
+      <li>Se Casco morrer, volta ao último <b>banco de descanso</b> (ou à vila) e tenta de novo, um pouco mais forte.</li>
+    </ul>
+  </div>
+  <div class="cols" style="margin-top:4mm">
+    <div class="tip"><b>Vitória:</b> derrotar o Polvo Abissal. A maré baixa, a vila comemora e todas as pérolas
+      ficam guardadas.</div>
+    <div class="tip"><b>Derrota:</b> levar um golpe <b>sem concha</b> ou ficar <b>sem ar</b> debaixo d'água, mesmo
+      vestindo uma concha.</div>
+  </div>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>2</span></div>
+</section>
+
+<!-- 3. Controles -->
+<section class="page">
+  <h2><span class="n">03</span>Controles</h2>
+  <p class="lead">Jogue no teclado ou conecte um controle por USB ou Bluetooth, antes ou durante o jogo. As legendas
+    na tela se ajustam ao controle reconhecido.</p>
+  <table>
+    <tr><th style="width:44%">Ação</th><th>Teclado</th><th>Xbox</th><th>PlayStation</th></tr>
+    <tr><td>Mover</td><td><kbd>A</kbd> <kbd>D</kbd> ou setas</td><td colspan="2">analógico esquerdo ou direcional</td></tr>
+    <tr><td>Pular (segure para pular mais alto)</td><td><kbd>Espaço</kbd> ou <kbd>W</kbd></td><td><span class="pad">A</span></td><td><span class="pad">×</span></td></tr>
+    <tr><td>Descer de uma plataforma</td><td><kbd>↓</kbd> + <kbd>Espaço</kbd></td><td>↓ + <span class="pad">A</span></td><td>↓ + <span class="pad">×</span></td></tr>
+    <tr><td>Atacar com a arma (ou com as pinças)</td><td><kbd>J</kbd></td><td><span class="pad">X</span></td><td><span class="pad">□</span></td></tr>
+    <tr><td>Rolar dentro da concha (fica invulnerável)</td><td><kbd>K</kbd> ou <kbd>Shift</kbd></td><td><span class="pad">B</span></td><td><span class="pad">○</span></td></tr>
+    <tr><td>Habilidade da concha</td><td><kbd>L</kbd></td><td><span class="pad">Y</span></td><td><span class="pad">△</span></td></tr>
+    <tr><td>Pegar arma, vestir concha, conversar, descansar no banco, descer</td><td><kbd>E</kbd></td><td><span class="pad">RB</span></td><td><span class="pad">R1</span></td></tr>
+    <tr><td>Comer alga (recupera 1 de resistência da concha)</td><td><kbd>Q</kbd></td><td><span class="pad">LB</span></td><td><span class="pad">L1</span></td></tr>
+    <tr><td>Pausa e mapa da jornada</td><td><kbd>Esc</kbd> ou <kbd>P</kbd></td><td><span class="pad">Start</span></td><td><span class="pad">Options</span></td></tr>
+    <tr><td>Pular uma cutscene</td><td>segure <kbd>Esc</kbd></td><td>segure <span class="pad">Start</span></td><td>segure <span class="pad">Options</span></td></tr>
+  </table>
+
+  <h3>Menus, lojas e diálogos</h3>
+  <p>Use o direcional, o analógico ou as setas para escolher. <kbd>Enter</kbd> / <span class="pad">A</span> /
+    <span class="pad">×</span> confirma e <kbd>Esc</kbd> / <span class="pad">B</span> / <span class="pad">○</span> volta.
+    O mesmo botão de confirmar avança os diálogos e os quadros das cutscenes.</p>
+
+  <h3>Movimento de Casco</h3>
+  <div class="cols">
+    <ul>
+      <li><b>Pulo variável:</b> segurar o botão leva Casco mais alto; soltar cedo dá um pulinho.</li>
+      <li><b>Pulo perdoado:</b> dá para pular logo depois de sair da beirada, e o pulo apertado um pouco antes de
+        tocar o chão também vale.</li>
+    </ul>
+    <ul>
+      <li><b>Rolamento:</b> Casco se esconde na concha e atravessa ataques sem levar dano. Use para passar por
+        botes e tentáculos.</li>
+      <li><b>Plataformas finas</b> podem ser atravessadas de baixo para cima; aperte ↓ + pular para descer delas.</li>
+    </ul>
+  </div>
+
+  <h3>Menu principal</h3>
+  <p><b>Novo jogo</b> começa uma jornada a partir da vila. <b>Continuar do banco</b> retoma a jornada salva no
+    último banco de descanso, com o mesmo roteiro de salas, mesmo depois de fechar o jogo. Na pausa,
+    <b>Menu</b> mantém o banco salvo e <b>Voltar à vila</b> encerra a jornada.</p>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>3</span></div>
+</section>
+
+<!-- 4. A tela do jogo -->
+<section class="page">
+  <h2><span class="n">04</span>A tela do jogo</h2>
+  <p class="lead">Tudo o que decide a sua sobrevivência fica sempre visível.</p>
+  <figure><img class="shot" src="img/hud.png" alt="Tela de jogo com o HUD"></figure>
+  <ol class="callouts" style="margin-top:5mm">
+    <li><b>Concha vestida</b>: nome, habilidade e quadradinhos de resistência. Cada golpe apaga um. Ao chegar a
+      zero, a concha quebra.</li>
+    <li><b>Arma equipada</b>, algas na bolsa (no máximo 2) e pérolas coletadas nesta jornada.</li>
+    <li><b>Zona, trecho e sala</b> atuais, e o <b>nome do chefe</b> com a barra de vida dele nas arenas.</li>
+    <li><b>Medidor da maré</b>: mostra quanto falta para a água inundar a sala.</li>
+    <li><b>Barra de ar</b>: aparece quando a cabeça de Casco fica debaixo d'água. Bolhas recarregam o ar.</li>
+    <li><b>Dicas de botão</b>: perto de conchas, armas, bancos e moradores, a tela mostra o botão para interagir.</li>
+  </ol>
+  <div class="tip">Debaixo d'água o som fica abafado, Casco anda e pula <b>30% mais devagar</b> e o ar começa a
+    acabar. Se o ar zerar, Casco morre mesmo com a concha inteira.</div>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>4</span></div>
+</section>
+
+<!-- 5. Conchas e armas -->
+<section class="page">
+  <h2><span class="n">05</span>Conchas: classe e vida</h2>
+  <p class="lead">Casco veste uma concha por vez. Ela é a armadura e define o jeito de jogar.</p>
+  <img src="img/conchas.png" alt="Casco com cada concha" style="border-radius:3px; margin:0 auto 2mm; height:60mm">
+  <table>
+    <tr><th>Concha</th><th>Resistência</th><th>Velocidade</th><th>Habilidade (L / Y / △)</th></tr>
+    <tr><td><b>Sem concha</b></td><td>0</td><td>rápido</td><td>nenhuma; <b>um golpe mata</b></td></tr>
+    <tr><td><b>Concha Comum</b></td><td>3</td><td>normal</td><td>nenhuma; a concha inicial</td></tr>
+    <tr><td><b>Tampinha de Garrafa</b></td><td>2</td><td>rápida</td><td>pulo duplo</td></tr>
+    <tr><td><b>Concha Espiral</b></td><td>4</td><td>normal</td><td>cambalhota que avança girando e dá 3 de dano dos dois lados</td></tr>
+    <tr><td><b>Lata de Refrigerante</b></td><td>6</td><td>lenta</td><td>investida que derruba e atordoa inimigos</td></tr>
+    <tr><td><b>Lâmpada Velha</b></td><td>3</td><td>normal</td><td>clarão que atordoa e ilumina salas escuras</td></tr>
+  </table>
+  <p>Para trocar, encoste numa concha no chão e aperte <kbd>E</kbd>. A antiga fica para trás com a resistência que
+    tinha. Uma <b>alga</b> (<kbd>Q</kbd>) recupera 1 ponto de resistência.</p>
+
+  <h2 style="margin-top:5mm"><span class="n">06</span>Armas de sucata</h2>
+  <p class="lead">Lixo humano encontrado no fundo do mar. Casco começa com as pinças.</p>
+  <table>
+    <tr><th>Arma</th><th>Dano</th><th>Estilo</th><th>Onde achar</th><th>Preço na forja</th></tr>
+    <tr><td><b>Pinças</b></td><td>1</td><td>curtas e rápidas</td><td>Casco já tem</td><td>grátis</td></tr>
+    <tr><td><b>Espada de Canudo</b></td><td>2</td><td>corte rápido</td><td>entrada do Recife Raso</td><td>5 pérolas</td></tr>
+    <tr><td><b>Lança de Garfo</b></td><td>2</td><td>alcance longo</td><td>entrada da Cidade Afundada</td><td>9 pérolas</td></tr>
+    <tr><td><b>Martelo de Escova</b></td><td>3</td><td>lento, atordoa</td><td>entrada da Fossa Abissal</td><td>12 pérolas</td></tr>
+  </table>
+  <p>Aperte <kbd>E</kbd> perto da arma para pegá-la; a anterior fica no chão. Armas compradas na forja viram opção
+    de arma inicial para sempre.</p>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>5</span></div>
+</section>
+
+<!-- 6. Maré, ar, pérolas e vila -->
+<section class="page">
+  <h2><span class="n">07</span>Maré, ar e pérolas</h2>
+  <p class="lead">Quatro sistemas que obrigam a escolher entre explorar e avançar.</p>
+  <div class="cols">
+    <div>
+      <h3>A maré</h3>
+      <p>Em cada sala a água sobe sem parar: <b>devagar</b> no Recife, <b>mais rápido</b> na Cidade e <b>muito
+        rápido</b> na Fossa. Algumas salas têm <b>válvulas</b>: atacar uma baixa a água por alguns segundos, mas o
+        barulho atrai inimigos. <b>Correntezas</b> empurram Casco.</p>
+      <h3>O ar</h3>
+      <p>Com a cabeça submersa, a barra de ar (8 segundos no início) esvazia. As <b>bolhas</b> espalhadas pelas salas
+        recarregam o ar.</p>
+    </div>
+    <div>
+      <h3>Pérolas</h3>
+      <p>Inimigos e baús deixam pérolas, que voam até Casco quando ele chega perto. Elas compram melhorias e
+        conchas na vila.</p>
+      <h3>Bolhas de ar</h3>
+      <p>Entre as zonas há uma sala segura: a água não sobe e a <b>fonte de cura</b> restaura a concha uma vez.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:6mm"><span class="n">08</span>A Vila da Praia</h2>
+  <p class="lead">O ponto de partida de toda jornada. Aperte <kbd>E</kbd> perto de um morador para conversar.</p>
+  <div class="cols">
+    <figure><img class="shot" src="img/vila.png" alt="Vila da Praia"></figure>
+    <div>
+      <p><b>Vovó Búzia</b> conta a história na primeira visita e depois dá uma dica nova a cada conversa.</p>
+      <p><b>Ostrácia</b> troca pérolas por melhorias permanentes.</p>
+      <p><b>Dona Lagosta</b> forja conchas, vende armas e define o equipamento inicial.</p>
+      <p><b>Bolota</b>, o baiacu filhote, faz piada e torce por Casco.</p>
+    </div>
+  </div>
+  <table style="margin-top:4mm">
+    <tr><th>Loja da Ostrácia</th><th>Efeito</th><th>Preço</th></tr>
+    <tr><td><b>Pulmão de Peixe</b> (3 níveis)</td><td>+2 s de ar por nível</td><td>3 · 5 · 8 pérolas</td></tr>
+    <tr><td><b>Casca Grossa</b></td><td>aguenta 1 golpe sem concha</td><td>6 pérolas</td></tr>
+    <tr><td><b>Alga na Bolsa</b> (2 níveis)</td><td>+1 alga no início da jornada</td><td>4 · 7 pérolas</td></tr>
+  </table>
+  <table>
+    <tr><th>Forja da Dona Lagosta</th><th>Preço para forjar</th><th>Condição</th></tr>
+    <tr><td>Tampinha de Garrafa · Concha Espiral</td><td>6 · 8 pérolas</td><td>sempre disponíveis</td></tr>
+    <tr><td>Lata de Refrigerante · Lâmpada Velha</td><td>14 · 16 pérolas</td><td>achar uma na jornada antes</td></tr>
+  </table>
+  <p>Depois de forjada, a concha vira opção de concha inicial. Trocar de concha ou arma inicial na forja é grátis.</p>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>6</span></div>
+</section>
+
+<!-- 7. Zonas, inimigos e chefes -->
+<section class="page">
+  <h2><span class="n">09</span>Zonas e inimigos</h2>
+  <p class="lead">Cada inimigo ensina uma resposta diferente: esquivar, recuar, punir ou usar a habilidade da concha.</p>
+  <table>
+    <tr><th>Inimigo</th><th>Zona</th><th>O que faz</th><th>Como vencer</th></tr>
+    <tr><td><b>Água-viva Errante</b></td><td><span class="tag t-recife">Recife</span></td><td>flutua e dá choques periódicos</td><td>atacar entre um choque e outro</td></tr>
+    <tr><td><b>Baiacu Nervoso</b></td><td><span class="tag t-recife">Recife</span></td><td>incha ao apanhar e explode em espinhos</td><td>bater uma vez e recuar</td></tr>
+    <tr><td><b>Moreia de Cano</b></td><td><span class="tag t-cidade">Cidade</span></td><td>se esconde no cano e dá um bote</td><td>esquivar do bote e atacar na volta</td></tr>
+    <tr><td><b>Siri Saqueador</b></td><td><span class="tag t-cidade">Cidade</span></td><td>agarra Casco e rouba a concha</td><td>bater nele para recuperar a concha</td></tr>
+    <tr><td><b>Peixe-pescador</b></td><td><span class="tag t-fossa">Fossa</span></td><td>uma isca luminosa atrai Casco para a boca</td><td>clarão da Lâmpada ou atacar de lado</td></tr>
+    <tr><td><b>Tentáculo Sombrio</b></td><td><span class="tag t-fossa">Fossa</span></td><td>sai do chão e varre a área</td><td>ver o aviso no chão e pular ou rolar</td></tr>
+  </table>
+  <p><span class="tag t-recife">Recife Raso</span> corais e luz do sol, maré lenta: o lugar para aprender.
+    <span class="tag t-cidade">Cidade Afundada</span> ruas, carros e prédios inundados, maré média.
+    <span class="tag t-fossa">Fossa Abissal</span> escuridão quase total, maré rápida; só as criaturas e a luz das
+    conchas brilham.</p>
+
+  <h2 style="margin-top:6mm"><span class="n">10</span>Os chefes</h2>
+  <div class="cols">
+    <div class="box">
+      <h3>Ermitão Colosso</h3>
+      <p>Um ermitão gigante que usa um pneu como concha, no fim da Cidade Afundada. Ele rola pela arena como uma roda.
+        Quando bate na parede, <b>fica tonto</b>: é a hora de atacar.</p>
+    </div>
+    <div class="box">
+      <h3>Polvo Abissal</h3>
+      <p><b>Fase 1:</b> tentáculos saem do chão em sequência, com aviso.<br>
+        <b>Fase 2:</b> ele jorra tinta e a tela escurece.<br>
+        <b>Fase 3:</b> a água da arena sobe rápido; suba nas plataformas e ataque os olhos.</p>
+    </div>
+  </div>
+  <figure style="margin-top:1mm; width:100mm"><img class="shot" src="img/colosso.png" alt="Arena do Polvo Abissal">
+    <figcaption>O covil do Polvo Abissal, no fundo da Fossa: só os olhos dele e a luz de Casco brilham.</figcaption></figure>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>7</span></div>
+</section>
+
+<!-- 8. Bancos, morte e dicas -->
+<section class="page">
+  <h2><span class="n">11</span>Bancos, morte e vitória</h2>
+  <p class="lead">Morrer faz parte. Cada derrota deixa a próxima tentativa um pouco mais fácil.</p>
+  <div class="cols">
+    <div>
+      <h3>Bancos de descanso</h3>
+      <p>Há seis abrigos na jornada: entre trechos do Recife e da Cidade, entre as zonas e antes de cada chefe.
+        Aperte <kbd>E</kbd> junto ao banco: Casco deita, recupera a concha, o ar e as algas, e o jogo guarda as
+        pérolas, o equipamento e o roteiro das salas. Sem concha, ele recebe uma Concha Comum.</p>
+    </div>
+    <div>
+      <h3>Ao morrer</h3>
+      <ul>
+        <li><b>Com banco salvo:</b> Casco volta ao último banco com o equipamento guardado e perde só as pérolas
+          obtidas depois do descanso.</li>
+        <li><b>Sem banco:</b> volta à vila com <b>metade</b> das pérolas.</li>
+        <li><b>Vitória:</b> todas as pérolas ficam guardadas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Cutscenes</h3>
+  <p>Quatro histórias em quadrinhos contam a aventura: <b>A Pérola Roubada</b> (início), <b>A Primeira Concha</b>
+    (ao vestir uma concha nova), <b>O Fundo do Mar</b> (ao entrar na Fossa) e <b>Maré Baixa</b> (vitória). Todas podem
+    ser puladas segurando <kbd>Esc</kbd> ou <span class="pad">Start</span>.</p>
+
+  <h2 style="margin-top:6mm"><span class="n">12</span>Dicas da Vovó Búzia</h2>
+  <div class="box">
+    <ul>
+      <li>Não explore tudo. A maré não espera: pegue o que estiver no caminho e desça.</li>
+      <li>Concha com 1 ponto de resistência? Coma uma alga ou procure outra concha antes do próximo inimigo.</li>
+      <li>O rolamento atravessa ataques. Use contra o bote da Moreia e os tentáculos do Polvo.</li>
+      <li>A Lâmpada Velha é a melhor amiga na Fossa: ilumina a sala e atordoa o Peixe-pescador.</li>
+      <li>A Lata aguenta muito, mas é lenta. Em salas de maré rápida, a Tampinha e o pulo duplo salvam.</li>
+      <li>Válvulas baixam a água, mas chamam inimigos. Use quando o ar estiver acabando.</li>
+      <li>Descanse em todo banco. Ele guarda as pérolas e evita perder a jornada inteira.</li>
+      <li>Logo no começo, compre o Pulmão de Peixe: mais ar é mais tempo para pensar.</li>
+    </ul>
+  </div>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>8</span></div>
+</section>
+
+<!-- 9. Três principais cenas -->
+<section class="page thumbs">
+  <h2><span class="n">13</span>As principais cenas</h2>
+  <p class="lead">Três momentos que resumem a jornada de Casco.</p>
+  <figure>
+    <img class="shot" src="img/thumb-1-menu.png" alt="Menu principal">
+    <figcaption><div class="num">1</div><h3>Menu principal</h3>A praia ao entardecer e as ruínas de Coralina
+      debaixo d'água. Daqui o jogador começa uma jornada nova ou continua do último banco.</figcaption>
+  </figure>
+  <figure>
+    <img class="shot" src="img/thumb-2-jogo.png" alt="Gameplay">
+    <figcaption><div class="num">2</div><h3>A descida</h3>Casco atravessa as salas sorteadas enfrentando
+      inimigos, enquanto o medidor da maré, à direita, mostra a água subindo.</figcaption>
+  </figure>
+  <figure>
+    <img class="shot" src="img/thumb-3-final.png" alt="Cena final">
+    <figcaption><div class="num">3</div><h3>Maré Baixa</h3>A cutscene final: com a Pérola Lunar de volta, a
+      maré recua e Casco e Bolota assistem ao pôr do sol na vila.</figcaption>
+  </figure>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>9</span></div>
+</section>
+
+<!-- 10. Créditos -->
+<section class="page">
+  <h2><span class="n">14</span>Instalação e créditos</h2>
+  <p class="lead">Como jogar e quem fez.</p>
+  <h3>Onde jogar</h3>
+  <ul>
+    <li><b>Navegador:</b> na página do jogo no itch.io, clique em <b>Run game</b>. Use tela cheia pelo botão no
+      canto inferior direito.</li>
+    <li><b>macOS:</b> baixe e abra <b>MareBaixa.app</b>. Na primeira vez, clique com o botão direito → Abrir.</li>
+    <li><b>Código-fonte:</b> github.com/edson-optio/mare-baixa. Abra a pasta <b>MareBaixa</b> no Unity 6.3 LTS
+      (6000.3.24f1) e aperte Play na cena Menu.</li>
+  </ul>
+  <p>O progresso (pérolas, melhorias e o último banco) é salvo automaticamente.</p>
+
+  <h3>Equipe</h3>
+  <table>
+    <tr><th>Integrante</th><th>RA</th></tr>
+    <tr><td><b>Edson Pedreira de Oliveira Júnior</b></td><td>22.123.038-6</td></tr>
+    <tr><td><b>Henrique Bassan Rebechi</b></td><td>22.223.083-1</td></tr>
+    <tr><td><b>Matheo Campanelli de Aquino Esteves</b></td><td>22.123.045-1</td></tr>
+  </table>
+
+  <h3>Tecnologia</h3>
+  <p>Unity 6.3 LTS com o Input System para teclado e controle. Salas desenhadas em texto e sorteadas a cada
+    jornada, interface construída por código, pixel art própria, música e efeitos sonoros sintetizados no jogo.
+    Fonte Pixelify Sans (SIL Open Font License).</p>
+
+  <h3>Mensagem</h3>
+  <p>Em Maré Baixa, os humanos não aparecem, só o que deixaram para trás. Canudos, garfos, latas e tampinhas
+    viram casa e arma para os animais do fundo do mar. O jogo usa o humor para falar de poluição sem ser chato.</p>
+
+  <figure style="margin-top:6mm"><img src="img/moradores.png" alt="Moradores da Vila da Praia" style="border-radius:3px; height:78mm; margin:0 auto"></figure>
+  <div class="folio"><span>Maré Baixa · Manual de Instruções</span><span>10</span></div>
+</section>
+
+</body>
+</html>

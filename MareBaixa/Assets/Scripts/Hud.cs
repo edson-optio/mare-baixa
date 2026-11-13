@@ -142,9 +142,8 @@ namespace MareBaixa
                 TextAnchor.MiddleLeft);
             shellAbility = UiKit.Label(area, "", 22, UiKit.TopLeft, new Vector2(104f, -50f), new Vector2(248f, 26f),
                 TextAnchor.MiddleLeft, GameRules.Sand);
-            shellAbility.resizeTextForBestFit = true;
-            shellAbility.resizeTextMinSize = 15;
-            shellAbility.resizeTextMaxSize = 22;
+            FitOneLine(shellName, 14);
+            FitOneLine(shellAbility, 12);
             for (int i = 0; i < MaxPips; i++)
             {
                 pips[i] = UiKit.Panel(area, UiKit.TopLeft, new Vector2(110f + i * 36f, -80f), new Vector2(28f, 16f),
@@ -170,6 +169,18 @@ namespace MareBaixa
                 TextAnchor.MiddleLeft, GameRules.Cream);
             weaponDetail = UiKit.Label(area, "", 18, UiKit.TopLeft, new Vector2(96f, -222f), new Vector2(250f, 25f),
                 TextAnchor.MiddleLeft, GameRules.Sand);
+            FitOneLine(weaponName, 14);
+            FitOneLine(weaponDetail, 12);
+        }
+
+        // Textos do quadro de estado mudam de tamanho (concha, arma, legenda do controle): em vez de quebrar a
+        // linha e invadir o rótulo de baixo, a fonte encolhe até caber. O best fit só atua com Truncate.
+        static void FitOneLine(Text label, int minSize)
+        {
+            label.verticalOverflow = VerticalWrapMode.Truncate;
+            label.resizeTextForBestFit = true;
+            label.resizeTextMaxSize = label.fontSize;
+            label.resizeTextMinSize = Mathf.Min(minSize, label.fontSize);
         }
 
         // Barra de ar logo abaixo do estado; só aparece quando falta ar.

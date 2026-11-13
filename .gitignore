@@ -10,7 +10,7 @@ MareBaixa/*.sln
 MareBaixa/*.slnx
 MareBaixa/.vscode/
 # App compilado (grande; gerado pelo build)
-Entrega/
+/Entrega/
 Verificacao/*.log
 .DS_Store
 __pycache__/
