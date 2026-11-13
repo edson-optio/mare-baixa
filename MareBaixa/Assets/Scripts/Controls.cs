@@ -49,8 +49,12 @@ namespace MareBaixa
             }
         }
 
+        // O layout HID do Switch Pro só existe no Input System para desktop; no build web ele não é compilado.
         public static bool NintendoLayout => Gamepad.current is EightBitDoUltimateHid
-            || Gamepad.current is UnityEngine.InputSystem.Switch.SwitchProControllerHID;
+#if UNITY_EDITOR || UNITY_STANDALONE
+            || Gamepad.current is UnityEngine.InputSystem.Switch.SwitchProControllerHID
+#endif
+            ;
         public static string FormatHints(string text) => text
             .Replace("{padJump}", NintendoLayout ? "B" : "A (×)")
             .Replace("{padDodge}", NintendoLayout ? "A" : "B (círculo)")

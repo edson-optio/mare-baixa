@@ -30,6 +30,9 @@ namespace MareBaixa.Editor
             PlayerSettings.WebGL.template = "APPLICATION:Default";
             PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.WebGL, ManagedStrippingLevel.Minimal);
             PlayerSettings.runInBackground = true;
+            // 16:9 como o jogo (o padrão do template é 960x600 e deixa faixas pretas).
+            PlayerSettings.defaultWebScreenWidth = 1280;
+            PlayerSettings.defaultWebScreenHeight = 720;
 
             if (Directory.Exists(OutputPath)) Directory.Delete(OutputPath, true);
             Directory.CreateDirectory(OutputPath);
